@@ -1,77 +1,149 @@
 # Functional specification template: climate change game project
 
 ## 1. Context
-- **Current situation**: The team, composed of six members from Algosup, is initiating the development of a serious game using Godot 4.3. This project is part of a six-week educational program aimed at evaluating both the technical skills and understanding of sustainable practices of the team. The game is intended to educate players about sustainable city management and the consequences of climate-related decisions.
-- **Background**: Players will engage in city-building and management to understand how their decisions impact the environment. The target audience includes a jury who will evaluate the game at the end of the project, as well as evaluators assessing the overall quality and educational value. The game should be fun, engaging, and capable of conveying important lessons about sustainability in a practical way.
 
-## 2. Goal / scope
-- **Primary goal**: Develop a game that simulates real-world environmental challenges to educate users on sustainability practices, focusing on the balance between economic growth and environmental responsibility.
+- **Current situation**: The team, composed of six members from Algosup, is developing a serious game using Godot 4.3. This project is part of a seven-week educational program to evaluate both technical skills and understanding of sustainable practices. The game aims to educate players about sustainable city management and the consequences of climate-related decisions.
+
+- **Background**: Players will engage in city-building and management to understand how their decisions impact the environment. The target audience includes those interested in sustainability and city management, as well as potential buyers and stakeholders. The game must be fun, engaging, and convey important sustainability lessons effectively.
+
+- **Initial MVP Focus**: The MVP will focus on core gameplay, including resource management, pollution tracking, and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics.
+
+## 2. Goal / Scope
+
+- **Primary goal**: Develop a game that simulates environmental challenges to educate users on sustainability, focusing on balancing economic growth with environmental responsibility.
+
 - **Scope of work**:
-  - **Includes**:
-    - **Resource management**: Players must allocate resources like energy, water, and food while ensuring sustainability.
-    - **Pollution tracking**: Pollution levels should be tracked, and players will see the effects of pollution on their city's health and progress.
-    - **Educational feedback**: Real-time feedback to help players understand the consequences of their actions and make better decisions for a sustainable city.
-    - **Climate-related decision-making**: Players will make choices regarding renewable energy, waste management, and infrastructure to build a sustainable city.
-  - **Excludes**:
-    - Advanced AI behavior, such as complex simulation of citizens' actions or sophisticated adversaries.
-    - Multiplayer features.
-    - Integration with external data sources, such as real-time climate data.
 
-- **Priority objectives**:
-  - **Promote Renewable Energy Use**: Encourage players to prioritize renewable energy options, such as wind, solar, or hydroelectric power, to minimize the carbon footprint.
-  - **Emphasize Waste Management**: Highlight the importance of managing waste and recycling to reduce pollution and resource depletion.
-  - **Foster Public Awareness**: Include scenarios that require players to make decisions that increase public awareness and engagement in sustainability.
+  - **MVP Scope**:
+    - **Resource management**: Players allocate renewable (e.g., solar energy) and non-renewable (e.g., fossil fuel) resources while managing the city’s finances.
+    - **Pollution tracking**: Pollution levels will be visually represented to show the city's health and the impact of player decisions over time.
+    - **Educational feedback**: Visual feedback (pollution indicators, health bars) helps players understand the consequences of their actions.
+    - **Simple decision-making**: Players make straightforward decisions regarding renewable energy, waste management, and city expansion.
 
-- **Game complexity**:
-  - The game will be designed to be simple to grasp and play, especially in the early phases, with intuitive mechanics. The goal is to have a minimum viable product (MVP) that includes core features like resource allocation, pollution tracking, and basic feedback mechanisms.
+  - **Future Vision Scope**:
+    - **Advanced resource management**: Introduce more complex resource types (e.g., food, advanced energy systems).
+    - **Pollution mitigation**: Advanced tools to reduce pollution, like tree planting, public transit, and waste management systems.
+    - **Complex decision-making**: Balancing industrial growth, environmental sustainability, and citizen satisfaction.
+
+  - **Priority objectives**:
+    - **Promote Renewable Energy**: Encourage players to prioritize renewable energy to minimize the carbon footprint.
+    - **Emphasize Waste Management**: Highlight managing waste through recycling, composting, and waste-to-energy plants.
+    - **Foster Public Awareness**: Include public campaigns to raise awareness about sustainability.
+
+- **Game complexity**: The game will be simple to grasp, with intuitive mechanics suitable for all ages. The MVP will focus on core features like resource allocation and pollution tracking, while future versions will expand these features for more depth.
 
 - **Target outcomes**:
-  - Players should develop an understanding of the importance of balancing city growth with sustainable practices.
-  - Players should learn the direct impact of resource choices on pollution and quality of life within their virtual city.
-  - Players should leave with a sense of responsibility regarding environmental impacts and potential actions for change.
+  - Players understand the importance of balancing city growth with sustainable practices.
+  - Players learn the impact of resource choices on pollution, quality of life, and growth.
+  - Players develop a sense of responsibility regarding environmental impacts.
 
 ## 3. Functional requirements
+
 - **Gameplay mechanics**:
-  - **Building and upgrades**: Players can place and upgrade various structures that affect resource management.
-  - **Resource management**: Players must allocate energy, water, and other resources efficiently.
-  - **Pollution control**: The game tracks pollution levels and reflects their impact on gameplay.
-  - **Random events**: Climate-related events trigger decisions that influence the player’s progress.
+
+  - **MVP**:
+    - **Building placement**: Players place basic structures (e.g., residential buildings, power plants, parks).
+    - **Resource management**: Players allocate energy resources and manage budgets effectively.
+    - **Pollution control**: Pollution levels are visually represented through indicators like smog and reduced greenery.
+
+  - **Future Vision**:
+    - **Building upgrades**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
+    - **Dynamic pollution control**: Advanced tools like public transit and green technologies reduce pollution levels.
+
 - **UI components**:
-  - Interactive dashboard displaying essential metrics (resources, pollution).
-  - Notification system for climate events and decision prompts.
+  - **MVP**:
+    - **Simple dashboard**: Displays essential metrics like energy consumption, financial status, and pollution levels.
+  - **Future Vision**:
+    - **Detailed notifications**: Prompts and messages guide players through complex decisions.
+    - **Advanced visual indicators**: Charts and graphs provide comprehensive feedback.
+
 - **Player interactions**:
-  - **Construction**: Add and modify buildings.
-  - **Decision-making**: Respond to climate challenges with choices that affect the city’s state.
-  - **Feedback mechanisms**: Receive real-time feedback on sustainability practices through visual and audio cues.
+  - **MVP**:
+    - **Construction**: Players place and remove basic buildings.
+    - **Basic decision-making**: Players decide on energy use, construction, and waste management.
+    - **Feedback mechanisms**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
+  - **Future Vision**:
+    - **Advanced construction**: Players upgrade buildings for increased efficiency.
+    - **Complex decision-making**: Players balance economic growth, environmental health, and citizen satisfaction.
+    - **Enhanced feedback**: Audio cues and detailed notifications provide deeper insights.
 
-## 4. Acceptance criteria
+## 4. Dependencies and Priorities
+
+- **Feature dependencies**:
+  - **Building upgrades** require basic building placement and resource allocation.
+  - **Dynamic pollution control** requires basic pollution tracking.
+
+- **Feature priorities**:
+  - **High priority**: Building placement, resource management, pollution tracking, and educational feedback.
+  - **Medium priority**: Building upgrades, complex decision-making.
+  - **Low priority**: Dynamic pollution control, enhanced feedback.
+
+## 5. Acceptance criteria
+
 - **Gameplay verification**:
-  - Players can achieve varying scores based on city sustainability.
-  - Pollution and resource management accurately reflect player decisions.
+  - Players can place buildings, allocate resources, and track pollution.
+  - Players achieve varying levels of success based on management of resources and pollution.
+
 - **User interface**:
-  - Interactive elements respond as expected (e.g., buttons, notifications).
+  - **MVP**: The UI must be intuitive, with responsive elements like buttons and dashboards.
+  - **Future Vision**: The UI must provide advanced feedback and clear indicators.
+
 - **Educational content**:
-  - Players receive relevant information about climate impacts during gameplay.
+  - Players receive relevant information about environmental impacts.
 
-## 5. Design specifications
-- **UI layout**: Include a link to mockups or design prototypes.
-- **UX elements**: Outline the user experience flow, ensuring it aligns with educational and engagement goals.
-- **Visual style**: Use a consistent theme that represents sustainability (e.g., green tones, nature imagery).
+## 6. Design specifications
 
-## 6. Non-functional requirements
-- **Performance**: Ensure the game runs at 60 FPS on typical mid-range devices.
-- **Scalability**: Game should handle large-scale city data without lag.
-- **Accessibility**: Support adjustable text sizes and colorblind-friendly palettes.
+- **UI layout**: Mockups or design prototypes should illustrate MVP and future UI versions. The MVP should have a clean layout focusing on ease of navigation.
 
-## 7. Out of scope
+- **UX elements**: The user experience should prioritize accessibility and engagement. The MVP will offer a linear flow, while the future version may include branching decisions and tutorials.
+
+- **Visual style**: Use a consistent theme representing sustainability. Green and blue tones dominate the palette, with red for pollution and warnings. Icons should intuitively represent buildings, energy, and pollution.
+
+## 7. Non-functional requirements
+
+- **Performance**: Ensure the game runs smoothly at 60 FPS on mid-range devices.
+
+- **Scalability**: The game must handle large-scale city data without issues. The MVP introduces base data management, while future versions implement optimizations.
+
+- **Accessibility**: Adjustable text sizes, colorblind-friendly palettes, and simplified UI modes for younger audiences or those with impairments.
+
+## 8. Win/Lose Conditions
+
+- **Win Condition**:
+  - **MVP**: Players win by maintaining pollution below a threshold and providing enough renewable energy for 5 in-game years.
+  - **Future Vision**: Players achieve milestones in sustainable growth, public awareness, and resource efficiency.
+
+- **Lose Condition**:
+  - **MVP**: Players lose if pollution exceeds a critical threshold for more than one in-game year, leading to city collapse.
+  - **Future Vision**: Players lose due to resource depletion, public dissatisfaction, or financial collapse.
+
+## 9. Impact of Management on Gameplay
+
+- **Good Management**:
+  - **Steady Growth**: Players receive more income for further development.
+  - **Positive Feedback**: The city becomes greener, with visual indicators of progress.
+  - **Citizen Satisfaction**: Higher satisfaction translates to bonuses, like increased tax revenue.
+
+- **Poor Management**:
+  - **Deterioration**: Rising pollution levels lead to resource scarcity and visible degradation.
+  - **Negative Feedback**: Pollution indicators, such as smog, increase, showing declining sustainability.
+  - **Citizen Dissatisfaction**: Reduced productivity, abandoned buildings, and city decline.
+
+## 10. Out of scope
+
 - **Features not included**:
   - Multiplayer modes.
-  - Detailed analytics tracking or integration with third-party services.
+  - Detailed analytics or third-party integration.
+  - Complex AI behavior beyond basic interactions.
 
-## 8. Security
-- **Data security**: Implement data protection protocols for user data.
-- **Authentication**: Outline any player identification mechanisms if needed.
+## 11. Security
 
-## 9. Glossary
-- **Resource management**: Allocation and monitoring of resources like energy, water, etc.
+- **Data security**: Implement data protection protocols. All saved data must be secure to prevent unauthorized access.
+
+- **Authentication**: Outline player identification mechanisms if needed, such as profile creation or save encryption.
+
+## 12. Glossary
+
+- **Resource management**: Allocation and monitoring of resources like energy and money.
 - **Pollution metric**: A numerical representation of pollution levels that affect gameplay.
+- **Citizen satisfaction**: A metric that reflects the happiness of the city's population, influenced by pollution, resources, and quality of life.
