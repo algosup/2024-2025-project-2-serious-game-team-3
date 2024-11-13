@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Team members](#team-members)
 - [1. Context](#1-context)
-- [2. Goal / scope](#2-goal-scope)
+- [2. Goal / scope](#2-goal--scope)
   - [MVP scope](#mvp-scope)
   - [Future vision scope](#future-vision-scope)
   - [Priority objectives](#priority-objectives)
@@ -17,7 +17,7 @@
 - [5. Acceptance criteria](#5-acceptance-criteria)
 - [6. Design specifications](#6-design-specifications)
 - [7. Non-Functional requirements](#7-non-functional-requirements)
-- [8. Win/Lose conditions](#8-win-lose-conditions)
+- [8. Win/lose conditions](#8-win--lose-conditions)
 - [9. Impact of management on gameplay](#9-impact-of-management-on-gameplay)
 - [10. Out of scope](#10-out-of-scope)
 - [11. Security](#11-security)
@@ -37,7 +37,7 @@
 
 ## 1. Context
 
-- **Current situation**: The team, composed of six members from Algosup, is developing a serious game using [Godot 4.3](#12-glossary). This project is part of a seven-week educational program to evaluate both technical skills and understanding of sustainable practices. The game aims to educate players about [sustainable city management](#12-glossary) and the consequences of [climate-related decisions](#12-glossary).
+- **Current situation**: The team, composed of seven members from Algosup, is developing a serious game using [Godot 4.3](#12-glossary). This project is part of a seven-week educational program to evaluate both technical skills and understanding of sustainable practices. The game aims to educate players about [sustainable city management](#12-glossary) and the consequences of [climate-related decisions](#12-glossary).
 
 - **Background**: Players will engage in [city-building](#12-glossary) and management to understand how their decisions impact the environment. The target audience includes those interested in sustainability and city management, as well as potential buyers and stakeholders. The game must be fun, engaging, and convey important sustainability lessons effectively.
 
@@ -45,7 +45,7 @@
 
 ## 2. Goal / scope
 
-- **Primary goal**: Develop a game that simulates environmental challenges to educate young adults and students on sustainability. The game focuses on balancing economic growth with environmental responsibility. Players will need to decide whether to build industrial facilities that boost the economy but increase pollution. Alternatively, they can invest in renewable energy sources, which cost more initially but lead to long-term sustainability.
+- **Primary goal**: Develop a game that simulates environmental challenges to educate young adults and students on sustainability. Players must balance economic development with sustainable practices, making choices that prioritize long-term environmental health. Players will need to decide whether to build industrial facilities that boost the economy but increase pollution. Alternatively, they can invest in renewable energy sources, which cost more initially but lead to long-term sustainability.
 
 - **Scope of work**:
 
@@ -78,9 +78,9 @@
 
 ## 3. Functional requirements
 
-- **Gameplay mechanics**:
+- ### Gameplay mechanics:
 
-  ### MVP
+  #### MVP
 
   - **Building placement**: Players place basic structures (e.g., residential buildings, power plants, parks).
   - **Resource management**: Players allocate energy resources and manage budgets effectively.
@@ -91,26 +91,26 @@
   - **Building upgrades**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
   - **Dynamic pollution control**: Advanced tools like public transit and green technologies reduce pollution levels.
 
-- **UI components**:
+- ### UI components:
 
-  ### MVP
+  #### MVP
 
   - **Simple dashboard**: Displays essential metrics like energy consumption, financial status, and pollution levels.
 
-  ### Future vision
+  #### Future vision
 
   - **Detailed notifications**: Prompts and messages guide players through complex decisions.
-  - **Advanced visual indicators**: Charts and graphs provide comprehensive feedback.
+  - **Advanced visual indicators**: Charts and graphs provide comprehensive feedback (e.g., pollution trends, energy usage over time).
 
-- **Player interactions**:
+- ### Player interactions:
 
-  ### MVP
+  #### MVP
 
   - **Construction**: Players place and remove basic buildings.
   - **Basic decision-making**: Players decide on energy use, construction, and waste management.
   - **Feedback mechanisms**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
 
-  ### Future vision
+  #### Future vision
 
   - **Advanced construction**: Players upgrade buildings for increased efficiency.
   - **Complex decision-making**: Players balance economic growth, environmental health, and citizen satisfaction.
@@ -161,7 +161,7 @@
 
 - **Accessibility**: Adjustable text sizes, colorblind-friendly palettes, and simplified UI modes for younger audiences or those with impairments.
 
-## 8. Win/lose conditions
+## 8. Win / lose conditions
 
 - **Win condition**:
 
@@ -208,11 +208,11 @@
 
 ## 12. Glossary
 
-- **Godot 4.3**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot)).[↩ Back to Context](#1-context)
+- **Godot**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))).[↩ Back to Context](#1-context)
 - **Sustainable city management**: Managing a city in a way that meets the needs of the present without compromising future generations (source: [Wikipedia](https://en.wikipedia.org/wiki/Sustainable_city)).[↩ Back to Context](#1-context)
 - **Climate-related decisions**: Decisions that affect or are affected by climate change, focusing on reducing carbon emissions and promoting sustainability (source: [Wikipedia](https://en.wikipedia.org/wiki/Climate_change_mitigation)).[↩ Back to Context](#1-context)
 - **City-building**: A genre of simulation games in which players act as the overall planner and leader of a city (source: [Wikipedia](https://en.wikipedia.org/wiki/City-building_game)).[↩ Back to Context](#1-context)
 - **MVP (Minimum Viable Product)**: A product with enough features to attract early adopters and validate an idea early in the product development cycle (source: [Wikipedia](https://en.wikipedia.org/wiki/Minimum_viable_product)).[↩ Back to Context](#1-context)
 - **Resource management**: The efficient and effective deployment of an organization's resources when they are needed (source: [Wikipedia](https://en.wikipedia.org/wiki/Resource_management)).[↩ Back to Context](#1-context)
 - **Pollution tracking**: Monitoring pollution levels to understand environmental health and impacts (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to Context](#1-context)
-- **Solar energy**: Energy from the sun that is converted into thermal or electrical energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Solar_energy)).[↩ Back to Goal / scope](#2-goal-scope)
+- **Solar energy**: Energy from the sun that is converted into thermal or electrical energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Solar_energy)).[↩ Back to Goal / scope](#2-goal--scope)
