@@ -33,3 +33,5 @@ For the second project of the year, we have to create a serious game on the subj
 [Test Cases](https://github.com/algosup/2024-2025-project-2-serious-game-team-3/blob/documents/documents/QA/test_cases.md)
 
 ### User Manual
+
+[User Manual](https://github.com/algosup/2024-2025-project-2-serious-game-team-3/blob/documents/documents/User%20Manual/user_manual.md)
