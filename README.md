@@ -20,9 +20,11 @@ For the second project of the year, we have to create a serious game on the subj
 
 ### Specifications
 
-[Functional Specifications](https://github.com/algosup/2024-2025-project-2-serious-game-team-3/blob/documents/functional_specifications.md)
+[Functional Specifications](https://github.com/algosup/2024-2025-project-2-serious-game-team-3/blob/documents/documents/Functional%20Specification/functional_specifications.md)
 
 ### Project Management
+
+[Project Management Artifacts](https://github.com/algosup/2024-2025-project-2-serious-game-team-3/tree/documents/documents/Management)
 
 ### Quality Assurance
 
