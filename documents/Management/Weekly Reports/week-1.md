@@ -7,6 +7,7 @@
   - [Overview](#overview)
   - [Goals](#goals)
   - [Key Accomplishments](#key-accomplishments)
+  - [Next Week](#next-week)
   - [Meeting \& Collaborations](#meeting--collaborations)
   - [Other Notes](#other-notes)
 
@@ -15,7 +16,7 @@
 
 ## Overview
 
-The week began with the presentation of the 7-week project, which focuses on creating a serious game. We engaged in a conversation with the teacher to understand the expectations and requirements for the project.
+The week began with the presentation of the 7-week project, which focuses on creating a serious game. We had a conversation with the teacher to understand the expectations and requirements for the project.
 
 ## Goals
 
@@ -25,21 +26,30 @@ The week began with the presentation of the 7-week project, which focuses on cre
 2. **Finalize the Project Concept:**
    - We decided to develop a city-building game. The player will make decisions on how to build the city, affecting the carbon footprint and CO2 emissions, which in turn impacts the climate.
 
-3. **Studying Climate Change:**
+3. **Study Climate Change:**
    - To create a sustainable city-building game, we studied the various causes of climate change and selected the aspects we would adapt for our game.
 
-4. **Learn GODOT:**
-   - GODOT is the programming language we will use to develop the game. None of the team members had prior experience with GODOT.
+4. **Learn Godot:**
+   - Godot is the game engine we will use to develop the game. None of the team members had prior experience with Godot.
 
 ## Key Accomplishments
 
 - ✅ Brainstormed and decided on the type of serious game to produce.
 - ✅ Finalized the project concept overview.
-- ✅ Began learning GODOT.
+- ✅ Began learning Godot.
+
+## Next Week
+
+1. Hold a final meeting to decide what we will implement in our game.
+2. Start and complete the README document.
+3. Search for templates to use for building the game.
+4. Start implementing the game design user interface.
+5. Start and complete the project charter.
+6. Begin working on the functional specifications document.
 
 ## Meeting & Collaborations
 
-We held a meeting on Wednesday where we concluded on creating a sustainable city-building game. Guillaume Deramchi the Technical Writer proposed the city-building idea on the first day of school, and we had a brief discussion with the teacher who agreed with our project. It was left to us to decide on the game's mechanics and overall design.
+We held a meeting on Wednesday where we concluded on creating a sustainable city-building game. Guillaume Deramchi, the Technical Writer, proposed the city-building idea on the first day of school, and we had a brief discussion with the teacher who agreed with our project. It was left to us to decide on the game's mechanics and overall design.
 
 ## Other Notes
 
