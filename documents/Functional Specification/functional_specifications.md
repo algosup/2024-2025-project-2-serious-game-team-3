@@ -46,7 +46,7 @@
 
 ### 1. Target audience personas
 
-The following personas represent key player types for Green City, ensuring the game caters to a broad and diverse audience:
+The following personas represent key player types for Green City:
 
 ---
 
