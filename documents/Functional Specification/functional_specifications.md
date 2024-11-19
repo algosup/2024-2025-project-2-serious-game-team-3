@@ -25,19 +25,19 @@
 
 ## Team members
 
-| Role              | Member Name        | Responsibilities                                                              |
+| Role              | Member name        | Responsibilities                                                              |
 | ----------------- | ------------------ | ----------------------------------------------------------------------------- |
-| Project Manager   | Bistrel Tsangue    | Oversees project progress and ensures deadlines are met.                      |
-| Program Manager   | Guillaume Deramchi | Manages program implementation, coordinates with stakeholders.                |
-| Technical Lead    | Lucas Aubard       | Leads the technical direction and supervises the development team.            |
-| Software Engineer | Victor Leroy       | Develops game features and ensures code quality.                              |
-| Software Engineer | Manech Laguens     | Implements gameplay mechanics and collaborates on technical tasks.            |
-| QA Tester         | Habi Cailleau      | Tests the game for bugs and ensures quality standards are met.                |
-| Technical Writer  | Jason Grosso       | Documents features, creates user guides, and maintains project documentation. |
+| Project manager   | Bistrel Tsangue    | Oversees project progress and ensures deadlines are met.                      |
+| Program manager   | Guillaume Deramchi | Manages program implementation, coordinates with stakeholders.                |
+| Technical lead    | Lucas Aubard       | Leads the technical direction and supervises the development team.            |
+| Software engineer | Victor Leroy       | Develops game features and ensures code quality.                              |
+| Software engineer | Manech Laguens     | Implements gameplay mechanics and collaborates on technical tasks.            |
+| QA tester         | Habi Cailleau      | Tests the game for bugs and ensures quality standards are met.                |
+| Technical writer  | Jason Grosso       | Documents features, creates user guides, and maintains project documentation. |
 
 ## 1. Context
 
-- **Current situation**: The team, composed of seven members from Algosup, is developing a serious game using [Godot 4.3](#12-glossary). This project is part of a seven-week educational program to evaluate both technical skills and understanding of sustainable practices. The game aims to educate players about [sustainable city management](#12-glossary) and the consequences of [climate-related decisions](#12-glossary).
+- **Current situation**: Our team is developing a serious game using [Godot 4.3](#12-glossary). The game aims to educate players about [sustainable city management](#12-glossary) and the consequences of [climate-related decisions](#12-glossary).
 
 - **Background**: Players will engage in [city-building](#12-glossary) and management to understand how their decisions impact the environment. The target audience includes those interested in sustainability and city management, as well as potential buyers and stakeholders. The game must be fun, engaging, and convey important sustainability lessons effectively.
 
