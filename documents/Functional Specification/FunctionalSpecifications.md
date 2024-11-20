@@ -84,9 +84,10 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 1: Sarah, the concerned parent
-![alt text](<Images/DALL·E 2024-11-20 11.23.28 - A realistic digital portrait of a persona_ a 42-year-old female elementary school teacher named Sarah from Chicago, USA. She has a warm and approachab.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|!["Image"](<Images/DALL·E 2024-11-20 11.23.28 - A realistic digital portrait of a persona_ a 42-year-old female elementary school teacher named Sarah from Chicago, USA. She has a warm and approachab.webp>) |
 | **Age**              | 42                                                                          |
 | **Occupation**       | Elementary school teacher                                                  |
 | **Location**         | Chicago, USA                                                               |
@@ -101,9 +102,10 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 2: Alex, the pragmatic entrepreneur
-![alt text](<Images/DALL·E 2024-11-20 11.23.32 - A realistic digital portrait of a persona_ a 35-year-old male entrepreneur named Alex from Berlin, Germany. He has short brown hair, a neatly groomed .webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.23.32 - A realistic digital portrait of a persona_ a 35-year-old male entrepreneur named Alex from Berlin, Germany. He has short brown hair, a neatly groomed .webp>) |
 | **Age**              | 35                                                                          |
 | **Occupation**       | Owner of a small tech startup                                              |
 | **Location**         | Berlin, Germany                                                           |
@@ -118,9 +120,10 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 3: Leila, the passionate student
-![alt text](<Images/DALL·E 2024-11-20 11.24.33 - A realistic digital portrait of a persona_ a 19-year-old female environmental science student named Leila from Rabat, Morocco. She has long, wavy dark.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.24.33 - A realistic digital portrait of a persona_ a 19-year-old female environmental science student named Leila from Rabat, Morocco. She has long, wavy dark.webp>) |
 | **Age**              | 19                                                                          |
 | **Occupation**       | Environmental science major                                               |
 | **Location**         | Rabat, Morocco                                                            |
@@ -135,9 +138,10 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 4: Mark, the climate skeptic
-![alt text](<Images/DALL·E 2024-11-20 11.24.34 - A realistic digital portrait of a persona_ a 50-year-old male construction manager named Mark from Houston, USA. He has a rugged, practical appearance.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.24.34 - A realistic digital portrait of a persona_ a 50-year-old male construction manager named Mark from Houston, USA. He has a rugged, practical appearance.webp>) |
 | **Age**              | 50                                                                          |
 | **Occupation**       | Construction manager                                                      |
 | **Location**         | Houston, USA                                                              |
@@ -158,9 +162,10 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 #### Use Case 1: Sarah, the concerned parent
-![alt text](<Images/DALL·E 2024-11-20 11.39.36 - 1. A mother and her child playing a climate change simulation game together on a tablet, in a cozy living room. The child is smiling, pointing at a gr.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.39.36 - 1. A mother and her child playing a climate change simulation game together on a tablet, in a cozy living room. The child is smiling, pointing at a gr.webp>) |
 | **Goal**             | Teach her children about eco-friendly habits in an interactive way.         |
 | **Steps**            | 1. Sarah starts a new game with her 10-year-old child, selecting the "Beginner" difficulty level. |
 |                       | 2. Together, they build a small city, starting with renewable energy sources like solar panels. |
@@ -173,9 +178,10 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 2: Alex, the pragmatic entrepreneur
-![alt text](<Images/DALL·E 2024-11-20 11.41.47 - A young entrepreneur seated at a desk in a modern office, playing a city-building simulation game focused on climate change on a laptop screen. The sc.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.41.47 - A young entrepreneur seated at a desk in a modern office, playing a city-building simulation game focused on climate change on a laptop screen. The sc.webp>) |
 | **Goal**             | Explore strategies for balancing business growth with sustainability.       |
 | **Steps**            | 1. Alex selects the "Advanced" difficulty level for a more challenging simulation. |
 |                       | 2. He prioritizes building industrial zones to generate revenue for his city but quickly sees pollution levels rise. |
@@ -188,9 +194,10 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 3: Leila, the passionate student
-![alt text](<Images/DALL·E 2024-11-20 11.42.21 - A young university student in a casual outfit playing a climate change simulation game on a laptop in her dorm room. The screen displays a city with r.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.42.21 - A young university student in a casual outfit playing a climate change simulation game on a laptop in her dorm room. The screen displays a city with r.webp>) |
 | **Goal**             | Understand the impact of urban planning decisions on climate change for her environmental science project. |
 | **Steps**            | 1. Leila begins with the "Intermediate" difficulty to explore a realistic city-building experience. |
 |                       | 2. She builds a city focused on renewable energy, including solar farms and wind turbines, to minimize emissions. |
@@ -203,9 +210,10 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 4: Mark, the climate skeptic
-![alt text](<Images/DALL·E 2024-11-20 11.43.24 - A middle-aged construction manager in a rugged work environment intently playing a climate change simulation game on a tablet. The screen shows a city.webp>)
+
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
+|**Image**|![alt text](<Images/DALL·E 2024-11-20 11.43.24 - A middle-aged construction manager in a rugged work environment intently playing a climate change simulation game on a tablet. The screen shows a city.webp>) |
 | **Goal**             | Test the validity of climate change claims through gameplay.                |
 | **Steps**            | 1. Mark plays the game on "Beginner" difficulty, skeptical of its premise.  |
 |                       | 2. He initially ignores renewable energy options, relying solely on coal and oil to minimize costs and maximize city expansion. |
