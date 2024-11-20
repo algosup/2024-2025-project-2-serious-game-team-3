@@ -5,37 +5,58 @@
 <summary>Click on this to view the table of contents</summary>
 
 - [Team members](#team-members)
-- [I. Context](#i-context)
-  - [Target audience personas](#1-target-audience-personas)
-  - [Use cases](#2-use-cases)
-- [II. Goal / scope](#ii-goal--scope)
+- [I. Introduction](#i-Introductioi)
+- [II. Personas & use cases](#ii-personas--use-cases)
+- [III. Goal / scope](#iii-goal--scope)
   - [MVP scope](#1-mvp-scope)
   - [Future vision scope](#2-future-vision-scope)
   - [Priority objectives](#3-priority-objectives)
-- [III. Functional requirements](#iii-functional-requirements)
+- [IV. Functional requirements](#iv-functional-requirements)
   - [Gameplay mechanics](#1-gameplay-mechanics)
     - [MVP functional limits](#a-mvp-functional-limits)
   - [UI components](#2-ui-components)
   - [Player interactions](#3-player-interactions)
-- [IV. Dependencies and priorities](#iv-dependencies-and-priorities)
+- [V. Dependencies & priorities](#v-dependencies--priorities)
   - [Feature dependencies and priorities](#1-feature-dependencies-and-priorities)
     - [Priorities for MVP development](#a-priorities-for-mvp-development)
     - [Priorities for future development](#b-priorities-for-future-development)
-- [V. Acceptance criteria](#v-acceptance-criteria)
-- [VI. Design specifications](#vi-design-specifications)
-- [VII. Non-functional requirements](#vii-non-functional-requirements)
-- [VIII. Win / lose conditions](#viii-win--lose-conditions)
-- [IX. Impact of management on gameplay](#ix-impact-of-management-on-gameplay)
-- [X. Out of scope](#x-out-of-scope)
+- [VI. Acceptance criteria](#vi-acceptance-criteria)
+- [VII. Design specifications](#vii-design-specifications)
+- [VIII. Non-functional requirements](#viii-non-functional-requirements)
+- [IX. Win / lose conditions](#ix-win--lose-conditions)
+- [X. Impact of management on gameplay](#x-impact-of-management-on-gameplay)
+- [XI. Out of scope](#xi-out-of-scope)
   - [Features planned for future updates](#1-features-planned-for-future-updates)
     - [Future features and improvements](#a-future-features-and-improvements)
-- [XI. Security](#xi-security)
-- [XII. Glossary](#xii-glossary)
+- [XII. Security](#xii-security)
+- [XIII. Timeline](#xiii-timeline)
+  - [Phase 1](#a-phase-1-research-and-functional-specification-deadline-1122)
+  - [Phase 2](#b-phase-2-technical-specification-and-project-setup-deadline-1129)
+  - [Phase 3](#c-phase-3-prototype-and-test-planning-deadline-126)
+  - [Phase 4](#d-phase-4-mvp-coding-and-iteration-deadline-1213)
+  - [Phase 5](#e-phase-5-final-presentation-and-delivery-deadline-1220)
+- [XIV. Risk assessment](#xiv-risk-assessment)
+  - [Project risks](#1-project-risks)
+  - [Technical risks](#2-technical-risks)
+  - [Team risks](#3-team-risks)
+  - [Timeline risks](#4-timeline-risks)
+  - [External risks](#5-external-risks)
+- [XV. Localization](#xv-localization)
+  - [Supported languages](#1-supported-languages)
+  - [Localization strategy](#2-localization-strategy)
+    - [Text externalization](#a-text-externalization)
+    - [Font and text formatting](#b-font-and-text-formatting)
+    - [Cultural relevance](#c-cultural-relevance)
+    - [Voiceovers and audio](#d-voiceovers-and-audio)
+  - [Localization tools](#3-localization-tools)
+  - [Testing and validation](#4-testing-and-validation)
+  - [Future plans](#5-future-plans)
+- [XVI. Glossary](xvi-glossary)
 
 </details>
 
 
-## II. Team members
+## Team members
 
 | Role              | Member name        | Responsibilities                                                              |
 | ----------------- | ------------------ | ----------------------------------------------------------------------------- |
@@ -47,15 +68,16 @@
 | QA tester         | Habi Cailleau      | Tests the game for bugs and ensures quality standards are met.                |
 | Technical writer  | Jason Grosso       | Documents features, creates user guides, and maintains project documentation. |
 
----
 
-## I. Context
+## I. Introduction
 
-- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](#xii-glossary), it leverages game mechanics to simulate urban [sustainability](#xii-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment.
+- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](xvi-glossary), it leverages game mechanics to simulate urban [sustainability](xvi-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment.
 
-- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](#xii-glossary), managing city resources efficiently, and minimizing carbon emissions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
+- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](xvi-glossary), managing city resources efficiently, and minimizing carbon emissions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
 
-### 1. Target audience personas
+- **Initial MVP focus**: The [MVP](xvi-glossary) will focus on core gameplay, including [resource management](xvi-glossary), [pollution tracking](xvi-glossary), and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control to maintain a healthy environment while ensuring economic growth.
+
+### II. Personas & use cases
 
 The following personas represent key player types for Green City:
 
@@ -70,7 +92,7 @@ The following personas represent key player types for Green City:
 | **Location**         | Chicago, USA                                                               |
 | **Tech-savviness**   | Moderate, uses apps and games occasionally                                |
 | **Goals**            | - Teach her children eco-friendly habits.                                   |
-|                       | - Learn practical ways to reduce her family's [carbon footprint](#xii-glossary).            |
+|                       | - Learn practical ways to reduce her family's [carbon footprint](xvi-glossary).            |
 | **Pain points**      | - Overwhelmed by conflicting information about sustainability.              |
 |                       | - Finds most climate education tools too complex or dry.                  |
 | **Motivation**       | - Play Green City with her kids as a bonding activity.                      |
@@ -195,9 +217,7 @@ The following use cases illustrate how different personas interact with Green Ci
 
 ---
 
-- **Initial MVP focus**: The [MVP](#xii-glossary) will focus on core gameplay, including [resource management](#xii-glossary), [pollution tracking](#xii-glossary), and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control to maintain a healthy environment while ensuring economic growth.
-
-## II. Goal / scope
+## III. Goal / scope
 
 - **Primary goal**: Develop a game that simulates environmental challenges to educate young adults and students on sustainability. Players must balance economic development with sustainable practices, making choices that prioritize long-term environmental health. Players will need to decide whether to build industrial facilities that boost the economy but increase pollution. Alternatively, they can invest in renewable energy sources, which cost more initially but lead to long-term sustainability.
 
@@ -240,14 +260,14 @@ To ensure focused development and avoid scope creep, the following functional li
 
 - **City size**: Players can build a city with up to **10 unique buildings** (e.g., residential, commercial, industrial, and parks). Each building can only be placed once.
 - **Resource types**: The MVP includes only **two energy types**: renewable (solar energy) and non-renewable (fossil fuels). Advanced energy systems (e.g., nuclear, wind turbines) will not be implemented in the MVP.
-- **Pollution tracking**: Pollution is measured using a **single [pollution bar](#xii-glossary)** ranging from 0% (clean) to 100% (critical).
+- **Pollution tracking**: Pollution is measured using a **single [pollution bar](xvi-glossary)** ranging from 0% (clean) to 100% (critical).
 - **Win/Lose conditions**: Pollution and energy management are the only criteria for winning or losing. No population satisfaction or other secondary metrics will be included.
 - **UI components**: The dashboard displays **energy consumption, pollution levels, and financial status** only. Advanced visual indicators (e.g., trend graphs, detailed notifications) are excluded.
 
 #### b. Future vision
 
-- **[Building upgrades](#xii-glossary)**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
-- **[Dynamic pollution control](#xii-glossary)**: Advanced tools like public transit and green technologies reduce pollution levels.
+- **[Building upgrades](xvi-glossary)**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
+- **[Dynamic pollution control](xvi-glossary)**: Advanced tools like public transit and green technologies reduce pollution levels.
 
 ### 2. UI components
 
@@ -266,7 +286,7 @@ To ensure focused development and avoid scope creep, the following functional li
 
 - **Construction**: Players place and remove basic buildings.
 - **Basic decision-making**: Players decide on energy use, construction, and waste management.
-- **[Feedback mechanisms](#xii-glossary)**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
+- **[Feedback mechanisms](xvi-glossary)**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
 
 #### b. Future vision
 
@@ -274,7 +294,7 @@ To ensure focused development and avoid scope creep, the following functional li
 - **Complex decision-making**: Players balance economic growth, environmental health, and citizen satisfaction.
 - **Enhanced feedback**: Audio cues and detailed notifications provide deeper insights.
 
-## IV. Dependencies and priorities
+## V. Dependencies & priorities
 
 ### 1. Feature dependencies and priorities
 
@@ -285,7 +305,7 @@ The following features are categorized by their priority level for the MVP:
 **High priority** (must-have):
 - Basic building placement for 5 structure types: residential, industrial, commercial, parks, and energy plants.
 - Pollution tracking via a simple visual bar.
-- Resource allocation for renewable and [non-renewable energy](#xii-glossary).
+- Resource allocation for renewable and [non-renewable energy](xvi-glossary).
 - Basic win/lose conditions based on pollution and energy levels.
 
 **Medium priority** (nice-to-have):
@@ -313,11 +333,11 @@ To guide future updates, the following features are prioritized based on their p
 **High priority** (post-MVP must-have):
 - **Dynamic pollution control**: Introduce tools like tree planting, waste recycling, and public transit to allow players to actively mitigate pollution.
 - **Building upgrades**: Enable upgrading buildings to increase efficiency and reduce resource consumption.
-- **[Population metrics](#xii-glossary)**: Add a population satisfaction meter influenced by pollution, resource allocation, and city infrastructure.
+- **[Population metrics](xvi-glossary)**: Add a population satisfaction meter influenced by pollution, resource allocation, and city infrastructure.
 
 **Medium priority** (post-MVP nice-to-have):
 - **Advanced energy options**: Expand energy types to include wind turbines, geothermal, and nuclear power plants.
-- **Random events**: Introduce [dynamic challenges](#xii-glossary) such as extreme weather events or economic downturns.
+- **Random events**: Introduce [dynamic challenges](xvi-glossary) such as extreme weather events or economic downturns.
 
 **Low priority** (optional for future updates):
 - **Multiplayer mode**: Enable competitive or cooperative gameplay for up to four players.
@@ -332,7 +352,7 @@ To guide future updates, the following features are prioritized based on their p
 | Medium         | Advanced energy options         | Adds variety to energy management          |
 | Low            | Multiplayer mode                | Requires significant technical resources   |
 
-## V. Acceptance criteria
+## VI. Acceptance criteria
 
 - **Gameplay verification**:
 
@@ -348,7 +368,7 @@ To guide future updates, the following features are prioritized based on their p
 
   - Players receive relevant information about environmental impacts.
 
-## VI. Design specifications
+## VII. Design specifications
 
 - **UI layout**: Mockups or design prototypes should illustrate MVP and future UI versions. The MVP should have a clean layout focusing on ease of navigation.
 
@@ -356,15 +376,15 @@ To guide future updates, the following features are prioritized based on their p
 
 - **Visual style**: Use a consistent theme representing sustainability. Green and blue tones dominate the palette, with red for pollution and warnings. Icons should intuitively represent buildings, energy, and pollution.
 
-## VII. Non-functional requirements
+## VIII. Non-functional requirements
 
 - **Performance**: Ensure the game runs smoothly at 60 FPS on mid-range devices.
 
-- **[Scalability](#xii-glossary)**: The game must handle large-scale city data without issues. The MVP introduces base data management, while future versions implement optimizations.
+- **[Scalability](xvi-glossary)**: The game must handle large-scale city data without issues. The MVP introduces base data management, while future versions implement optimizations.
 
 - **Accessibility**: Adjustable text sizes, colorblind-friendly palettes, and simplified UI modes for younger audiences or those with impairments.
 
-## VIII. Win / lose conditions
+## IX. Win / lose conditions
 
 - **Win condition**:
 
@@ -386,7 +406,7 @@ To guide future updates, the following features are prioritized based on their p
 
 - Players lose due to resource depletion, public dissatisfaction, or financial collapse.
 
-## IX. Impact of management on gameplay
+## X. Impact of management on gameplay
 
 - **Good management**:
   - **Steady growth**: Players receive more income for further development, similar to how cities with strong policies on renewable energy and efficient infrastructure see economic growth over time.
@@ -397,7 +417,7 @@ To guide future updates, the following features are prioritized based on their p
   - **Negative feedback**: Pollution indicators, such as smog, increase, showing declining sustainability, much like how poor urban planning can lead to visible pollution and declining living conditions.
   - **Citizen dissatisfaction**: Reduced productivity, abandoned buildings, and city decline, similar to urban decay seen in cities that fail to manage resources effectively.
 
-## X. Out of scope
+## XI. Out of scope
 
 ### 1. Features Planned for Future Updates
 
@@ -414,44 +434,246 @@ The following features are **not included in the MVP** but are planned for futur
 
 These features will be prioritized based on player feedback and available resources following the MVP release.
 
-## XI. Security
+## XII. Security
 
 - **Data security**: Implement data protection protocols. All saved data must be secure to prevent unauthorized access. Specific measures include data encryption (e.g., AES-256) for all stored player data, secure communication channels (e.g., HTTPS), and regular security audits to identify vulnerabilities.
 
-- **[Authentication](#xii-glossary)**: Outline player identification mechanisms if needed, such as profile creation or save encryption. Multi-factor authentication (MFA) may also be considered for added security.
+- **[Authentication](xvi-glossary)**: Outline player identification mechanisms if needed, such as profile creation or save encryption. Multi-factor authentication (MFA) may also be considered for added security.
 
-## XII. Glossary
+## XIII. Timeline
 
-- **Godot**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))).[↩ Back to Context](#i-context)
+### 1. Phase 1: Research and functional specification _(Deadline: 11/22)_
 
-- **Sustainability**: The ability to maintain ecological balance by avoiding the depletion of natural resources (source: [Wikipedia](https://en.wikipedia.org/wiki/Sustainability)).[↩ Back to Context](#i-context)
+- **Deliverables:**
+  - Identify core educational objectives for the game.
+  - Research scientific data on climate change and urban sustainability to inform gameplay mechanics.
+  - Develop the functional specification document, detailing the game's features and use cases.
+- **Outcome:** A finalized functional specification document that establishes the foundation for the project.
 
-- **Renewable energy**: Energy derived from natural processes that are replenished at a faster rate than they are consumed, such as solar and wind energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Renewable_energy)).[↩ Back to Context](#i-context)
+---
 
-- **Carbon footprint**: The total amount of greenhouse gases (GHG) generated by human actions, expressed as carbon dioxide equivalent (CO2e) (source: [Wikipedia](https://en.wikipedia.org/wiki/Carbon_footprint)).[↩ Back to Context](#i-context)
+### 2. Phase 2: Technical specification and project setup _(Deadline: 11/29)_
 
-- **MVP (minimum viable product)**: A product version with the minimum features necessary to test an idea and attract early adopters for feedback (source: [Wikipedia](https://en.wikipedia.org/wiki/Minimum_viable_product)).[↩ Back to Context](#i-context)
+- **Deliverables:**
+  - Write the technical specification document, defining the architecture and technical requirements.
+  - Set up the Godot 4.3 project repository and integrate assets from the Starter Kit.
+  - Establish workflows for coding, testing, and asset integration.
+- **Outcome:** A comprehensive technical specification document and a fully initialized project environment.
 
-- **Resource management**: The process of efficiently allocating resources such as energy and materials within the game to achieve goals (source: [Wikipedia](https://en.wikipedia.org/wiki/Resource_management)).[↩ Back to Context](#i-context)
+---
 
-- **Pollution tracking**: Monitoring and visual representation of pollution levels in the game to show the impact of player decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to Context](#i-context)
+### 3. Phase 3: Prototype and test planning _(Deadline: 12/6)_
 
-- **Educational feedback**: Insights provided to players about the consequences of their actions, aiming to educate on sustainability principles (source: [Wikipedia](https://en.wikipedia.org/wiki/Educational_game)).[↩ Back to Goal / scope](#ii-goal--scope)
+- **Deliverables:**
+  - Develop the basic game loop with placeholder assets.
+  - Implement initial gameplay mechanics, including building placement and resource tracking.
+  - Draft the test plan, outlining scenarios, test cases, and acceptance criteria.
+- **Outcome:** A functional prototype and a detailed test plan for validating the game.
 
-- **Pollution bar**: A visual indicator in the game that represents the city’s overall pollution levels, ranging from 0% (clean) to 100% (critical) (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to Functional requirements](#iii-functional-requirements)
+---
 
-- **Building upgrades**: Improvements players can apply to existing structures to increase efficiency, reduce resource consumption, or mitigate pollution (source: [Wikipedia](https://en.wikipedia.org/wiki/Building_upgrade)).[↩ Back to Functional requirements](#iii-functional-requirements)
+### 4. Phase 4: MVP coding and iteration _(Deadline: 12/13)_
 
-- **Dynamic pollution control**: In-game tools and methods to actively manage and reduce pollution levels, such as public transit or advanced green technologies (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution_control)).[↩ Back to Functional requirements](#iii-functional-requirements)
+- **Deliverables:**
+  - Implement core gameplay mechanics, including pollution tracking and educational feedback.
+  - Integrate assets from Kenney’s library for visual consistency.
+  - Conduct iterative testing to resolve bugs and refine the user experience.
+  - Develop the user manual, covering gameplay, mechanics, and educational content.
+- **Outcome:** A polished MVP with core functionality, supporting documentation, and an optimized user experience.
 
-- **Feedback mechanisms**: Tools and indicators that help players understand the immediate and long-term impact of their decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Feedback_mechanism)).[↩ Back to Functional requirements](#iii-functional-requirements)
+---
 
-- **Non-renewable energy**: Energy sourced from finite resources like fossil fuels (coal, oil, natural gas) that emit greenhouse gases when consumed (source: [Wikipedia](https://en.wikipedia.org/wiki/Non-renewable_energy)).[↩ Back to Dependencies and priorities](#iv-dependencies-and-priorities)
+### 5. Phase 5: Final presentation and delivery _(Deadline: 12/20)_
 
-- **Population metrics**: Indicators that measure citizen satisfaction based on pollution levels, resource availability, and city infrastructure (source: [Wikipedia](https://en.wikipedia.org/wiki/Quality_of_life)).[↩ Back to Dependencies and priorities](#iv-dependencies-and-priorities)
+- **Deliverables:**
+  - Conduct comprehensive QA testing to ensure stability and usability.
+  - Prepare a professional presentation showcasing the game’s educational objectives and gameplay features.
+  - Deliver a live demo highlighting the game’s mechanics and educational impact.
+  - Submit all final deliverables, including code, documentation, and testing results.
+- **Outcome:** A completed game, ready for stakeholder evaluation and presentation.
 
-- **Dynamic challenges**: Unpredictable events such as severe weather or economic crises that test the player’s adaptability and decision-making skills (source: [Wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)).[↩ Back to Dependencies and priorities](#iv-dependencies-and-priorities)
+---
 
-- **Scalability**: The ability of the game to handle increasing complexity or larger datasets without performance degradation (source: [Wikipedia](https://en.wikipedia.org/wiki/Scalability)).[↩ Back to Non-functional requirements](#vii-non-functional-requirements)
+## XIV. Risk assessment
 
-- **Authentication**: Mechanisms to verify player identity, which may include profile creation or encryption to secure game progress (source: [Wikipedia](https://en.wikipedia.org/wiki/Authentication)).[↩ Back to Security](#xi-security)
+---
+
+### 1. Project risks
+
+1. **Scope creep**
+   - **Risk:** Adding unplanned features may delay the project timeline and affect the quality of deliverables.
+   - **Mitigation:**
+     - Strict adherence to the MVP scope during development.
+     - Stakeholder requests for new features are logged for future versions.
+     - Regular review meetings to validate project progress against the scope.
+
+2. **Unclear stakeholder expectations**
+   - **Risk:** Misalignment between the development team and stakeholder objectives may result in rework.
+   - **Mitigation:**
+     - Frequent validation of deliverables with stakeholders.
+     - Clear documentation of expectations and acceptance criteria.
+     - Open communication channels for resolving ambiguities quickly.
+
+---
+
+### 2. Technical risks
+
+1. **Limited experience with Godot 4.3**
+   - **Risk:** Team inexperience with the game engine could lead to slower development and technical errors.
+   - **Mitigation:**
+     - Use of Godot’s Starter Kit and Kenney’s assets for faster integration.
+     - Allocate time for training and experimenting with Godot features early in the timeline.
+     - Consult Godot documentation and community forums for guidance.
+
+2. **Asset integration challenges**
+   - **Risk:** Issues with integrating external assets into the project may cause delays.
+   - **Mitigation:**
+     - Test assets in the Godot environment during the initial setup phase.
+     - Standardize asset formats and naming conventions.
+     - Assign a dedicated team member to oversee asset integration.
+
+---
+
+### 3. Team risks
+
+1. **Inadequate communication**
+   - **Risk:** Miscommunication within the team could result in missed deadlines or conflicting implementations.
+   - **Mitigation:**
+     - Schedule regular check-ins to align progress and resolve blockers.
+     - Use collaborative tools like GitHub, Trello, or Slack for task management and updates.
+     - Encourage open discussions during team meetings.
+
+2. **Uneven workload distribution**
+   - **Risk:** Team members being overburdened or underutilized could impact morale and productivity.
+   - **Mitigation:**
+     - Clearly define roles and responsibilities for each phase of the project.
+     - Adjust workload distribution as needed during progress reviews.
+     - Encourage team members to communicate challenges early.
+
+---
+
+### 4. Timeline risks
+
+1. **Missed deadlines**
+   - **Risk:** Delays in one phase may cascade into subsequent phases, jeopardizing the overall project timeline.
+   - **Mitigation:**
+     - Establish buffer time for critical milestones.
+     - Regularly monitor progress against the timeline.
+     - Address delays early with focused sprints or reassignment of tasks.
+
+2. **Inadequate testing time**
+   - **Risk:** Limited time for QA could result in undetected bugs and a subpar user experience.
+   - **Mitigation:**
+     - Integrate testing into each phase of development.
+     - Prioritize critical game features for early testing.
+     - Allocate sufficient time in the final phase for comprehensive QA.
+
+---
+
+### 5. External risks
+
+1. **Stakeholder unavailability**
+   - **Risk:** Delayed feedback from stakeholders may hinder progress and decision-making.
+   - **Mitigation:**
+     - Schedule regular feedback sessions in advance.
+     - Maintain clear documentation for asynchronous review by stakeholders.
+     - Proceed with team decisions if feedback is unavailable within a set time frame.
+
+2. **Technology or tool limitations**
+   - **Risk:** Issues with the Godot engine, GitHub, or other tools could slow progress.
+   - **Mitigation:**
+     - Use well-documented and stable versions of tools.
+     - Prepare backup plans for potential tool or technology failures.
+     - Regularly update tools and resolve compatibility issues promptly.
+
+---
+
+## XV. Localization
+
+### 1. Supported languages
+
+The game will initially support English only for the MVP:
+
+Future updates may include additional languages based on player demographics and demand, such as French, Spanish, German, or Arabic.
+
+### 2. Localization strategy
+
+The following steps outline the localization strategy for "Green City":
+
+#### a. Text externalization
+
+- All in-game text, including dialogues, menus, and tooltips, will be stored in external resource files (e.g., JSON, CSV, or PO files). This ensures that translations can be easily added or updated without modifying the codebase.
+
+#### b. Font and text formatting
+
+- Fonts that support multiple character sets, such as Latin, Cyrillic, and Arabic scripts, will be used to ensure compatibility across languages.
+- Text alignment and formatting will dynamically adapt to account for differences in word length and reading direction (e.g., right-to-left for Arabic).
+
+#### c. Cultural relevance
+
+- Icons, symbols, and examples will be reviewed to ensure they are culturally neutral and globally relatable.
+- Environmental scenarios (e.g., renewable energy solutions) will include options relevant to different regions, such as solar power in sunny climates or wind turbines in coastal regions.
+
+#### d. Voiceovers and audio
+
+- If voiceovers are added in future versions, localized voice acting will be implemented. For the MVP, text-based subtitles will suffice.
+
+### 3. Localization tools
+
+To streamline the localization process, the following tools will be considered:
+
+- **Crowdin** or **POEditor**: For collaborative translation management.
+- **Godot's built-in localization system**: For handling multiple language files and dynamic text loading.
+
+### 4. Testing and validation
+
+Before releasing localized versions, the following will be tested:
+
+- Text rendering and alignment for all supported languages.
+- Consistency and accuracy of translations.
+- User feedback to ensure translations are culturally and contextually appropriate.
+
+### 5. Future plans
+
+In future updates, localization may include:
+
+- Regional-specific tutorials or examples (e.g., explaining carbon offset programs common in Europe).
+- Dynamic adaptation to local metrics (e.g., Celsius/Fahrenheit for temperature, kilometers/miles for distance).
+- Broader language support based on user feedback and analytics.
+
+
+## XVI. Glossary
+
+- **Godot**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))).[↩ Back to introduction](#i-introduction)
+
+- **Sustainability**: The ability to maintain ecological balance by avoiding the depletion of natural resources (source: [Wikipedia](https://en.wikipedia.org/wiki/Sustainability)).[↩ Back to introduction](#i-introduction)
+
+- **Renewable energy**: Energy derived from natural processes that are replenished at a faster rate than they are consumed, such as solar and wind energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Renewable_energy)).[↩ Back to introduction](#i-introduction)
+
+- **Carbon footprint**: The total amount of greenhouse gases (GHG) generated by human actions, expressed as carbon dioxide equivalent (CO2e) (source: [Wikipedia](https://en.wikipedia.org/wiki/Carbon_footprint)).[↩ Back to introduction](#i-introduction)
+
+- **MVP (minimum viable product)**: A product version with the minimum features necessary to test an idea and attract early adopters for feedback (source: [Wikipedia](https://en.wikipedia.org/wiki/Minimum_viable_product)).[↩ Back to introduction](#i-introduction)
+
+- **Resource management**: The process of efficiently allocating resources such as energy and materials within the game to achieve goals (source: [Wikipedia](https://en.wikipedia.org/wiki/Resource_management)).[↩ Back to introduction](#i-introduction)
+
+- **Pollution tracking**: Monitoring and visual representation of pollution levels in the game to show the impact of player decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to introduction](#i-introduction)
+
+- **Educational feedback**: Insights provided to players about the consequences of their actions, aiming to educate on sustainability principles (source: [Wikipedia](https://en.wikipedia.org/wiki/Educational_game)).[↩ Back to Goal / scope](#iii-goal--scope)
+
+- **Pollution bar**: A visual indicator in the game that represents the city’s overall pollution levels, ranging from 0% (clean) to 100% (critical) (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to Functional requirements](#iv-functional-requirements)
+
+- **Building upgrades**: Improvements players can apply to existing structures to increase efficiency, reduce resource consumption, or mitigate pollution (source: [Wikipedia](https://en.wikipedia.org/wiki/Building_upgrade)).[↩ Back to Functional requirements](#iv-functional-requirements)
+
+- **Dynamic pollution control**: In-game tools and methods to actively manage and reduce pollution levels, such as public transit or advanced green technologies (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution_control)).[↩ Back to Functional requirements](#iv-functional-requirements)
+
+- **Feedback mechanisms**: Tools and indicators that help players understand the immediate and long-term impact of their decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Feedback_mechanism)).[↩ Back to Functional requirements](#iv-functional-requirements)
+
+- **Non-renewable energy**: Energy sourced from finite resources like fossil fuels (coal, oil, natural gas) that emit greenhouse gases when consumed (source: [Wikipedia](https://en.wikipedia.org/wiki/Non-renewable_energy)).[↩ Back to Dependencies & priorities](##v-dependencies--priorities)
+
+- **Population metrics**: Indicators that measure citizen satisfaction based on pollution levels, resource availability, and city infrastructure (source: [Wikipedia](https://en.wikipedia.org/wiki/Quality_of_life)).[↩ Back to Dependencies & priorities](##v-dependencies--priorities)
+
+- **Dynamic challenges**: Unpredictable events such as severe weather or economic crises that test the player’s adaptability and decision-making skills (source: [Wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)).[↩ Back to Dependencies & priorities](##v-dependencies--priorities)
+
+- **Scalability**: The ability of the game to handle increasing complexity or larger datasets without performance degradation (source: [Wikipedia](https://en.wikipedia.org/wiki/Scalability)).[↩ Back to Non-functional requirements](#viiI-non-functional-requirements)
+
+- **Authentication**: Mechanisms to verify player identity, which may include profile creation or encryption to secure game progress (source: [Wikipedia](https://en.wikipedia.org/wiki/Authentication)).[↩ Back to Security](#xii-security)
