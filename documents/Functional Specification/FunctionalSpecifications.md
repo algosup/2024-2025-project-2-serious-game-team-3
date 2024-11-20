@@ -5,7 +5,7 @@
 <summary>Click on this to view the table of contents</summary>
 
 - [Team members](#team-members)
-- [I. Introduction](#i-Introductioi)
+- [I. Introduction](#i-introduction)
 - [II. Personas & use cases](#ii-personas--use-cases)
 - [III. Goal / scope](#iii-goal--scope)
   - [MVP scope](#1-mvp-scope)
@@ -30,11 +30,11 @@
     - [Future features and improvements](#a-future-features-and-improvements)
 - [XII. Security](#xii-security)
 - [XIII. Timeline](#xiii-timeline)
-  - [Phase 1](#a-phase-1-research-and-functional-specification-deadline-1122)
-  - [Phase 2](#b-phase-2-technical-specification-and-project-setup-deadline-1129)
-  - [Phase 3](#c-phase-3-prototype-and-test-planning-deadline-126)
-  - [Phase 4](#d-phase-4-mvp-coding-and-iteration-deadline-1213)
-  - [Phase 5](#e-phase-5-final-presentation-and-delivery-deadline-1220)
+  - [Phase 1](#1-phase-1-research-and-functional-specification-deadline-1122)
+  - [Phase 2](#2-phase-2-technical-specification-and-project-setup-deadline-1129)
+  - [Phase 3](#3-phase-3-prototype-and-test-planning-deadline-126)
+  - [Phase 4](#4-phase-4-mvp-coding-and-iteration-deadline-1213)
+  - [Phase 5](#5-phase-5-final-presentation-and-delivery-deadline-1220)
 - [XIV. Risk assessment](#xiv-risk-assessment)
   - [Project risks](#1-project-risks)
   - [Technical risks](#2-technical-risks)
@@ -51,7 +51,7 @@
   - [Localization tools](#3-localization-tools)
   - [Testing and validation](#4-testing-and-validation)
   - [Future plans](#5-future-plans)
-- [XVI. Glossary](xvi-glossary)
+- [XVI. Glossary](#xvi-glossary)
 
 </details>
 
@@ -71,11 +71,11 @@
 
 ## I. Introduction
 
-- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](xvi-glossary), it leverages game mechanics to simulate urban [sustainability](xvi-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment.
+- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](#xvi-glossary), it leverages game mechanics to simulate urban [sustainability](#xvi-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment.
 
-- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](xvi-glossary), managing city resources efficiently, and minimizing carbon emissions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
+- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](#xvi-glossary), managing city resources efficiently, and minimizing carbon emissions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
 
-- **Initial MVP focus**: The [MVP](xvi-glossary) will focus on core gameplay, including [resource management](xvi-glossary), [pollution tracking](xvi-glossary), and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control to maintain a healthy environment while ensuring economic growth.
+- **Initial MVP focus**: The [MVP](#xvi-glossary) will focus on core gameplay, including [resource management](#xvi-glossary), [pollution tracking](#xvi-glossary), and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control to maintain a healthy environment while ensuring economic growth.
 
 ### II. Personas & use cases
 
@@ -84,7 +84,7 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 1: Sarah, the concerned parent
-
+![alt text](<Images/DALL·E 2024-11-20 11.23.28 - A realistic digital portrait of a persona_ a 42-year-old female elementary school teacher named Sarah from Chicago, USA. She has a warm and approachab.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Age**              | 42                                                                          |
@@ -92,7 +92,7 @@ The following personas represent key player types for Green City:
 | **Location**         | Chicago, USA                                                               |
 | **Tech-savviness**   | Moderate, uses apps and games occasionally                                |
 | **Goals**            | - Teach her children eco-friendly habits.                                   |
-|                       | - Learn practical ways to reduce her family's [carbon footprint](xvi-glossary).            |
+|                       | - Learn practical ways to reduce her family's [carbon footprint](#xvi-glossary).            |
 | **Pain points**      | - Overwhelmed by conflicting information about sustainability.              |
 |                       | - Finds most climate education tools too complex or dry.                  |
 | **Motivation**       | - Play Green City with her kids as a bonding activity.                      |
@@ -101,7 +101,7 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 2: Alex, the pragmatic entrepreneur
-
+![alt text](<Images/DALL·E 2024-11-20 11.23.32 - A realistic digital portrait of a persona_ a 35-year-old male entrepreneur named Alex from Berlin, Germany. He has short brown hair, a neatly groomed .webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Age**              | 35                                                                          |
@@ -118,7 +118,7 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 3: Leila, the passionate student
-
+![alt text](<Images/DALL·E 2024-11-20 11.24.33 - A realistic digital portrait of a persona_ a 19-year-old female environmental science student named Leila from Rabat, Morocco. She has long, wavy dark.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Age**              | 19                                                                          |
@@ -135,7 +135,7 @@ The following personas represent key player types for Green City:
 ---
 
 #### Persona 4: Mark, the climate skeptic
-
+![alt text](<Images/DALL·E 2024-11-20 11.24.34 - A realistic digital portrait of a persona_ a 50-year-old male construction manager named Mark from Houston, USA. He has a rugged, practical appearance.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Age**              | 50                                                                          |
@@ -158,7 +158,7 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 #### Use Case 1: Sarah, the concerned parent
-
+![alt text](<Images/DALL·E 2024-11-20 11.39.36 - 1. A mother and her child playing a climate change simulation game together on a tablet, in a cozy living room. The child is smiling, pointing at a gr.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Goal**             | Teach her children about eco-friendly habits in an interactive way.         |
@@ -173,7 +173,7 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 2: Alex, the pragmatic entrepreneur
-
+![alt text](<Images/DALL·E 2024-11-20 11.41.47 - A young entrepreneur seated at a desk in a modern office, playing a city-building simulation game focused on climate change on a laptop screen. The sc.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Goal**             | Explore strategies for balancing business growth with sustainability.       |
@@ -188,7 +188,7 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 3: Leila, the passionate student
-
+![alt text](<Images/DALL·E 2024-11-20 11.42.21 - A young university student in a casual outfit playing a climate change simulation game on a laptop in her dorm room. The screen displays a city with r.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Goal**             | Understand the impact of urban planning decisions on climate change for her environmental science project. |
@@ -203,7 +203,7 @@ The following use cases illustrate how different personas interact with Green Ci
 ---
 
 ### Use Case 4: Mark, the climate skeptic
-
+![alt text](<Images/DALL·E 2024-11-20 11.43.24 - A middle-aged construction manager in a rugged work environment intently playing a climate change simulation game on a tablet. The screen shows a city.webp>)
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | **Goal**             | Test the validity of climate change claims through gameplay.                |
@@ -250,7 +250,7 @@ The following use cases illustrate how different personas interact with Green Ci
   - Players learn the impact of resource choices on pollution, quality of life, and growth.
   - Players develop a sense of responsibility regarding environmental impacts.
 
-## III. Functional requirements
+## IV. Functional requirements
 
 ### 1. Gameplay mechanics
 
@@ -260,14 +260,14 @@ To ensure focused development and avoid scope creep, the following functional li
 
 - **City size**: Players can build a city with up to **10 unique buildings** (e.g., residential, commercial, industrial, and parks). Each building can only be placed once.
 - **Resource types**: The MVP includes only **two energy types**: renewable (solar energy) and non-renewable (fossil fuels). Advanced energy systems (e.g., nuclear, wind turbines) will not be implemented in the MVP.
-- **Pollution tracking**: Pollution is measured using a **single [pollution bar](xvi-glossary)** ranging from 0% (clean) to 100% (critical).
+- **Pollution tracking**: Pollution is measured using a **single [pollution bar](#xvi-glossary)** ranging from 0% (clean) to 100% (critical).
 - **Win/Lose conditions**: Pollution and energy management are the only criteria for winning or losing. No population satisfaction or other secondary metrics will be included.
 - **UI components**: The dashboard displays **energy consumption, pollution levels, and financial status** only. Advanced visual indicators (e.g., trend graphs, detailed notifications) are excluded.
 
 #### b. Future vision
 
-- **[Building upgrades](xvi-glossary)**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
-- **[Dynamic pollution control](xvi-glossary)**: Advanced tools like public transit and green technologies reduce pollution levels.
+- **[Building upgrades](#xvi-glossary)**: Players upgrade buildings to improve efficiency (e.g., reducing energy consumption).
+- **[Dynamic pollution control](#xvi-glossary)**: Advanced tools like public transit and green technologies reduce pollution levels.
 
 ### 2. UI components
 
@@ -286,7 +286,7 @@ To ensure focused development and avoid scope creep, the following functional li
 
 - **Construction**: Players place and remove basic buildings.
 - **Basic decision-making**: Players decide on energy use, construction, and waste management.
-- **[Feedback mechanisms](xvi-glossary)**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
+- **[Feedback mechanisms](#xvi-glossary)**: Visual cues (e.g., changes in city aesthetics) help players understand their impact.
 
 #### b. Future vision
 
@@ -305,7 +305,7 @@ The following features are categorized by their priority level for the MVP:
 **High priority** (must-have):
 - Basic building placement for 5 structure types: residential, industrial, commercial, parks, and energy plants.
 - Pollution tracking via a simple visual bar.
-- Resource allocation for renewable and [non-renewable energy](xvi-glossary).
+- Resource allocation for renewable and [non-renewable energy](#xvi-glossary).
 - Basic win/lose conditions based on pollution and energy levels.
 
 **Medium priority** (nice-to-have):
@@ -333,11 +333,11 @@ To guide future updates, the following features are prioritized based on their p
 **High priority** (post-MVP must-have):
 - **Dynamic pollution control**: Introduce tools like tree planting, waste recycling, and public transit to allow players to actively mitigate pollution.
 - **Building upgrades**: Enable upgrading buildings to increase efficiency and reduce resource consumption.
-- **[Population metrics](xvi-glossary)**: Add a population satisfaction meter influenced by pollution, resource allocation, and city infrastructure.
+- **[Population metrics](#xvi-glossary)**: Add a population satisfaction meter influenced by pollution, resource allocation, and city infrastructure.
 
 **Medium priority** (post-MVP nice-to-have):
 - **Advanced energy options**: Expand energy types to include wind turbines, geothermal, and nuclear power plants.
-- **Random events**: Introduce [dynamic challenges](xvi-glossary) such as extreme weather events or economic downturns.
+- **Random events**: Introduce [dynamic challenges](#xvi-glossary) such as extreme weather events or economic downturns.
 
 **Low priority** (optional for future updates):
 - **Multiplayer mode**: Enable competitive or cooperative gameplay for up to four players.
@@ -380,7 +380,7 @@ To guide future updates, the following features are prioritized based on their p
 
 - **Performance**: Ensure the game runs smoothly at 60 FPS on mid-range devices.
 
-- **[Scalability](xvi-glossary)**: The game must handle large-scale city data without issues. The MVP introduces base data management, while future versions implement optimizations.
+- **[Scalability](#xvi-glossary)**: The game must handle large-scale city data without issues. The MVP introduces base data management, while future versions implement optimizations.
 
 - **Accessibility**: Adjustable text sizes, colorblind-friendly palettes, and simplified UI modes for younger audiences or those with impairments.
 
@@ -438,7 +438,7 @@ These features will be prioritized based on player feedback and available resour
 
 - **Data security**: Implement data protection protocols. All saved data must be secure to prevent unauthorized access. Specific measures include data encryption (e.g., AES-256) for all stored player data, secure communication channels (e.g., HTTPS), and regular security audits to identify vulnerabilities.
 
-- **[Authentication](xvi-glossary)**: Outline player identification mechanisms if needed, such as profile creation or save encryption. Multi-factor authentication (MFA) may also be considered for added security.
+- **[Authentication](#xvi-glossary)**: Outline player identification mechanisms if needed, such as profile creation or save encryption. Multi-factor authentication (MFA) may also be considered for added security.
 
 ## XIII. Timeline
 
@@ -644,19 +644,19 @@ In future updates, localization may include:
 
 ## XVI. Glossary
 
-- **Godot**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))).[↩ Back to introduction](#i-introduction)
+- **Godot**: An open-source game engine used for 2D and 3D game development (source: [Wikipedia](https://en.wikipedia.org/wiki/Godot_(game_engine))).[↩ Back to Introduction](#i-introduction)
 
-- **Sustainability**: The ability to maintain ecological balance by avoiding the depletion of natural resources (source: [Wikipedia](https://en.wikipedia.org/wiki/Sustainability)).[↩ Back to introduction](#i-introduction)
+- **Sustainability**: The ability to maintain ecological balance by avoiding the depletion of natural resources (source: [Wikipedia](https://en.wikipedia.org/wiki/Sustainability)).[↩ Back to Introduction](#i-introduction)
 
-- **Renewable energy**: Energy derived from natural processes that are replenished at a faster rate than they are consumed, such as solar and wind energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Renewable_energy)).[↩ Back to introduction](#i-introduction)
+- **Renewable energy**: Energy derived from natural processes that are replenished at a faster rate than they are consumed, such as solar and wind energy (source: [Wikipedia](https://en.wikipedia.org/wiki/Renewable_energy)).[↩ Back to Introduction](#i-introduction)
 
-- **Carbon footprint**: The total amount of greenhouse gases (GHG) generated by human actions, expressed as carbon dioxide equivalent (CO2e) (source: [Wikipedia](https://en.wikipedia.org/wiki/Carbon_footprint)).[↩ Back to introduction](#i-introduction)
+- **Carbon footprint**: The total amount of greenhouse gases (GHG) generated by human actions, expressed as carbon dioxide equivalent (CO2e) (source: [Wikipedia](https://en.wikipedia.org/wiki/Carbon_footprint)).[↩ Back to Introduction](#i-introduction)
 
-- **MVP (minimum viable product)**: A product version with the minimum features necessary to test an idea and attract early adopters for feedback (source: [Wikipedia](https://en.wikipedia.org/wiki/Minimum_viable_product)).[↩ Back to introduction](#i-introduction)
+- **MVP (minimum viable product)**: A product version with the minimum features necessary to test an idea and attract early adopters for feedback (source: [Wikipedia](https://en.wikipedia.org/wiki/Minimum_viable_product)).[↩ Back to Introduction](#i-introduction)
 
-- **Resource management**: The process of efficiently allocating resources such as energy and materials within the game to achieve goals (source: [Wikipedia](https://en.wikipedia.org/wiki/Resource_management)).[↩ Back to introduction](#i-introduction)
+- **Resource management**: The process of efficiently allocating resources such as energy and materials within the game to achieve goals (source: [Wikipedia](https://en.wikipedia.org/wiki/Resource_management)).[↩ Back to Introduction](#i-introduction)
 
-- **Pollution tracking**: Monitoring and visual representation of pollution levels in the game to show the impact of player decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to introduction](#i-introduction)
+- **Pollution tracking**: Monitoring and visual representation of pollution levels in the game to show the impact of player decisions (source: [Wikipedia](https://en.wikipedia.org/wiki/Pollution)).[↩ Back to Introduction](#i-introduction)
 
 - **Educational feedback**: Insights provided to players about the consequences of their actions, aiming to educate on sustainability principles (source: [Wikipedia](https://en.wikipedia.org/wiki/Educational_game)).[↩ Back to Goal / scope](#iii-goal--scope)
 
