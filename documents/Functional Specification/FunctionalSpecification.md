@@ -2,7 +2,7 @@
 
 ## Table of contents
 <details>
-<summary>Click on this to view the table of contents</summary>
+<summary>Click to unfold</summary>
 
   - [Team members](#team-members)
   - [I. Introduction](#i-introduction)
