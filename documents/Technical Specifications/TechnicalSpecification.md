@@ -15,7 +15,7 @@
     - [2. Pollution Tracking System](#2-pollution-tracking-system)
       - [a. Overview](#a-overview)
       - [b. Features](#b-features)
-      - [c. Example Code](#c-example-code)
+    - [c. Example Code](#c-example-code)
     - [3. Gameplay Loop and State Management](#3-gameplay-loop-and-state-management)
       - [a. Finite State Machine](#a-finite-state-machine)
     - [4. Win/Lose Conditions](#4-winlose-conditions)
@@ -106,12 +106,13 @@ Tracks the total pollution caused by player actions, visualized using the pollut
   - Changes the appearance of the city (e.g., smog effects).
   - Displays real-time pollution levels on the dashboard.
 
-#### c. Example Code
-    ```gdscript
-    func calculate_total_pollution():
-        total_pollution = sum(building.pollution for building in active_buildings)
-        emit_signal("pollution_updated", total_pollution)
-    ```
+### c. Example Code
+
+```gdscript
+func calculate_total_pollution():
+    total_pollution = sum(building.pollution for building in active_buildings)
+    emit_signal("pollution_updated", total_pollution)
+```
 
 ---
 
