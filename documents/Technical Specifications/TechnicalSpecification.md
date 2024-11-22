@@ -1,9 +1,11 @@
-# Complete Technical Specification for *Green City*
+# Technical Specification for *Green City*
 
 ---
+<details>
+<summary>Table Of Content</summary>
 
 ## Table of Contents
-- [Complete Technical Specification for *Green City*](#complete-technical-specification-for-green-city)
+- [Technical Specification for *Green City*](#technical-specification-for-green-city)
   - [Table of Contents](#table-of-contents)
   - [I. Introduction](#i-introduction)
   - [II. Game Architecture](#ii-game-architecture)
@@ -38,6 +40,8 @@
   - [VI. Development Workflow](#vi-development-workflow)
   - [VII. Timeline and Milestones](#vii-timeline-and-milestones)
   - [VIII. Glossary](#viii-glossary)
+
+</details>
 
 ---
 
