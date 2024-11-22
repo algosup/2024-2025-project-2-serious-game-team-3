@@ -258,7 +258,7 @@ The game will emphasize visual evidence of environmental changes and the economi
 #### a. MVP scope
 
 - **Resource management**: Players allocate renewable (e.g., solar energy) and non-renewable (e.g., fossil fuel) resources while managing the city’s finances.
-- **Pollution tracking**: Pollution levels will be visually represented to show the city's health and the impact of player decisions over time. The pollution levels will be supplied by CO2, methane emissions and carbon footprint of each action the player does.
+- **Pollution tracking**: Pollution levels will be visually represented to show the city's health and the impact of player decisions over time. The pollution levels will be supplied by CO2, methane emissions and carbon footprint of each action the player does, and will modify the only pollution bar percentage.
 - **Educational feedback**: Visual feedback (pollution indicators, health bars) helps players understand the consequences of their actions.
 - **Simple decision-making**: Players make straightforward decisions regarding renewable energy, waste management, and city expansion.
 
@@ -415,7 +415,7 @@ Here are some mockups of what the game should be looking like, using Canva and t
 
 ---
 
-**Here is how the contextual menu should look like when you click on a building (ecological upgrade, economical upgrade, destroy, and information about the building and how it affects our environment):**
+**Here is how the contextual menu should look like when you click on a building (ecological upgrade, economical upgrade, destroy, and information about the building and how it affects our environment):**  
 <img src="Images/Image3.png" width="700px">
 
 
