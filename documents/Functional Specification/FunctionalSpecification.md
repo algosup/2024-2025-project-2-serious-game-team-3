@@ -13,10 +13,10 @@
       - [Persona 3](#c-ersona-3-leila-the-passionate-student)
       - [Persona 4](#d-persona-4-mark-the-climate-skeptic)
     - [Use cases](#2-use-cases)
-      - [Use Case 1](#a-use-case-1-sarah-the-concerned-parent)
-      - [Use Case 2](#b-use-case-2-alex-the-pragmatic-entrepreneur)
-      - [Use Case 3](#c-use-case-3-leila-the-passionate-student)
-      - [Use Case 4](#d-use-case-4-mark-the-climate-skeptic)
+      - [Use case 1](#a-use-case-1-sarah-the-concerned-parent)
+      - [Use case 2](#b-use-case-2-alex-the-pragmatic-entrepreneur)
+      - [Use case 3](#c-use-case-3-leila-the-passionate-student)
+      - [Use case 4](#d-use-case-4-mark-the-climate-skeptic)
   - [III. Goal / scope](#iii-goal--scope)
     - [Primary goal](#1-primary-goal)
     - [Scope of work](#2-scope-of-work)
@@ -88,11 +88,11 @@
 
 ## I. Introduction
 
-- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](#xv-glossary), it leverages game mechanics to simulate urban [sustainability](#xv-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment.
+- **Current situation**: "Green City" is an ongoing project aimed at creating an engaging and educational serious game about climate change. Built on [Godot 4.3](#xv-glossary), it leverages game mechanics to simulate urban [sustainability](#xv-glossary) challenges. The project seeks to deliver a polished, professional product that combines education and entertainment while prioritizing its role as a teaching tool.
 
-- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](#xv-glossary), managing city resources efficiently, and minimizing carbon emissions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
+- **Background**: The game integrates elements of city-building and climate education. Players will face realistic challenges such as transitioning from fossil fuels to [renewable energy](#xv-glossary), managing city resources efficiently, and minimizing carbon emissions. Designed to impart critical lessons in sustainability, the game employs interactive scenarios and feedback mechanisms to educate players about the environmental impact of urban planning decisions. The primary audience includes young adults (ages 15–25), educators in environmental science, and individuals interested in sustainability.
 
-- **Initial MVP focus**: The [MVP](#xv-glossary) will focus on core gameplay, including [resource management](#xv-glossary), [pollution tracking](#xv-glossary), and city-building. The goal is to lay a foundation that can be expanded to achieve the full game vision. The MVP will act as a proof of concept demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control to maintain a healthy environment while ensuring economic growth.
+- **Initial MVP focus**: The [MVP](#xv-glossary) will center on core gameplay, including [resource management](#xv-glossary), [pollution tracking](#xv-glossary), and city-building, while strongly emphasizing its educational purpose. It will incorporate tailored feedback mechanisms, climate-related facts, and scenario-based learning to teach players the consequences of their choices. The MVP will act as a proof of concept, demonstrating key sustainable city-building mechanics, such as balancing energy production with pollution control, while guiding players through the broader implications of their decisions on the environment.
 
 ---
 
@@ -100,7 +100,7 @@
 
 ### 1. Personas
 
-The following personas represent key player types for Green City:
+The following personas represent the diverse key player types for Green City. Each persona will interact with the game differently, highlighting its versatility and adaptability to varied educational and engagement needs:
 
 ---
 
@@ -108,17 +108,20 @@ The following personas represent key player types for Green City:
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image1.webp" width="200px"> |
+| **Image**            | <img src="Images/Image1.webp" width="200px">                               |
 | **Age**              | 42                                                                          |
 | **Occupation**       | Elementary school teacher                                                  |
 | **Location**         | Chicago, USA                                                               |
 | **Tech-savviness**   | Moderate, uses apps and games occasionally                                |
 | **Goals**            | - Teach her children eco-friendly habits.                                   |
-|                       | - Learn practical ways to reduce her family's [carbon footprint](#xv-glossary).            |
+|                      | - Learn practical ways to reduce her family's [carbon footprint](#xv-glossary). |
 | **Pain points**      | - Overwhelmed by conflicting information about sustainability.              |
-|                       | - Finds most climate education tools too complex or dry.                  |
+|                      | - Finds most climate education tools too complex or dry.                  |
 | **Motivation**       | - Play Green City with her kids as a bonding activity.                      |
-|                       | - Discover actionable steps for greener living.                           |
+|                      | - Discover actionable steps for greener living.                           |
+
+**Game approach for Sarah**: 
+The game will feature simplified mechanics and clear visual feedback to make it accessible for younger players and their parents. Interactive lessons and achievements will encourage collaboration and discussion about sustainability in the household.
 
 ---
 
@@ -126,17 +129,20 @@ The following personas represent key player types for Green City:
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image2.webp" width="200px">  |
+| **Image**            | <img src="Images/Image2.webp" width="200px">                               |
 | **Age**              | 35                                                                          |
 | **Occupation**       | Owner of a small tech startup                                              |
 | **Location**         | Berlin, Germany                                                           |
 | **Tech-savviness**   | High, frequently uses digital tools and games for learning                |
 | **Goals**            | - Understand how sustainability impacts business growth.                   |
-|                       | - Learn innovative strategies for reducing energy costs.                  |
+|                      | - Learn innovative strategies for reducing energy costs.                  |
 | **Pain points**      | - Struggles to balance profit and environmental responsibility.             |
-|                       | - Feels climate change discussions are often too idealistic.              |
+|                      | - Feels climate change discussions are often too idealistic.              |
 | **Motivation**       | - Explore practical solutions to energy and waste management.              |
-|                       | - Simulate real-world decision-making in a fun environment.              |
+|                      | - Simulate real-world decision-making in a fun environment.              |
+
+**Game approach for Alex**: 
+The game will incorporate deeper strategic mechanics, such as balancing profits and sustainability. Detailed data and visualizations will provide practical insights into decision-making, reflecting challenges faced by entrepreneurs.
 
 ---
 
@@ -144,17 +150,20 @@ The following personas represent key player types for Green City:
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image3.webp" width="200px">  |
+| **Image**            | <img src="Images/Image3.webp" width="200px">                               |
 | **Age**              | 19                                                                          |
 | **Occupation**       | Environmental science major                                               |
 | **Location**         | Rabat, Morocco                                                            |
 | **Tech-savviness**   | Intermediate, uses technology for research and casual gaming              |
 | **Goals**            | - Gain deeper insights into how cities contribute to climate change.        |
-|                       | - Use knowledge from Green City for her studies and activism.              |
+|                      | - Use knowledge from Green City for her studies and activism.              |
 | **Pain points**      | - Finds traditional academic tools uninspiring.                            |
-|                       | - Wants engaging ways to learn while having fun.                          |
+|                      | - Wants engaging ways to learn while having fun.                          |
 | **Motivation**       | - Test strategies for reducing urban emissions in a risk-free environment.  |
-|                       | - Advocate for sustainability using lessons from the game.               |
+|                      | - Advocate for sustainability using lessons from the game.               |
+
+**Game approach for Leila**: 
+Green City will include advanced learning modules, such as detailed scenarios and dynamic events, to challenge Leila’s understanding of urban sustainability. Integration of data-driven results and optional complex settings will align with her academic needs.
 
 ---
 
@@ -162,87 +171,78 @@ The following personas represent key player types for Green City:
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image4.webp" width="200px">  |
+| **Image**            | <img src="Images/Image4.webp" width="200px">                               |
 | **Age**              | 50                                                                          |
 | **Occupation**       | Construction manager                                                      |
 | **Location**         | Houston, USA                                                              |
 | **Tech-savviness**   | Low, mostly uses technology for work-related purposes                     |
 | **Goals**            | - Prove that concerns about climate change are exaggerated.                |
-|                       | - Understand the game’s perspective on environmental issues.              |
+|                      | - Understand the game’s perspective on environmental issues.              |
 | **Pain points**      | - Believes climate change data is often biased or alarmist.                |
-|                       | - Prefers practical, measurable solutions over theoretical debates.       |
+|                      | - Prefers practical, measurable solutions over theoretical debates.       |
 | **Motivation**       | - Challenge his views through gameplay scenarios.                          |
-|                       | - See if the game’s mechanics reflect his perspective of economic growth. |
+|                      | - See if the game’s mechanics reflect his perspective of economic growth. |
+
+**Game approach for mark**: 
+The game will emphasize visual evidence of environmental changes and the economic impacts of pollution. Balanced scenarios will allow Mark to explore different perspectives, fostering critical thinking and constructive debate.
 
 ---
 
 ### 2. Use cases
 
-The following use cases illustrate how different personas interact with Green City:
-
 ---
 
-#### a. Use Case 1: Sarah, the concerned parent
+#### a. Use case 1: Sarah, the concerned parent
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image5.webp" width="200px">  |
+| **Image**            | <img src="Images/Image5.webp" width="200px">                               |
 | **Goal**             | Teach her children about eco-friendly habits in an interactive way.         |
-| **Steps**            | 1. Sarah starts a new game with her 10-year-old child. |
-|                       | 2. Together, they build a small city, starting with renewable energy sources like solar panels. |
-|                       | 3. They encounter scenarios such as a budget deficit, where they must choose between cheaper fossil fuels or maintaining green energy. |
-|                       | 4. They explore pollution indicators, watching how decisions like adding a park reduce smog and improve city health. |
-|                       | 5. The game provides feedback on how these choices relate to real-world climate impacts. |
-| **Outcome**          | - Sarah and her child learn about the importance of renewable energy and urban greenery. |
-|                       | - The game sparks conversations about practical eco-friendly steps they can take at home. |
+| **Steps**            | 1. Sarah starts a new game with her 10-year-old child.                     |
+|                      | 2. Together, they build a small city, starting with renewable energy.       |
+|                      | 3. They explore pollution indicators and add parks to reduce smog.         |
+|                      | 4. The game provides feedback about real-world impacts of choices.         |
+| **Outcome**          | - Sarah and her child learn about renewable energy and urban greenery.     |
+|                      | - The game sparks conversations about eco-friendly steps at home.          |
 
 ---
 
-#### b. Use Case 2: Alex, the pragmatic entrepreneur
+#### b. Use case 2: Alex, the pragmatic entrepreneur
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image6.webp" width="200px">  |
+| **Image**            | <img src="Images/Image6.webp" width="200px">                               |
 | **Goal**             | Explore strategies for balancing business growth with sustainability.       |
-| **Steps**            | 1. Alex starts the game. |
-|                       | 2. He prioritizes building industrial zones to generate revenue for his city but quickly sees pollution levels rise. |
-|                       | 3. To mitigate this, Alex invests in green technology upgrades for factories and introduces a recycling program. |
-|                       | 4. He experiments with policies such as carbon taxes and public awareness campaigns to balance growth and emissions. |
-|                       | 5. Through trial and error, Alex optimizes his city’s financial and environmental health. |
-| **Outcome**          | - Alex gains insights into the challenges of implementing green policies in a business environment. |
-|                       | - He discovers how small investments in sustainability can lead to long-term economic benefits. |
+| **Steps**            | 1. Alex starts the game.                                                   |
+|                      | 2. He prioritizes building industrial zones, generating pollution.          |
+|                      | 3. He introduces green policies to mitigate pollution costs.               |
+| **Outcome**          | - Alex learns how sustainable investments improve long-term profitability. |
 
 ---
 
-#### c. Use Case 3: Leila, the passionate student
+#### c. Use case 3: Leila, the passionate student
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image7.webp" width="200px">  |
-| **Goal**             | Understand the impact of urban planning decisions on climate change for her environmental science project. |
-| **Steps**            | 1. Leila starts the game. |
-|                       | 2. She builds a city focused on renewable energy, including solar farms and wind turbines, to minimize emissions. |
-|                       | 3. She uses the carbon meter to track how urban sprawl and energy choices increase the city’s emissions. |
-|                       | 4. When a scenario introduces severe weather due to climate change, she learns about the importance of mitigation strategies like tree planting and improved public transit. |
-|                       | 5. Leila uses the game’s data-driven feedback to write a detailed report for her class project. |
-| **Outcome**          | - Leila deepens her understanding of climate systems and their connection to urban development. |
-|                       | - She uses screenshots and in-game data to support her academic presentation. |
+| **Image**            | <img src="Images/Image7.webp" width="200px">                               |
+| **Goal**             | Understand the impact of urban planning decisions on climate change.        |
+| **Steps**            | 1. Leila experiments with energy options to minimize emissions.             |
+|                      | 2. She uses the carbon meter to track urban sprawl’s effects.              |
+|                      | 3. She writes an academic report using in-game data.                      |
+| **Outcome**          | - Leila gains deeper understanding of climate systems and urban impact.     |
 
 ---
 
-#### d. Use Case 4: Mark, the climate skeptic
+#### d. Use case 4: Mark, the climate skeptic
 
 | **Attribute**        | **Details**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
-|**Image**|<img src="Images/Image8.webp" width="200px">  |
+| **Image**            | <img src="Images/Image8.webp" width="200px">                               |
 | **Goal**             | Test the validity of climate change claims through gameplay.                |
-| **Steps**            | 1. Mark plays the game on "Beginner" difficulty, skeptical of its premise.  |
-|                       | 2. He initially ignores renewable energy options, relying solely on coal and oil to minimize costs and maximize city expansion. |
-|                       | 3. As pollution levels rise, he sees the game introduce visible consequences like smog, health warnings, and citizen dissatisfaction. |
-|                       | 4. Curious, he tries introducing green policies like solar energy and public transit to test their impact. |
-|                       | 5. He compares the financial trade-offs and benefits, finding that sustainable policies eventually lead to a balanced budget and improved citizen satisfaction. |
-| **Outcome**          | - Mark gains a clearer understanding of the economic and social costs of pollution. |
-|                       | - While not fully convinced, he acknowledges the benefits of renewable energy and efficient resource management. |
+| **Steps**            | 1. Mark plays, skeptical of the game’s premise.                            |
+|                      | 2. He experiments with renewable energy policies.                          |
+|                      | 3. He compares costs of coal vs. solar and notices pollution impacts.      |
+| **Outcome**          | - Mark sees the economic and social benefits of sustainable policies.       |
 
 ---
 
@@ -258,7 +258,7 @@ The following use cases illustrate how different personas interact with Green Ci
 #### a. MVP scope
 
 - **Resource management**: Players allocate renewable (e.g., solar energy) and non-renewable (e.g., fossil fuel) resources while managing the city’s finances.
-- **Pollution tracking**: Pollution levels will be visually represented to show the city's health and the impact of player decisions over time.
+- **Pollution tracking**: Pollution levels will be visually represented to show the city's health and the impact of player decisions over time. The pollution levels will be supplied by CO2, methane emissions and carbon footprint of each action the player does.
 - **Educational feedback**: Visual feedback (pollution indicators, health bars) helps players understand the consequences of their actions.
 - **Simple decision-making**: Players make straightforward decisions regarding renewable energy, waste management, and city expansion.
 
@@ -370,17 +370,30 @@ To guide future updates, the following features are prioritized based on their p
 
 - **Gameplay verification**:
 
-  - Players can place buildings, allocate resources, and track pollution.
-  - Players achieve varying levels of success based on management of resources and pollution.
+  - Players can place buildings, allocate resources, and track CO₂ and methane emissions.
+  - Players achieve varying levels of success based on their management of resources, emissions, and long-term sustainability goals.
+
+---
 
 - **User interface**:
 
-  - **MVP**: The UI must be intuitive, with responsive elements like buttons and dashboards.
-  - **Future vision**: The UI must provide advanced feedback and clear indicators.
+  - **MVP**: The UI must be intuitive, with responsive elements like buttons, dashboards, and emission tracking bars (CO₂ and methane).
+  - **Future vision**: The UI must provide advanced feedback and clear indicators, such as detailed graphs or notifications explaining trends and changes.
+
+---
 
 - **Educational content**:
 
-  - Players receive relevant information about environmental impacts.
+  - Players receive relevant **foundational knowledge** about climate change, emissions, and sustainability:
+    - The difference between CO₂ and methane, their sources, and their impact on climate change.
+    - The relationship between energy production (fossil fuels vs. renewable energy) and carbon emissions.
+    - Basic concepts of carbon footprint and its importance in sustainability.
+  - Educational feedback includes:
+    - Real-time updates on the consequences of player decisions (e.g., how industrial zones increase emissions).
+    - Comparisons of different choices, such as the trade-offs between short-term economic gain and long-term ecological health.
+    - Contextual explanations for game metrics (e.g., why methane emissions are displayed alongside CO₂).
+  - Players understand not only **the impact** of their choices but also **why** these impacts matter by linking them to basic scientific principles.
+
 
 ## VII. Design specifications
 
