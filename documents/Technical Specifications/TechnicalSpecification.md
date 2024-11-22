@@ -1,72 +1,49 @@
-# Complete Technical Specification Document for *Green City*
+# Complete Technical Specification for *Green City*
 
 ---
 
 ## Table of Contents
-<details>
-<summary>Click to expand</summary>
-
-- [Complete Technical Specification Document for *Green City*](#complete-technical-specification-document-for-green-city)
+- [Complete Technical Specification for *Green City*](#complete-technical-specification-for-green-city)
   - [Table of Contents](#table-of-contents)
-  - [I. Technical Goals and Approach](#i-technical-goals-and-approach)
-    - [1. Translating Functional Requirements into Technical Tasks](#1-translating-functional-requirements-into-technical-tasks)
-    - [2. High-Level Architecture](#2-high-level-architecture)
+  - [I. Introduction](#i-introduction)
   - [II. Game Architecture](#ii-game-architecture)
     - [1. Core Systems Design](#1-core-systems-design)
       - [a. Building Placement Logic](#a-building-placement-logic)
       - [b. Resource Management](#b-resource-management)
     - [2. Pollution Tracking System](#2-pollution-tracking-system)
+      - [a. Overview](#a-overview)
+      - [b. Features](#b-features)
+      - [c. Example Code](#c-example-code)
     - [3. Gameplay Loop and State Management](#3-gameplay-loop-and-state-management)
+      - [a. Finite State Machine](#a-finite-state-machine)
     - [4. Win/Lose Conditions](#4-winlose-conditions)
   - [III. User Interface Implementation](#iii-user-interface-implementation)
-    - [1. UI Framework and Integration](#1-ui-framework-and-integration)
-      - [a. Dashboard Design](#a-dashboard-design)
-      - [b. Contextual Menus and Feedback Mechanisms](#b-contextual-menus-and-feedback-mechanisms)
+    - [1. Dashboard Design](#1-dashboard-design)
     - [2. Accessibility Features](#2-accessibility-features)
-  - [IV. Development Workflow and Pipeline](#iv-development-workflow-and-pipeline)
-    - [1. Repository Structure](#1-repository-structure)
-    - [2. CI/CD Integration](#2-cicd-integration)
-  - [V. Tools, Libraries, and Standards](#v-tools-libraries-and-standards)
-    - [1. Overview of Tools](#1-overview-of-tools)
-      - [a. Godot Engine](#a-godot-engine)
-      - [b. GDScript Overview](#b-gdscript-overview)
-    - [2. Supporting Tools](#2-supporting-tools)
-    - [3. Coding Standards and Conventions](#3-coding-standards-and-conventions)
-  - [VI. Advanced Game Systems](#vi-advanced-game-systems)
-    - [1. Pollution Dynamics and Calculation](#1-pollution-dynamics-and-calculation)
-    - [2. Resource Balancing Algorithms](#2-resource-balancing-algorithms)
-  - [VII. Localization Strategy](#vii-localization-strategy)
-  - [VIII. Testing and Debugging Framework](#viii-testing-and-debugging-framework)
-    - [1. Unit Testing Plan](#1-unit-testing-plan)
-    - [2. Integration Testing Plan](#2-integration-testing-plan)
-  - [IX. Timeline and Milestones](#ix-timeline-and-milestones)
-  - [X. Glossary](#x-glossary)
-    - [Key Terms](#key-terms)
-
-</details>
+  - [IV. Tools, Libraries, and File Architecture](#iv-tools-libraries-and-file-architecture)
+    - [1. Tools and Libraries](#1-tools-and-libraries)
+    - [2. File Architecture](#2-file-architecture)
+    - [3. Detailed Explanation of File Architecture](#3-detailed-explanation-of-file-architecture)
+      - [Assets Directory](#assets-directory)
+      - [Scenes Directory](#scenes-directory)
+      - [Scripts Directory](#scripts-directory)
+      - [Tests Directory](#tests-directory)
+      - [Docs Directory](#docs-directory)
+    - [4. Guidelines for Expansion](#4-guidelines-for-expansion)
+  - [V. Testing Strategy](#v-testing-strategy)
+    - [1. Unit Testing](#1-unit-testing)
+    - [2. Integration Testing](#2-integration-testing)
+    - [3. End-to-End Testing](#3-end-to-end-testing)
+    - [4. Automation in Testing](#4-automation-in-testing)
+  - [VI. Development Workflow](#vi-development-workflow)
+  - [VII. Timeline and Milestones](#vii-timeline-and-milestones)
+  - [VIII. Glossary](#viii-glossary)
 
 ---
 
-## I. Technical Goals and Approach
+## I. Introduction
 
-### 1. Translating Functional Requirements into Technical Tasks
-
-The functional requirements define **what** the game must achieve, while this document explains **how** to build it technically.
-
-- **Buildings**: Each building will be represented as a scene with predefined attributes (e.g., type, pollution impact, resource cost). These buildings will be dynamically placed and managed during gameplay.
-- **Pollution System**: Implemented as a singleton (`PollutionManager.gd`) that collects data from all active buildings and updates visual and mechanical feedback in real-time.
-- **Gameplay Feedback**: Real-time updates via Godot's signal system, ensuring UI elements like pollution bars and resource dashboards reflect the player's decisions dynamically.
-
----
-
-### 2. High-Level Architecture
-
-- **Node-based Structure**: All game elements are represented as nodes in Godot, with a hierarchical organization for modularity and reusability.
-- **Scenes and Prefabs**: Buildings, UI elements, and game logic components will be organized into separate scenes, instantiated dynamically as required.
-- **Signals**: Event-driven communication between nodes to trigger UI updates, game state transitions, and gameplay effects.
-- **Global Systems**:
-  - **ResourceManager**: Handles global resources like energy, finances, and pollution limits.
-  - **GameStateManager**: Manages game states (e.g., `BUILD`, `SIMULATE`, `EVALUATE`).
+This technical specification defines the architecture and implementation plan for *Green City*, an educational city-building game that explores sustainability. The game is developed using **Godot Engine (v4.3)** and emphasizes modular, scalable design. This document translates functional requirements into actionable technical details and includes a roadmap for development and testing.
 
 ---
 
@@ -75,10 +52,15 @@ The functional requirements define **what** the game must achieve, while this do
 ### 1. Core Systems Design
 
 #### a. Building Placement Logic
-- **Grid Management**: Use Godot's `TileMap` node to manage the city grid, ensuring efficient placement and removal of buildings.
-- **Placement Rules**:
-  - Validate if the tile is empty and the player has enough resources.
-  - Dynamically deduct resources and update pollution after placement:
+- **Purpose**: Allow players to place, upgrade, and remove buildings on a city grid.
+- **Implementation**:
+  - Use a `TileMap` node to represent the city grid.
+  - Each building type has associated metadata, including cost, pollution impact, and resource consumption.
+  - Validate placement based on tile availability and player resources.
+- **Building Removal**:
+  - Deduct energy for demolition.
+  - Refund a portion of resources.
+- **Example Code**:
     ```gdscript
     func place_building(position: Vector2, building_type: String):
         if tilemap.get_cellv(position) == -1 and resources_available(building_type):
@@ -86,160 +68,272 @@ The functional requirements define **what** the game must achieve, while this do
             update_resources(building_type)
             emit_signal("building_placed", position)
     ```
-- **Building Removal**:
-  - Allow players to demolish buildings and refund partial resources.
-
----
 
 #### b. Resource Management
-- **Singleton Implementation**: `ResourceManager.gd` manages all resource-related calculations, including energy usage, finances, and pollution.
-- **Dynamic Updates**: Resources are updated when buildings are placed or removed:
+- **Singleton Design**: `ResourceManager.gd` manages:
+  - Renewable and non-renewable energy.
+  - Financial resources.
+  - Pollution levels.
+- **Dynamic Updates**:
+  - Resource and pollution levels are recalculated when buildings are placed or removed.
+- **Signal-Based UI Updates**:
+  - Example:
     ```gdscript
     func update_resources(building_type: String):
-        if building_type == "solar":
-            renewable_energy -= 10
-        elif building_type == "coal":
-            non_renewable_energy -= 20
-            pollution += 15
+        match building_type:
+            "solar":
+                renewable_energy -= 10
+            "coal":
+                non_renewable_energy -= 20
+                pollution += 15
+        emit_signal("resources_updated")
     ```
-- **Tracking UI**: Emit signals to update dashboard components like energy meters and pollution bars.
 
 ---
 
 ### 2. Pollution Tracking System
-- **Global Pollution Data**: Aggregate pollution levels from all active buildings using a signal-driven approach.
-- **Feedback Mechanisms**:
-  - Update pollution bar:
+
+#### a. Overview
+Tracks the total pollution caused by player actions, visualized using the pollution bar and city aesthetics.
+
+#### b. Features
+- **Global Pollution Manager**: Aggregates pollution data.
+- **Feedback**:
+  - Changes the appearance of the city (e.g., smog effects).
+  - Displays real-time pollution levels on the dashboard.
+
+#### c. Example Code
     ```gdscript
-    func update_pollution_bar():
-        PollutionBar.value = total_pollution
+    func calculate_total_pollution():
+        total_pollution = sum(building.pollution for building in active_buildings)
+        emit_signal("pollution_updated", total_pollution)
     ```
-  - Trigger visual effects like smog overlays when thresholds are reached.
 
 ---
 
 ### 3. Gameplay Loop and State Management
-- **Finite State Machine**: Implemented in `GameStateManager.gd` with defined states like `BUILD`, `SIMULATE`, and `EVALUATE`.
-- **State Transitions**: Signals are used to transition between states and update relevant game logic.
+
+#### a. Finite State Machine
+- **States**:
+  - `BUILD`: Place or remove buildings.
+  - `SIMULATE`: Process environmental and economic effects.
+  - `EVALUATE`: Reflect on success or failure.
+- **Transitions**:
+  - Signals trigger transitions between states.
+- **Example Code**:
+    ```gdscript
+    func switch_state(new_state: String):
+        current_state = new_state
+        emit_signal("state_changed", new_state)
+    ```
 
 ---
 
 ### 4. Win/Lose Conditions
-- **Win Condition**: Maintain pollution below critical levels and meet energy requirements for a specified period.
-- **Lose Condition**: Exceed pollution thresholds for too long, causing the city to collapse.
+
+- **Win Condition**:
+  - Maintain pollution below thresholds for five in-game years.
+  - Sustain energy and financial goals.
+- **Lose Condition**:
+  - Pollution exceeds critical levels, or resources are depleted.
 
 ---
 
 ## III. User Interface Implementation
 
-### 1. UI Framework and Integration
-
-#### a. Dashboard Design
-- **Metrics Display**: Energy levels, finances, and pollution are displayed using `Label` and `ProgressBar` nodes.
-- **Real-time Updates**: Signal-based updates from resource and pollution managers.
-
-#### b. Contextual Menus and Feedback Mechanisms
-- **Building Context Menus**:
-  - Right-click menus provide options like upgrading or demolishing buildings.
-- **Tooltip Feedback**:
-  - Hover over buildings to display stats like pollution impact and energy cost.
-
----
+### 1. Dashboard Design
+- **Key Components**:
+  - Energy, finances, and pollution indicators.
+  - Hover tooltips for detailed building stats.
+- **Dynamic Feedback**:
+  - Signals update UI elements based on game state.
 
 ### 2. Accessibility Features
-- **Adjustable Text Sizes**: Modify font sizes using theme files.
-- **Colorblind-Friendly Palettes**: Apply shaders or alternate color schemes.
+- Adjustable text sizes.
+- Colorblind-friendly color schemes.
 
 ---
 
-## IV. Development Workflow and Pipeline
+## IV. Tools, Libraries, and File Architecture
 
-### 1. Repository Structure
+### 1. Tools and Libraries
 
-'''
+- **Godot Engine**: Open-source engine for 2D/3D games.
+- **GDScript**: Lightweight, Python-like scripting language.
+- **Kenney Assets**: Free asset library for placeholders.
+
+### 2. File Architecture
+
+```text
 GreenCity/
 ├── Assets/
+│   ├── Graphics/
+│   ├── Audio/
+│   └── Fonts/
 ├── Scenes/
+│   ├── UI/
+│   │   ├── Dashboard.tscn
+│   │   └── ContextMenus.tscn
+│   ├── Game/
+│   │   ├── MainScene.tscn
+│   │   └── TileMap.tscn
 ├── Scripts/
+│   ├── Core/
+│   │   ├── ResourceManager.gd
+│   │   ├── PollutionManager.gd
+│   │   └── GameStateManager.gd
+│   ├── UI/
+│   │   ├── Dashboard.gd
+│   │   └── ContextMenu.gd
+│   └── Gameplay/
+│       ├── Building.gd
+│       └── CityLogic.gd
+├── Tests/
+│   ├── Unit/
+│   ├── Integration/
+│   └── EndToEnd/
 ├── Docs/
-└── Tests/
-'''
-### 2. CI/CD Integration
-- **Automated Testing**: Use GDUnit for unit tests on each commit.
-- **Deployment**: Export to supported platforms using GitHub Actions.
+│   ├── FunctionalSpecification.md
+│   └── TechnicalSpecification.md
+```
+---
+
+### 3. Detailed Explanation of File Architecture
+
+The file architecture ensures modularity and maintainability by categorizing assets, scenes, scripts, and documentation into distinct directories. Each section has a specific purpose:
+
+#### Assets Directory
+- **Purpose**: Contains all graphical, audio, and font files used in the game.
+- **Structure**:
+  - `Graphics/`: Stores image files, including sprites and UI elements.
+  - `Audio/`: Includes sound effects and background music.
+  - `Fonts/`: Holds font files for text-based UI elements.
+
+#### Scenes Directory
+- **Purpose**: Houses all Godot scene files (`.tscn`), representing the game’s UI, game world, and mechanics.
+- **Structure**:
+  - `UI/`: Contains user interface scenes like `Dashboard.tscn` and `ContextMenus.tscn`.
+  - `Game/`: Stores primary game scenes, such as the `MainScene.tscn` (entry point) and `TileMap.tscn` (grid-based game area).
+
+#### Scripts Directory
+- **Purpose**: Stores all scripts used for game logic, organized into functional categories for clarity.
+- **Structure**:
+  - `Core/`: Contains essential scripts for game state and resource management, including:
+    - `ResourceManager.gd`: Tracks energy, finances, and pollution levels.
+    - `PollutionManager.gd`: Manages pollution calculations and visual feedback.
+    - `GameStateManager.gd`: Implements the finite state machine for game flow.
+  - `UI/`: Includes scripts for UI behavior and interactivity, such as:
+    - `Dashboard.gd`: Updates dashboard components with real-time data.
+    - `ContextMenu.gd`: Handles contextual menus for building interactions.
+  - `Gameplay/`: Holds scripts for gameplay mechanics, such as:
+    - `Building.gd`: Manages building attributes and actions.
+    - `CityLogic.gd`: Contains core logic for city management.
+
+#### Tests Directory
+- **Purpose**: Includes unit, integration, and end-to-end test cases for verifying game functionality.
+- **Structure**:
+  - `Unit/`: Tests individual modules, such as resource and pollution managers.
+  - `Integration/`: Validates interactions between components, like building placement and resource updates.
+  - `EndToEnd/`: Simulates complete gameplay scenarios to ensure a seamless experience.
+
+#### Docs Directory
+- **Purpose**: Stores all project documentation, ensuring easy reference for developers and stakeholders.
+- **Structure**:
+  - `FunctionalSpecification.md`: Details the functional requirements of the game.
+  - `TechnicalSpecification.md`: Provides the technical implementation plan.
 
 ---
 
-## V. Tools, Libraries, and Standards
+### 4. Guidelines for Expansion
 
-### 1. Overview of Tools
-
-#### a. Godot Engine
-- Open-source game engine ideal for 2D projects.
-- Node-based structure for modular design.
-
-#### b. GDScript Overview
-- Python-like scripting language for Godot, optimized for game logic.
+The file structure is designed to accommodate future enhancements. Developers should adhere to the following principles when adding new files or features:
+1. **Categorize**: Place new files in the appropriate directory based on functionality.
+2. **Reuse**: Leverage existing scripts and scenes to minimize redundancy.
+3. **Document**: Update the documentation in the `Docs/` folder to reflect changes or additions.
+4. **Testing**: Ensure all new features are accompanied by relevant test cases in the `Tests/` directory.
 
 ---
 
-### 2. Supporting Tools
-- **GDUnit**: For unit and integration testing.
-- **Kenney Assets**: Free placeholders for rapid prototyping.
+## V. Testing Strategy
+
+### 1. Unit Testing
+- **Objective**: Validate the functionality of individual scripts, such as `ResourceManager.gd` and `PollutionManager.gd`.
+- **Example Test**:
+    ```gdscript
+    extends "res://addons/Gut/test.gd"
+
+    func test_pollution_calculation():
+        var pollution_manager = PollutionManager.new()
+        pollution_manager.add_pollution(10)
+        pollution_manager.add_pollution(20)
+        assert_eq(pollution_manager.total_pollution, 30, "Pollution calculation failed")
+    ```
+
+### 2. Integration Testing
+- **Objective**: Test interactions between components, ensuring that changes in one system (e.g., building placement) reflect correctly in others (e.g., resource updates).
+- **Example Scenario**:
+  - Place a building.
+  - Verify that resources are deducted and the pollution bar updates.
+
+### 3. End-to-End Testing
+- **Objective**: Simulate complete gameplay scenarios to identify potential issues in the user experience.
+- **Example Workflow**:
+  - Start the game.
+  - Place various buildings.
+  - Monitor energy, finances, and pollution levels.
+  - Trigger win/lose conditions and validate outcomes.
 
 ---
 
-### 3. Coding Standards and Conventions
-- **Naming**: Use `snake_case` for variables and `PascalCase` for class names.
-- **Comments**: Document all methods and important logic blocks.
+### 4. Automation in Testing
+- **Tools**: Use GDUnit for automated testing of GDScript code.
+- **Continuous Integration**:
+  - Integrate tests with GitHub Actions to automate test execution on each commit.
 
 ---
 
-## VI. Advanced Game Systems
+## VI. Development Workflow
 
-### 1. Pollution Dynamics and Calculation
-- Calculate pollution as a weighted average of all buildings.
+1. **Version Control**:
+   - Use GitHub for source control.
+   - Branching Strategy:
+     - `main`: Stable, production-ready code.
+     - `dev`: Active development branch.
+     - Feature branches: For individual features or fixes.
 
----
+2. **Coding Standards**:
+   - Use `snake_case` for variables and functions.
+   - Use `PascalCase` for class names.
+   - Include comments for methods and significant logic.
 
-### 2. Resource Balancing Algorithms
-- Dynamic algorithms for balancing energy production and pollution control.
-
----
-
-## VII. Localization Strategy
-- Store text in JSON files for multi-language support.
-
----
-
-## VIII. Testing and Debugging Framework
-
-### 1. Unit Testing Plan
-- Isolated tests for pollution and resource managers.
+3. **CI/CD Pipeline**:
+   - **Testing**: Automatically run unit and integration tests on new commits.
+   - **Deployment**: Use Godot’s export templates for platform-specific builds.
 
 ---
 
-### 2. Integration Testing Plan
-- Validate end-to-end workflows, e.g., placing a building and updating the UI.
+## VII. Timeline and Milestones
+
+| Phase                  | Deadline | Deliverables                         |
+|------------------------|----------|--------------------------------------|
+| Technical Spec         | 11/29    | Complete technical documentation     |
+| Prototype Development  | 12/06    | Core game loop and UI integration    |
+| MVP Completion         | 12/13    | Key mechanics and resource balancing |
+| QA and Final Delivery  | 12/20    | Fully tested and polished product    |
 
 ---
 
-## IX. Timeline and Milestones
-| Phase              | Deadline | Deliverables                         |
-|--------------------|----------|--------------------------------------|
-| Technical Spec     | 11/29    | Finalized document and repo setup    |
-| Prototype          | 12/06    | Game loop and UI integration         |
-| MVP Implementation | 12/13    | Core systems and resource balancing  |
-| QA and Delivery    | 12/20    | Final build and testing              |
+## VIII. Glossary
 
----
-
-## X. Glossary
-
-### Key Terms
-- **Godot Engine**: Game development engine used for 2D/3D projects.
-- **GDScript**: Python-like language for Godot.
-- **TileMap**: A grid-based system for placing objects.
-- **Singleton**: A global, persistent node for shared data.
+- **Godot Engine**: A cross-platform, open-source game engine for 2D and 3D projects.
+- **TileMap**: A node in Godot that facilitates grid-based layouts for games.
+- **Singleton**: A design pattern where a script or node is globally accessible across the game.
+- **GDScript**: Godot’s native scripting language, resembling Python, for implementing game logic.
+- **Finite State Machine (FSM)**: A model for managing states and transitions, ensuring structured game flow.
+- **Pollution Manager**: A system script that tracks, aggregates, and visualizes pollution metrics based on player actions.
+- **Resource Manager**: A centralized system managing resources like energy, finances, and pollution.
+- **Progress Bar**: A UI element used to display numerical data as a visual gauge.
+- **GDUnit**: A testing framework for GDScript, enabling unit and integration tests.
+- **Continuous Integration (CI)**: A development practice where automated tests run frequently to ensure code stability.
 
 ---
