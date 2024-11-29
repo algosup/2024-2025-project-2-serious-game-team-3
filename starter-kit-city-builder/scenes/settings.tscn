@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://c36qejtf5if7t"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_ydyv0"]
+[ext_resource type="AudioStream" uid="uid://diblcm2dll0jr" path="res://audio/[FIXED] Timeless but its the version we all wanted (w adlibs AND AYYE).mp3" id="2_0mmri"]
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="2_c1yy2"]
+[ext_resource type="Theme" uid="uid://di6ar77l4k26w" path="res://menutheme.tres" id="2_f25tv"]
+
+[sub_resource type="GDScript" id="GDScript_qw4jn"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f25tv")
+script = ExtResource("1_ydyv0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_qw4jn")
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="MuteButton" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+text = "  Mute"
+
+[node name="ResolutionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+text = "Resolution
+"
+
+[node name="Resolution" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+selected = 3
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "3840x2060"
+popup/item_3/id = 3
+
+[node name="DisplayLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+text = "Display"
+
+[node name="Display" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f25tv")
+theme_override_fonts/font = ExtResource("2_c1yy2")
+theme_override_font_sizes/font_size = 36
+selected = 0
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_1/text = "Borderless Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0mmri")
+autoplay = true
+
+[connection signal="value_changed" from="VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="VBoxContainer/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="item_selected" from="VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/Display" to="." method="_on_resolution_item_selected"]

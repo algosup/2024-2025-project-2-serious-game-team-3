@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://di6ar77l4k26w"]
+
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="1_05n4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqr15"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5fbs7"]
+content_margin_left = 8.0
+content_margin_top = 35.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3errt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ydgd"]
+
+[resource]
+default_font = ExtResource("1_05n4r")
+default_font_size = 30
+CheckBox/constants/align_to_largest_stylebox = 1
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_yqr15")
+Label/styles/normal = SubResource("StyleBoxEmpty_5fbs7")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_3errt")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_7ydgd")
