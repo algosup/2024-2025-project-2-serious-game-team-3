@@ -17,7 +17,12 @@ func _process(delta):
 	if current_window_size != last_window_size:  # Compare Vector2i types
 		print("Window resized!")
 		last_window_size = current_window_size
+	if Input.is_action_just_pressed("return_to_menu"):
+		print("ui_menu action triggered, returning to menu...")
+		return_to_menu()
 
+func return_to_menu():  # Replace with the path to your menu scene
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0,value/16)
