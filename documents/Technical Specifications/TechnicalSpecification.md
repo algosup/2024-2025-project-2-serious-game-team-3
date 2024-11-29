@@ -409,6 +409,7 @@ func update_visible_grid(viewport_rect: Rect2):
 1. **Parallel Processing**:
 
    - Offload computationally intensive tasks (e.g., pollution simulation or traffic pathfinding) to separate threads or cores if supported by the platform.
+
 ```gdscript
 # Example: Running pathfinding on a separate thread
 var pathfinding_thread = Thread.new()
@@ -421,6 +422,7 @@ func _calculate_paths(data):
     pass
 
 ```
+
 2. **Dynamic Updates**:
 
    - Update game state in smaller increments rather than attempting to compute everything in a single frame.
@@ -442,15 +444,18 @@ The tutorial system aims to guide players through the mechanics and gameplay pra
 1. **Interactive Walkthrough**:
 
    - The tutorial provides step-by-step guidance for essential gameplay elements, such as zoning areas, managing resources, and controlling pollution.
+
 ```gdscript
 # Example: Highlighting UI elements during the tutorial
 func highlight_element(ui_element: Control):
     ui_element.add_color_override("font_color", Color(1, 0, 0)) # Red highlight
 
 ```
+
 2. **Contextual Tips**:
 
    - Display tooltips dynamically based on player actions or when they hover over game elements.
+
 ```gdscript
 # Example: Showing contextual tooltips
 func show_tooltip(message: String, position: Vector2):
@@ -460,6 +465,7 @@ func show_tooltip(message: String, position: Vector2):
     add_child(tooltip)
 
 ```
+
 3. **Progressive Learning**:
    - Introduce mechanics progressively as players advance in the game, ensuring they are not overwhelmed.
 
@@ -482,6 +488,7 @@ The reward system encourages player engagement by setting concrete goals and mil
 
    - Example: "Low Pollution for 5 Years," "1000 Population Milestone," etc.
    - Achievements unlock badges and in-game rewards.
+
 ```gdscript
 # Example: Achievement system
 var achievements = {"low_pollution_5_years": false}
@@ -492,18 +499,21 @@ func unlock_achievement(name: String):
         display_achievement(name)
 
 ```
+
 2. **Dynamic Feedback**:
 
    - Display rewards and achievements prominently to motivate players.
 
 3. **Milestone Notifications**:
    - Notify players of significant achievements with pop-ups or animations.
+
 ```gdscript
 # Example: Milestone notification
 func display_achievement(name: String):
     print("Achievement unlocked: %s" % name)
 
 ```
+
 ### Implementation
 
 1. Maintain a tracking system to monitor conditions for unlocking achievements.
@@ -523,6 +533,7 @@ Dynamic weather (e.g., rain, fog) enhances gameplay immersion and affects pollut
 
    - Rain and fog animations for aesthetic enhancement.
    - Weather transitions based on in-game conditions.
+
 ```gdscript
 # Example: Weather transition
 func set_weather(weather_type: String):
@@ -532,9 +543,11 @@ func set_weather(weather_type: String):
         enable_fog_effect()
 
 ```
+
 2. **Gameplay Impact**:
    - Rain reduces pollution temporarily but increases traffic slowdowns.
    - Fog decreases visibility, affecting traffic efficiency.
+
 ```gdscript
 # Example: Adjusting gameplay impact based on weather
 func adjust_pollution(weather_type: String):
@@ -542,6 +555,7 @@ func adjust_pollution(weather_type: String):
         pollution_level *= 0.9  # 10% reduction
 
 ```
+
 ### Implementation
 
 1. Implement particle systems for rain and fog effects.
@@ -591,6 +605,7 @@ func load_game(file_path: String):
         apply_save_data(save_data)
 
 ```
+
 ---
 
 ## XIV. Building Animations and UI Transitions
@@ -604,6 +619,7 @@ Enhance the user experience through smooth animations and transitions.
 1. **Building Construction Animations**:
 
    - Animate the building process to provide visual feedback when players place structures.
+
 ```gdscript
 # Example: Building construction animation
 func animate_building_construction(building: Sprite):
@@ -613,9 +629,11 @@ func animate_building_construction(building: Sprite):
     tween.start()
 
 ```
+
 2. **UI Transitions**:
 
    - Use fade-ins, slide-ins, and other transitions for menus and notifications.
+
 ```gdscript
 # Example: Sliding menu transition
 func slide_in_menu(menu: Control):
@@ -624,6 +642,7 @@ func slide_in_menu(menu: Control):
     menu.move_local_x(menu.rect_size.x, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 
 ```
+
 3. **Real-Time Feedback**:
    - Display dynamic effects, such as progress bars, during ongoing actions.
 
