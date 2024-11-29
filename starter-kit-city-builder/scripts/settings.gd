@@ -60,3 +60,7 @@ func _on_display_item_selected(index: int):
 	# Save the selected mode
 	ProjectSettings.set_setting("display/window/mode", index)
 	ProjectSettings.save()
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
