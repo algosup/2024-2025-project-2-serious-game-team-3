@@ -74,6 +74,7 @@ popup/item_3/text = "3840x2060"
 popup/item_3/id = 3
 
 [node name="DisplayLabel" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_f25tv")
 theme_override_fonts/font = ExtResource("2_c1yy2")
