@@ -25,11 +25,18 @@
     - [Key Accomplishments](#key-accomplishments-2)
     - [Next Week](#next-week-2)
     - [Other Notes](#other-notes-2)
+  - [Weekly Report - Week 4](#weekly-report---week-4)
+    - [Overview](#overview-3)
+    - [Goals](#goals-3)
+    - [Key Accomplishments](#key-accomplishments-3)
+    - [Next Week](#next-week-3)
+    - [Other Notes](#other-notes-3)
 
 <details>
 
 ## Scope
 This document copies all the weekly reports in a single document, providing a quick overview of the project’s goals, key accomplishments and challenges.
+
 
 ## Weekly Report - Week 1
 
@@ -73,6 +80,7 @@ We held a meeting on Wednesday where we concluded on creating a sustainable city
 ### Other Notes
 
 To conclude, the week started with a lot of passion and many ideas. All team members are eager to develop an educational game, and I hope things will continue to progress smoothly.
+
 
 ## Weekly Report - Week 2
 
@@ -123,6 +131,7 @@ Final meeting decided to focus on the impact of CO2 emissions and the carbon foo
 
 The week was productive, but we didn't meet all requirements due to limited project time. We will complete everything next week with available time.
 
+
 ## Weekly Report - Week 3
 
 ### Overview
@@ -166,3 +175,32 @@ This week, our main objective was to start the game prototype, aiming to have a 
 ### Other Notes
 
 The week was moderately productive. While we didn't complete all our goals, we exceeded expectations on the tasks we did complete. This delay does not affect the project deadlines, and we are on track.
+
+
+## Weekly Report - Week 4
+
+### Overview
+
+We had three hours of project time this week, which was not enough to complete all our tasks.
+
+### Goals
+
+1. **Submit Technical Specification Document:**
+   - Assigned to Lucas Aubard. Responsible for submitting the technical document before the deadline.
+
+2. **User Manual:**
+   - Assigned to Jason Grosso. Responsible for creating a user-friendly game guidebook to explain how the game functions.
+
+### Key Accomplishments
+
+- ✅ Completed the Technical Specification Document.
+
+### Next Week
+
+1. Conduct unit tests to ensure the game is bug-free.
+2. Continue implementing the basic core mechanics of the game.
+3. Continue improving the game UI.
+
+### Other Notes
+
+The week was not productive due to a lack of project time. We need to work over the weekend to catch up and meet deadlines. We have critical tasks running out of their due date that must be completed as soon as possible to avoid delays and potential issues later.
