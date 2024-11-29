@@ -14,7 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_f25tv")
 script = ExtResource("1_ydyv0")
-metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -70,11 +69,10 @@ popup/item_1/text = "1600x900"
 popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
-popup/item_3/text = "3840x2060"
+popup/item_3/text = "3840x2160"
 popup/item_3/id = 3
 
 [node name="DisplayLabel" type="Label" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_f25tv")
 theme_override_fonts/font = ExtResource("2_c1yy2")

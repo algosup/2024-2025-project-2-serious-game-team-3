@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://vgwrcfy1qawf"]
+[gd_scene load_steps=26 format=3 uid="uid://vgwrcfy1qawf"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_7iria"]
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_jybm7"]
 [ext_resource type="Environment" uid="uid://jbptgqvstei3" path="res://scenes/main-environment.tres" id="1_yndf3"]
 [ext_resource type="Script" path="res://scripts/structure.gd" id="2_54v6r"]
@@ -30,6 +31,7 @@ font_size = 24
 shadow_color = Color(0, 0, 0, 0.392157)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_7iria")
 
 [node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "cash_display")]
 script = ExtResource("1_jybm7")
