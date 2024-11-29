@@ -7,12 +7,10 @@
 
 [node name="Settings" type="Control"]
 layout_mode = 3
-anchor_left = -0.35
 anchor_top = -0.000925926
 anchor_right = 0.99974
 anchor_bottom = 0.999074
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = 0.000243902
 theme = ExtResource("2_f25tv")
 script = ExtResource("1_ydyv0")
 
@@ -29,10 +27,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1345.0
-offset_top = 4.0
-offset_right = 1345.0
-offset_bottom = 4.0
+offset_left = 7.0
+offset_top = -4.0
+offset_right = -1339.0
+offset_bottom = -3.99976
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_f25tv")
