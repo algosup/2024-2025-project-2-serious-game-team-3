@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://gisc1m3gjvm0"]
+
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="1_nri2o"]
+
+[resource]
+default_font = ExtResource("1_nri2o")
+default_font_size = 36
+Button/font_sizes/font_size = 36

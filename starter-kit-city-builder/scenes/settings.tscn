@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_ydyv0"]
 [ext_resource type="AudioStream" uid="uid://diblcm2dll0jr" path="res://audio/[FIXED] Timeless but its the version we all wanted (w adlibs AND AYYE).mp3" id="2_0mmri"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="2_c1yy2"]
-[ext_resource type="Theme" uid="uid://di6ar77l4k26w" path="res://menutheme.tres" id="2_f25tv"]
+[ext_resource type="Theme" uid="uid://di6ar77l4k26w" path="res://settings.tres" id="2_f25tv"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = -0.35
+anchor_top = -0.000925926
+anchor_right = 0.99974
+anchor_bottom = 0.999074
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_f25tv")
@@ -28,8 +29,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1345.0
+offset_top = 4.0
+offset_right = 1345.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_f25tv")
 
 [node name="VolumeLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -95,6 +101,8 @@ popup/item_2/id = 2
 [node name="ReturnToMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_f25tv")
+theme_type_variation = &"FlatButton"
 text = "Return to menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

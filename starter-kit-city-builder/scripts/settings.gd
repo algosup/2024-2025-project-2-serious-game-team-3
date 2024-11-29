@@ -2,14 +2,6 @@ extends Control
 
 var last_window_size = Vector2i.ZERO  # Keep track of the last known window size
 # Called when the node enters the scene tree for the first time.
-
-func _ready():
-	$VBoxContainer/Resolution.theme = Theme.new()
-	$VBoxContainer/Resolution.theme.default_font = FontFile.new()
-	$VBoxContainer/Resolution.theme.default_font.font_data = load("res://fonts/lilita_one_regular.ttf")
-	$VBoxContainer/Display.theme = Theme.new()
-	$VBoxContainer/Display.theme.default_font = FontFile.new()
-	$VBoxContainer/Display.theme.default_font.font_data = load("res://fonts/lilita_one_regular.ttf")
 	
 	
 func _process(delta):
