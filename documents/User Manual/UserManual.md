@@ -1,12 +1,19 @@
 # User Manual
 
-<img width=100% src="/documents/User Manual/images/Green_City.png" alt="User Manual" />
+<img heigth=100% src="/documents/User Manual/images/Green_City.png" alt="User Manual" />
 
 ## Index
 
-Index
-Welcome to Green City
-Set Up and Getting Started
+- Index
+- Welcome to Green City
+- Set Up and Getting Started
+  - Set Up
+  - Getting Started
+- Improving the City
+  - Ameliorations
+  - The Different Gauges
+- Settings
+- Get Help
 
 ---
 
@@ -50,9 +57,28 @@ You will arrive on a pre-existing city that you will have to improve. Good Luck.
 
 <img width=100% src="/documents/User Manual/images/Starting_City.png" alt="starting city"/>
 
-### Improving the City
+## Improving the City
+
+When you start the game, you arrive in a city halfway between industry and ecology.
+
+It is your decisions that will influence the direction this city will take.
+
+Your decision will come in the form of ameliorations that you will give to the different building of your city.
+
+### Ameliorations
+
+Amelioration come in two "flavor":
+
+- Major to medium increase in money generation with a major to medium increase in CO2 production.
+- Medium to small increase in money generation with a small to negative increase in CO2 production.
 
 ### The Different Gauges
+
+On the top left corner of the screen you will find multiple gauges:
+
+<!-- 
+TODO insert image of the gauges 
+-->
 
 ---
 
