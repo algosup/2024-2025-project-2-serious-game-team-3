@@ -1,5 +1,7 @@
 <div align="center">
 
+---
+
 # Test Plan | Team 3
 | Document Type  | Specification           |
 | -------------- | ----------------------- |
@@ -9,7 +11,7 @@
 
 <br>
 
-</div>
+---
 
 ## Test Plan approval
 | Role                      | Name                    | Signature | Date        |
@@ -23,6 +25,8 @@
 | Quality Assurance         | Habi CAILLEAU           |           | 04/10/2024  |
 
 <br>
+
+</div>
 
 ---
 
@@ -209,7 +213,7 @@ Test levels define the stages at which different types of testing are performed.
 
 - Unit Testing:
 
-**Focus**: Verify individual modules and scripts, such as ResourceManager.gd and PollutionManager.gd.
+**Focus**: Verify individual modules and scripts, such as `ResourceManager.gd` and `PollutionManager.gd`.
 
 **Tools**: GDUnit.
 
@@ -290,7 +294,7 @@ The test types describe the different approaches and methodologies to be used ba
 
 **Objective**: Verify the functionality of individual scripts and modules.
 
-**Scope**: Critical scripts such as ResourceManager.gd and PollutionManager.gd.
+**Scope**: Critical scripts such as `ResourceManager.gd` and `PollutionManager.gd`.
 
 **Tools**: GDUnit.
 
@@ -452,7 +456,7 @@ Here are the templates used during the project :
 
 Test criteria regulate all testing activities, ensuring consistency and quality. In the GreenCity project, we will use two key types: Suspension Criteria and Exit Criteria.
 
-    a. Suspension criteria
+#### a. Suspension criteria
 
 Suspension criteria establish the conditions under which all testing activities must be temporarily halted. This prevents wasted effort when critical issues compromise the validity of ongoing tests.
 
@@ -461,7 +465,7 @@ Suspension criteria establish the conditions under which all testing activities 
 - Once the defect is addressed, testing will resume from the point of suspension, ensuring comprehensive coverage without missing crucial steps
 
 
-    b. Exit criteria
+#### b. Exit criteria
 
 Exit criteria are predefined goals or conditions that must be met to conclude a test phase successfully. These criteria ensure that the system meets the necessary quality standards before progressing to the next phase.
 
@@ -471,6 +475,8 @@ Exit criteria are predefined goals or conditions that must be met to conclude a 
 - Qualitative Goals: No high-priority bugs should remain unresolved, and all major functionalities ( resource management, pollution tracking) must operate as expected.
 
 - Documentation: All test outcomes must be documented, and the test status must be clearly recorded to ensure transparency.
+
+<br>
 
 |Name|Purpose|Link|
 |-:|:-|:-:|
@@ -519,7 +525,27 @@ Indicates the effectiveness of testing in catching defects before release. Highe
 
 ## VII. Conclusion 
 
+The "Green City" testing plan outlines a comprehensive approach to ensuring the game's quality, educational value, and performance. By systematically validating core functionalities, educational integrity, and user experience, this plan guarantees that the game effectively meets its goals of teaching sustainability through engaging gameplay.
+
+Key testing metrics such as Defect Density, Test Coverage, and Defect Detection Efficiency (DDE) provide measurable insights into code quality, requirement validation, and testing effectiveness. Establishing clear Suspension and Exit Criteria ensures that critical defects are addressed promptly, and testing phases conclude only when predefined quality standards are met.
+
+Through rigorous manual and automated testing, coupled with efficient defect management via GitHub, "Green City" aims to deliver a stable, user-friendly, and educational experience, preparing it for a successful launch and positive impact on its audience.
 
 
-## VIII. Glossary 
+## VIII. Glossary
 
+| Term                  | Definition                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| **Test Coverage**      | Percentage of requirements covered by test cases.                          |
+| **Defect Density**     | Number of defects per size of release (e.g., lines of code).               |
+| **Unit Testing**       | Testing individual components of the game.                                 |
+| **Integration Testing**| Testing interactions between components.                                   |
+| **System Testing**     | End-to-end testing of the game’s functionality as a whole.                 |
+| **Regression Testing** | Verifying new changes don’t break existing features.                       |
+| **Bug Report**         | Document detailing a defect, including steps to reproduce and expected results. |
+| **CI/CD Pipeline**     | Automated process for integrating and deploying code changes.              |
+| **Test Case** | A test case is a set of conditions or variables under which a tester will determine if features is working as it was originally established for it to do. |
+
+# note :
+
+quand je mentionne un document(management.gd), il faut que je le mette en mode code
