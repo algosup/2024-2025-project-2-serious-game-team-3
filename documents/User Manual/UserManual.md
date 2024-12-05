@@ -1,27 +1,14 @@
 # User Manual
 
-## Green City
+<img width=100% src="/documents/User Manual/images/Green_City.png" alt="User Manual" />
 
-### Index
+## Index
 
 Index
 Welcome to Green City
-Quick Start
-Controls
-Main Menu
-Starting a New Game
-User Interface
-Building your City
-Roads
-Buildings
-Decoration
-Making your City Prosper
-Citizens
-Economy
-Pollution
-Editor Tools
-Customer Service
-Credits
+Set Up and Getting Started
+
+---
 
 ## Welcome to Green City
 
@@ -31,34 +18,44 @@ Improve your city by buiding new infrastructres or improving the old ones. You w
 
 Managing the city is an exciting challenge, and we're here to help you to get started!
 
-## Quick Start
+---
 
-## Controls
+## Set Up and Getting Started
 
-## Main Menu
+### Set Up
 
-## Starting a New Game
+First of all, before playing the game you have to install it, to do that go to the GitHub Repositorie of the game:
+<https://github.com/algosup/2024-2025-project-2-serious-game-team-3/releases>
 
-## User Interface
+Depending on your Operating System download the corresponding file.
 
-## Building your City
+| Operating System | File to Download |
+| :---: | :---: |
+| Windows | Green_City.exe |
+| MacOS | Green_City.dmg |
 
-## Roads
+Double Click on the downloaded file to launch the game
 
-## Buildings
+### Getting Started
 
-## Decoration
+When you first enter the game you will arrive on this menu:
 
-## Making your City Prosper
+<!-- 
+TODO insert image of the main menu
+ -->
 
-## Citizens
+We will explore the different parameters further down in the user manual, for now let's click on New Game to start playing.
 
-## Economy
+You will arrive on a pre-existing city that you will have to improve. Good Luck.
 
-## Pollution
+<img width=100% src="/documents/User Manual/images/Starting_City.png" alt="starting city"/>
 
-## Editor Tools
+### Improving the City
 
-## Customer Service
+### The Different Gauges
 
-## Credits
+---
+
+## Settings
+
+## Get Help
