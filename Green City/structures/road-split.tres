@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("2_xa71m")
+name = "road_split"
 model = ExtResource("1_ku0rj")
 price = 25
+type = "environment"

@@ -4,8 +4,6 @@ extends Node3D
 
 var map:DataMap
 
-var index:int = 0 # Index of structure being built
-
 @export var selector:Node3D # The 'cursor'
 @export var selector_container:Node3D # Node that holds a preview of the structure
 @export var view_camera:Camera3D # Used for raycasting mouse
@@ -21,7 +19,7 @@ func _ready():
 		map = ResourceLoader.load("res://maps/premade_map.res")
 	if not map:
 		map = DataMap.new()  # Create an empty map if both loading attempts fail
-	
+
 	plane = Plane(Vector3.UP, Vector3.ZERO)
 
 	# Create new MeshLibrary dynamically, can also be done in the editor
@@ -41,41 +39,53 @@ func _ready():
 	for cell in map.structures:
 		gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
 
-	# Update the structure preview and cash display
-	update_structure()
 	update_cash()
 
-
-
-
 func _process(delta):
-	
 	# Controls
-	
 	action_rotate() # Rotates selection 90 degrees
-	action_structure_toggle() # Toggles between structures
-	
+
 	action_save() # Saving
 	action_load() # Loading
-	
+
 	if Input.is_action_just_pressed("reset"):
-			print("Reset button pressed!")  # Debug print to confirm input detection
-			action_reset()
-	
+		print("Reset button pressed!")  # Debug print to confirm input detection
+		action_reset()
+
 	# Map position based on mouse
-	
 	var world_position = plane.intersects_ray(
 		view_camera.project_ray_origin(get_viewport().get_mouse_position()),
-		view_camera.project_ray_normal(get_viewport().get_mouse_position()))
+		view_camera.project_ray_normal(get_viewport().get_mouse_position())
+	)
 
-	var gridmap_position = Vector3(round(world_position.x), 0, round(world_position.z))
-	selector.position = lerp(selector.position, gridmap_position, delta * 40)
-	
-	action_build(gridmap_position)
-	action_demolish(gridmap_position)
+	if world_position != null:
+		var grid_x = round(world_position.x)
+		var grid_z = round(world_position.z)
+		var gridmap_position = Vector3i(grid_x, 0, grid_z)
+		selector.position = lerp(selector.position, Vector3(grid_x, 0, grid_z), delta * 40)
+
+	# Raycast to check for building/environment selection based on mouse input
+	if Input.is_action_just_pressed("click"):
+		print("Click detected")  # Debug print to confirm input detection
+		if world_position != null:
+			var clicked_position = Vector3i(round(world_position.x), 0, round(world_position.z))
+			print("Clicked GridMap position: ", clicked_position)  # Debug print to confirm gridmap position
+
+			var cell_item = gridmap.get_cell_item(clicked_position)
+			if cell_item != -1 and cell_item < structures.size():
+				var structure = structures[cell_item]
+				if structure.type == "building":
+					print("Building clicked: ", structure.name)
+				elif structure.type == "environment":
+					print("Environment clicked: ", structure.name)
+				else:
+					print("Unknown structure type clicked: ", structure.name)
+			else:
+				print("No structure found at clicked position.")
+
+
 
 # Retrieve the mesh from a PackedScene, used for dynamically creating a MeshLibrary
-
 func get_mesh(packed_scene: PackedScene) -> Mesh:
 	var scene_state: SceneState = packed_scene.get_state()
 	for i in range(scene_state.get_node_count()):
@@ -87,62 +97,19 @@ func get_mesh(packed_scene: PackedScene) -> Mesh:
 					return prop_value.duplicate()  # Return the duplicated Mesh instance
 	return null  # Return null if no mesh is found
 
-# Build (place) a structure
-
-func action_build(gridmap_position):
-	if Input.is_action_just_pressed("build"):
-		
-		var previous_tile = gridmap.get_cell_item(gridmap_position)
-		gridmap.set_cell_item(gridmap_position, index, gridmap.get_orthogonal_index_from_basis(selector.basis))
-		
-		if previous_tile != index:
-			map.cash -= structures[index].price
-			update_cash()
-
-# Demolish (remove) a structure
-
-func action_demolish(gridmap_position):
-	if Input.is_action_just_pressed("demolish"):
-		gridmap.set_cell_item(gridmap_position, -1)
-
 # Rotates the 'cursor' 90 degrees
-
 func action_rotate():
 	if Input.is_action_just_pressed("rotate"):
 		selector.rotate_y(deg_to_rad(90))
 
-# Toggle between structures to build
-
-func action_structure_toggle():
-	if Input.is_action_just_pressed("structure_next"):
-		index = wrap(index + 1, 0, structures.size())
-	
-	if Input.is_action_just_pressed("structure_previous"):
-		index = wrap(index - 1, 0, structures.size())
-
-	update_structure()
-
-# Update the structure visual in the 'cursor'
-
-func update_structure():
-	# Clear previous structure preview in selector
-	for n in selector_container.get_children():
-		selector_container.remove_child(n)
-		
-	# Create new structure preview in selector
-	var _model = structures[index].model.instantiate()
-	selector_container.add_child(_model)
-	_model.position.y += 0.25
-	
 func update_cash():
 	cash_display.text = "$" + str(map.cash)
 
 # Saving/load
-
 func action_save():
 	if Input.is_action_just_pressed("save"):
 		print("Saving current game state...")
-		
+
 		map.structures.clear()
 		for cell in gridmap.get_used_cells():
 			var data_structure:DataStructure = DataStructure.new()
@@ -152,19 +119,19 @@ func action_save():
 			map.structures.append(data_structure)
 
 		ResourceSaver.save(map, "res://maps/saved_map.res")  # Save to the user's directory to persist progress
-	
+
 func action_load():
 	if Input.is_action_just_pressed("load"):
 		print("Loading map...")
-		
+
 		gridmap.clear()
-		
+
 		map = ResourceLoader.load("res://maps/saved_map.res")
 		if not map:
 			map = DataMap.new()
 		for cell in map.structures:
 			gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
-			
+
 		update_cash()
 		print("Loaded map cash: ", map.cash)
 
@@ -206,16 +173,9 @@ func action_reset():
 		# Update the current map instance to reflect the premade map state
 		map = premade_map
 
+		# Reset the cash to the initial value of 10,000
+		map.cash = 10000
+
 		# Update the cash display based on the reset premade map's cash value
 		update_cash()
 		print("Reset completed. Cash: ", map.cash)
-
-
-
-
-
-
-
-
-	
-	

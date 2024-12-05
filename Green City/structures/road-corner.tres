@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("3_oloyn")
+name = "road_corner"
 model = ExtResource("1_r8n8k")
 price = 25
+type = "environment"

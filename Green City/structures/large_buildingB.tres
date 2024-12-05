@@ -162,5 +162,7 @@ _bundled = {
 
 [resource]
 script = ExtResource("2_lv8db")
+name = "tower"
 model = SubResource("PackedScene_en0wr")
 price = 25
+type = "building"

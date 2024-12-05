@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("2_470aq")
+name = "road_light"
 model = ExtResource("1_i07jw")
 price = 25
+type = "environment"

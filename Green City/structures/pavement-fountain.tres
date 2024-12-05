@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("2_wqyte")
+name = "fountain"
 model = ExtResource("1_r2n53")
 price = 10
+type = "environment"
