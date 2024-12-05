@@ -1,6 +1,6 @@
 # User Manual
 
-<img heigth=100% src="/documents/User Manual/images/Green_City.png" alt="User Manual" />
+<img width=100% src="/documents/User Manual/images/Green_City.png" alt="User Manual" />
 
 ## Index
 
@@ -55,7 +55,7 @@ We will explore the different parameters further down in the user manual, for no
 
 You will arrive on a pre-existing city that you will have to improve. Good Luck.
 
-<img width=100% src="/documents/User Manual/images/Starting_City.png" alt="starting city"/>
+<img width=80% src="/documents/User Manual/images/Starting_City.png" alt="starting city"/>
 
 ## Improving the City
 
