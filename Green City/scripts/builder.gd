@@ -166,6 +166,7 @@ func action_load():
 			gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
 			
 		update_cash()
+		print("Loaded map cash: ", map.cash)
 
 func action_reset():
 	if Input.is_action_just_pressed("reset"):
@@ -206,6 +207,7 @@ func action_reset():
 
 		# Update the cash display after resetting
 		update_cash()
+		print("Reset completed. Cash: ", map.cash)
 
 		print("Reset completed.")
 
