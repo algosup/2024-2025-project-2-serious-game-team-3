@@ -172,6 +172,15 @@ func action_reset():
 	if Input.is_action_just_pressed("reset"):
 		print("Resetting to premade map...")
 
+		# Delete the saved map file if it exists
+		var dir_access = DirAccess.open("res://")
+		if dir_access and dir_access.file_exists("res://maps/saved_map.res"):
+			var delete_error = dir_access.remove("res://maps/saved_map.res")
+			if delete_error == OK:
+				print("Saved map file deleted successfully.")
+			else:
+				print("Failed to delete saved map file. Error code: ", delete_error)
+
 		# Load the premade map
 		var premade_map = ResourceLoader.load("res://maps/premade_map.res")
 		if not premade_map:
@@ -179,7 +188,6 @@ func action_reset():
 			premade_map = DataMap.new()
 
 		# Clear the gridmap completely
-		print("Clearing GridMap...")
 		gridmap.clear()
 
 		# Reload the MeshLibrary to avoid any residual data issues
@@ -192,24 +200,21 @@ func action_reset():
 		gridmap.mesh_library = mesh_library
 
 		# Load the structures from the premade map into the gridmap
-		print("Loading structures from premade map...")
 		for cell in premade_map.structures:
 			gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
 
 		# Update the current map instance to reflect the premade map state
 		map = premade_map
 
-		# Overwrite saved game state with the premade map state
-		print("Saving the reset map state to saved_map.res...")
-		var save_result = ResourceSaver.save(map, "user://saved_map.res")
-		if save_result != OK:
-			print("Failed to save the reset map: ", save_result)
-
-		# Update the cash display after resetting
+		# Update the cash display based on the reset premade map's cash value
 		update_cash()
 		print("Reset completed. Cash: ", map.cash)
 
-		print("Reset completed.")
+
+
+
+
+
 
 
 	
