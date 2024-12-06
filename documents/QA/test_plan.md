@@ -14,15 +14,15 @@
 ---
 
 ## Test Plan approval
-| Role                      | Name                    | Signature | Date        |
-| --------------------------| ----------------------- | --------- | ----------  |
-| Project Manager           | Bistrel TSANGUE         |           | 05/12/2024  |
-| Program Manager           | Guillaume DERAMCHI      |           | 05/12/2024  |
-| Technical Lead            | Lucas AUBARD            |           | 05/12/2024  |
-| Senior Software Engineer  | Manech LAGUENS          |           | 05/12/2024  |
-| Junior Software Engineer  | Manech LAGUENS          |           | 05/12/2024  |
-| Technical Writer          | Jason GROSSO            |           | 05/12/2024  |
-| Quality Assurance         | Habi CAILLEAU           |           | 05/12/2024  |
+| Role                      | Name                    | Signature  | Date        |
+| --------------------------| ----------------------- | ---------- | ----------  |
+| Project Manager           | Bistrel TSANGUE         |     ✅     | 05/12/2024  |
+| Program Manager           | Guillaume DERAMCHI      |     ✅     | 05/12/2024  |
+| Technical Lead            | Lucas AUBARD            |     ✅     | 05/12/2024  |
+| Senior Software Engineer  | Manech LAGUENS          |     ✅     | 05/12/2024  |
+| Junior Software Engineer  | Manech LAGUENS          |     ✅     | 05/12/2024  |
+| Technical Writer          | Jason GROSSO            |     ✅     | 05/12/2024  |
+| Quality Assurance         | Habi CAILLEAU           |     ✅     | 05/12/2024  |
 
 <br>
 
@@ -402,7 +402,6 @@ The following structure will be used for Green City, with a dedicated template f
 | Pre-conditions | Requirements for the test |
 | Steps | Steps to go from the current state to the expected result |
 | Expected Result |Actual result of the test (could differ from what's expected) |
-| Status | Status of the test (To Test , Testing , Tested )  |
 | Importance | Defines if a test is important or not. Using symbols : Low / Medium / High |
 
 <br>
