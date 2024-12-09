@@ -3,12 +3,8 @@
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="1_nri2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cv8t"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
-border_blend = true
+shadow_size = 2
 
 [resource]
 default_font = ExtResource("1_nri2o")

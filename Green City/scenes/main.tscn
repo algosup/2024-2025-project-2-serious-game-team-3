@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://vgwrcfy1qawf"]
+[gd_scene load_steps=29 format=3 uid="uid://vgwrcfy1qawf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7iria"]
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_jybm7"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bng0d1sou7c8a" path="res://sprites/coin.png" id="17_cjamx"]
 [ext_resource type="Resource" uid="uid://2fgh7jnqylhx" path="res://structures/large_buildingB.tres" id="17_eamrl"]
 [ext_resource type="Resource" uid="uid://2dugf0tyh08s" path="res://structures/large_buildingA.tres" id="17_iv05t"]
+[ext_resource type="Theme" uid="uid://cx5l3cfqbt417" path="res://game_label.tres" id="24_wn6e2"]
 [ext_resource type="Script" path="res://scripts/information_display.gd" id="25_nqssb"]
 [ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="26_gqlh6"]
 
@@ -99,7 +100,7 @@ offset_left = 68.0
 offset_top = 25.0
 offset_right = 190.0
 offset_bottom = 63.0
-theme = ExtResource("26_gqlh6")
+theme = ExtResource("24_wn6e2")
 text = "$10,000"
 label_settings = SubResource("LabelSettings_q176i")
 
@@ -141,15 +142,15 @@ offset_left = 26.0
 offset_top = 85.0
 offset_right = 181.0
 offset_bottom = 127.0
-theme = ExtResource("26_gqlh6")
+theme = ExtResource("24_wn6e2")
 text = "Pollution: "
 
 [node name="PollutionGauge" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 146.0
-offset_right = 218.0
-offset_bottom = 227.0
-theme = ExtResource("26_gqlh6")
+offset_left = 30.0
+offset_top = 145.0
+offset_right = 288.0
+offset_bottom = 229.0
+theme = ExtResource("24_wn6e2")
 max_value = 500.0
 value = 250.0

@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Starter Kit City Builder"
+config/name="Green City"
+config/description="The insane Team3 game, Green City!!!!"
 config/tags=PackedStringArray("starterkit")
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.92549, 0.92549, 0.960784, 1)
-boot_splash/image="res://splash-screen.png"
-config/icon="res://icon.png"
+boot_splash/image="res://green-city.png"
+config/icon="res://green-city.png"
 
 [display]
 

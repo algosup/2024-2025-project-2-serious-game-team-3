@@ -161,14 +161,24 @@ func action_rotate():
 
 # Update the resources and gauge based on the current pollution level
 func update_resources():
+	if not is_instance_valid(cash_display):
+		print("Error: cash_display is null!")
+		return
+	if not is_instance_valid(pollution_label):
+		print("Error: pollution_label is null!")
+		return
 	if not is_instance_valid(pollution_gauge):
 		print("Error: pollution_gauge is null!")
 		return
 
-	# Update the pollution gauge value
+	# Update cash display
+	cash_display.text = "$" + str(map.cash)
+
+	# Update pollution label and gauge
+	pollution_label.text = "Pollution: " + str(map.pollution)
 	pollution_gauge.value = map.pollution
 
-	# Adjust the fill color based on pollution level
+	# Adjust ProgressBar fill color
 	var sb = StyleBoxFlat.new()
 	pollution_gauge.add_theme_stylebox_override("fill", sb)
 
@@ -178,6 +188,7 @@ func update_resources():
 		sb.bg_color = Color(1, 1, 0)  # Yellow for medium pollution
 	else:
 		sb.bg_color = Color(1, 0, 0)  # Red for high pollution
+
 
 
 func simulate_pollution():
