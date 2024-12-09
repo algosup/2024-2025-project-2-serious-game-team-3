@@ -8,5 +8,5 @@ script = ExtResource("2_l3bhw")
 name = "Coal Factory"
 model = ExtResource("1_agf83")
 price = 25
-pollution_effect = 0
+pollution_effect = 20
 type = "building"

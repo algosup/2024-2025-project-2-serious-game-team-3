@@ -9,7 +9,7 @@ class_name Structure
 
 @export_subgroup("Gameplay")
 @export var price:int # Price of the structure when building
-@export var pollution_effect: int = 0 # Increase or decrease in pollution
+@export var pollution_effect:float # Increase or decrease in pollution
 
 @export_subgroup("Type")
 @export var type: String = "Type"

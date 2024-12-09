@@ -8,4 +8,5 @@ script = ExtResource("2_xa71m")
 name = "road_split"
 model = ExtResource("1_ku0rj")
 price = 25
+pollution_effect = 0.0
 type = "environment"

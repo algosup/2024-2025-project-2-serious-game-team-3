@@ -165,4 +165,5 @@ script = ExtResource("2_lv8db")
 name = "tower"
 model = SubResource("PackedScene_en0wr")
 price = 25
+pollution_effect = 0.0
 type = "building"

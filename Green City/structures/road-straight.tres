@@ -8,4 +8,5 @@ script = ExtResource("1_5fmmh")
 name = "road"
 model = ExtResource("1_ump1f")
 price = 25
+pollution_effect = 0.0
 type = "environment"

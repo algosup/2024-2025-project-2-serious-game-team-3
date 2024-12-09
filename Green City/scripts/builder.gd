@@ -8,8 +8,13 @@ var map:DataMap
 @export var selector_container:Node3D # Node that holds a preview of the structure
 @export var view_camera:Camera3D # Used for raycasting mouse
 @export var gridmap:GridMap
-@export var cash_display:Label
+@export var interval_time: float = 1.0
+@export var pollution_gauge: ProgressBar
+@export var cash_display: Label
+@export var pollution_label: Label
 
+
+var timer: Timer
 var plane:Plane # Used for raycasting mouse
 
 func _ready():
@@ -21,7 +26,18 @@ func _ready():
 		map = DataMap.new()  # Create an empty map if both loading attempts fail
 
 	plane = Plane(Vector3.UP, Vector3.ZERO)
-
+	
+	print(get_node_or_null("CanvasLayer/Control/PollutionGauge"))
+	print("Cash Display Node: ", cash_display)
+	print("Pollution Label Node: ", pollution_label)
+	
+	timer = Timer.new()
+	timer.wait_time = interval_time
+	timer.one_shot = false
+	timer.connect("timeout", Callable(self, "_on_pollution_timer_timeout"))
+	add_child(timer)
+	timer.start()
+	
 	# Create new MeshLibrary dynamically, can also be done in the editor
 	var mesh_library = MeshLibrary.new()
 
@@ -39,7 +55,7 @@ func _ready():
 	for cell in map.structures:
 		gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
 
-	update_cash()
+	update_resources()
 
 @onready var info_panel = get_node("/root/Main/CanvasLayer/Control/Panel")
 var last_clicked_position: Vector3i = Vector3i(-1, -1, -1)
@@ -105,7 +121,26 @@ func _process(delta):
 				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
 				print("No structure found at clicked position.")
 
+@onready var data_map = get_node("data_map.gd")
 
+func apply_building_pollution_effect(building: Structure):
+	if not pollution_gauge:
+		print("Error: pollution_gauge is null!")
+		return
+	if not map:
+		print("Error: map is null!")
+		return
+
+	map.pollution += building.pollution_effect
+	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
+	update_resources()
+	print("Pollution changed by: ", building.pollution_effect, ". New pollution level: ", map.pollution)
+
+
+func _on_pollution_timer_timeout():
+	for building in structures:
+		apply_building_pollution_effect(building)
+		
 # Retrieve the mesh from a PackedScene, used for dynamically creating a MeshLibrary
 func get_mesh(packed_scene: PackedScene) -> Mesh:
 	var scene_state: SceneState = packed_scene.get_state()
@@ -123,8 +158,40 @@ func action_rotate():
 	if Input.is_action_just_pressed("rotate"):
 		selector.rotate_y(deg_to_rad(90))
 
-func update_cash():
-	cash_display.text = "$" + str(map.cash)
+
+# Update the resources and gauge based on the current pollution level
+func update_resources():
+	if not is_instance_valid(pollution_gauge):
+		print("Error: pollution_gauge is null!")
+		return
+
+	# Update the pollution gauge value
+	pollution_gauge.value = map.pollution
+
+	# Adjust the fill color based on pollution level
+	var sb = StyleBoxFlat.new()
+	pollution_gauge.add_theme_stylebox_override("fill", sb)
+
+	if map.pollution < pollution_gauge.max_value / 3:
+		sb.bg_color = Color(0, 1, 0)  # Green for low pollution
+	elif map.pollution < (2 * pollution_gauge.max_value) / 3:
+		sb.bg_color = Color(1, 1, 0)  # Yellow for medium pollution
+	else:
+		sb.bg_color = Color(1, 0, 0)  # Red for high pollution
+
+
+func simulate_pollution():
+	for building in map.structures:
+		print("Building type: ", typeof(building))
+		print("Building class: ", building.get_class())
+		if building is DataStructure:
+			map.pollution += building.pollution_effect
+		else:
+			print("Error: Object in map.structures is not a DataStructure!")
+	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
+	update_resources()
+
+
 
 # Saving/load
 func action_save():
@@ -153,7 +220,7 @@ func action_load():
 		for cell in map.structures:
 			gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
 
-		update_cash()
+		update_resources()
 		print("Loaded map cash: ", map.cash)
 
 func action_reset():
@@ -198,5 +265,5 @@ func action_reset():
 		map.cash = 10000
 
 		# Update the cash display based on the reset premade map's cash value
-		update_cash()
+		update_resources()
 		print("Reset completed. Cash: ", map.cash)

@@ -8,4 +8,5 @@ script = ExtResource("2_q3i1h")
 name = "red"
 model = ExtResource("1_v5apy")
 price = 50
+pollution_effect = 0.0
 type = "building"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://vgwrcfy1qawf"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_7iria"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_7iria"]
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_jybm7"]
 [ext_resource type="Environment" uid="uid://jbptgqvstei3" path="res://scenes/main-environment.tres" id="1_yndf3"]
 [ext_resource type="Script" path="res://scripts/structure.gd" id="2_54v6r"]
@@ -37,14 +37,16 @@ shadow_color = Color(0, 0, 0, 0.392157)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_7iria")
 
-[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "cash_display")]
+[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "pollution_gauge", "cash_display", "pollution_label")]
 script = ExtResource("1_jybm7")
 structures = Array[ExtResource("2_54v6r")]([ExtResource("2_bwyku"), ExtResource("3_o6o81"), ExtResource("3_6fpyf"), ExtResource("7_kqu4g"), ExtResource("8_1swhv"), ExtResource("4_b632v"), ExtResource("8_4il2q"), ExtResource("5_v5o2m"), ExtResource("6_f4603"), ExtResource("10_84or2"), ExtResource("12_8obn7"), ExtResource("13_ut2cy"), ExtResource("9_ifw7y"), ExtResource("10_vaeah"), ExtResource("17_iv05t"), ExtResource("17_eamrl")])
 selector = NodePath("Selector")
 selector_container = NodePath("Selector/Container")
 view_camera = NodePath("../View/Camera")
 gridmap = NodePath("../GridMap")
+pollution_gauge = NodePath("../CanvasLayer/Control/PollutionGauge")
 cash_display = NodePath("../CanvasLayer/Control/Cash")
+pollution_label = NodePath("../CanvasLayer/Control/PollutionLabel")
 
 [node name="Selector" type="Node3D" parent="Builder"]
 
@@ -97,6 +99,7 @@ offset_left = 68.0
 offset_top = 25.0
 offset_right = 190.0
 offset_bottom = 63.0
+theme = ExtResource("26_gqlh6")
 text = "$10,000"
 label_settings = SubResource("LabelSettings_q176i")
 
@@ -109,6 +112,7 @@ offset_bottom = 534.0
 script = ExtResource("25_nqssb")
 
 [node name="BuildingNameLabel" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 9.0
 offset_right = 120.0
@@ -130,3 +134,22 @@ offset_top = 95.0
 offset_right = 121.0
 offset_bottom = 137.0
 theme = ExtResource("26_gqlh6")
+
+[node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 85.0
+offset_right = 181.0
+offset_bottom = 127.0
+theme = ExtResource("26_gqlh6")
+text = "Pollution: "
+
+[node name="PollutionGauge" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 146.0
+offset_right = 218.0
+offset_bottom = 227.0
+theme = ExtResource("26_gqlh6")
+max_value = 500.0
+value = 250.0
