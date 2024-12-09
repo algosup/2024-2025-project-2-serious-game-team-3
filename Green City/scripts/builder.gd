@@ -41,6 +41,9 @@ func _ready():
 
 	update_cash()
 
+@onready var info_panel = get_node("/root/Main/CanvasLayer/Control/Panel")
+var last_clicked_position: Vector3i = Vector3i(-1, -1, -1)
+
 func _process(delta):
 	# Controls
 	action_rotate() # Rotates selection 90 degrees
@@ -74,15 +77,33 @@ func _process(delta):
 			var cell_item = gridmap.get_cell_item(clicked_position)
 			if cell_item != -1 and cell_item < structures.size():
 				var structure = structures[cell_item]
+
+				# Check if the same building was clicked twice
+				if last_clicked_position == clicked_position:
+					info_panel.visible = false
+					last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
+					print("Same building clicked, closing panel.")
+					return
+
 				if structure.type == "building":
+					if info_panel:
+						info_panel.update_info_panel(structure)
+						info_panel.visible = true
+						last_clicked_position = clicked_position
 					print("Building clicked: ", structure.name)
 				elif structure.type == "environment":
+					if info_panel:
+						info_panel.visible = false  # Hide the panel if an environment is clicked
 					print("Environment clicked: ", structure.name)
 				else:
+					if info_panel:
+						info_panel.visible = false
 					print("Unknown structure type clicked: ", structure.name)
 			else:
+				if info_panel:
+					info_panel.visible = false
+				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
 				print("No structure found at clicked position.")
-
 
 
 # Retrieve the mesh from a PackedScene, used for dynamically creating a MeshLibrary
