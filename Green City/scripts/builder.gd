@@ -12,10 +12,12 @@ var map:DataMap
 @export var pollution_gauge: ProgressBar
 @export var cash_display: Label
 @export var pollution_label: Label
+@export var time_label: Label
 
 
-var timer: Timer
-var plane:Plane # Used for raycasting mouse
+var res_timer: Timer
+var game_timer: Timer
+var plane: Plane # Used for raycasting mouse
 
 func _ready():
 	# Try to load the saved map; fallback to the premade map if no saved map is found
@@ -26,29 +28,35 @@ func _ready():
 		map = DataMap.new()  # Create an empty map if both loading attempts fail
 
 	plane = Plane(Vector3.UP, Vector3.ZERO)
-	
+
+	# Initialize the resource timer (pollution updates)
+	res_timer = Timer.new()
+	res_timer.wait_time = interval_time
+	res_timer.one_shot = false
+	res_timer.connect("timeout", Callable(self, "_on_res_timer_timeout"))
+	add_child(res_timer)
+	res_timer.start()
+
+	# Initialize the game timer (10 minutes duration)
+	game_timer = Timer.new()
+	game_timer.wait_time = 600.0  # 10 minutes = 600 seconds
+	game_timer.one_shot = true
+	game_timer.connect("timeout", Callable(self, "_on_game_timer_timeout"))
+	add_child(game_timer)
+	game_timer.start()
+
+	# Debug output
 	print(get_node_or_null("CanvasLayer/Control/PollutionGauge"))
 	print("Cash Display Node: ", cash_display)
 	print("Pollution Label Node: ", pollution_label)
-	
-	timer = Timer.new()
-	timer.wait_time = interval_time
-	timer.one_shot = false
-	timer.connect("timeout", Callable(self, "_on_pollution_timer_timeout"))
-	add_child(timer)
-	timer.start()
-	
-	# Create new MeshLibrary dynamically, can also be done in the editor
-	var mesh_library = MeshLibrary.new()
 
+	# Create new MeshLibrary dynamically
+	var mesh_library = MeshLibrary.new()
 	for structure in structures:
 		var id = mesh_library.get_last_unused_item_id()
-
 		mesh_library.create_item(id)
 		mesh_library.set_item_mesh(id, get_mesh(structure.model))
 		mesh_library.set_item_mesh_transform(id, Transform3D())
-
-	# Assign the newly created MeshLibrary to the GridMap
 	gridmap.mesh_library = mesh_library
 
 	# Load the structures from the map into the GridMap
@@ -57,10 +65,38 @@ func _ready():
 
 	update_resources()
 
+# Function to handle resource timer updates
+func _on_res_timer_timeout():
+	for building in structures:
+		apply_building_pollution_effect(building)
+
+# Function to handle game timer timeout
+func _on_game_timer_timeout():
+	print("Game Over: Time is up!")
+	time_label.text = "Time's Up!"  # Update the label to indicate game over
+	disable_gameplay()
+
+# Function to disable gameplay (optional)
+func disable_gameplay():
+	# Disable input or any other gameplay elements
+	selector.set_process(false)  # Disable cursor movement
+	gridmap.set_process(false)   # Stop GridMap interactions
+	res_timer.stop()             # Stop pollution updates
+	print("Gameplay disabled.")
+
+
+
 @onready var info_panel = get_node("/root/Main/CanvasLayer/Control/Panel")
 var last_clicked_position: Vector3i = Vector3i(-1, -1, -1)
 
 func _process(delta):
+	# Update the time label with the remaining time
+	if is_instance_valid(game_timer):
+		var remaining_time = game_timer.time_left
+		var minutes = int(remaining_time) / 60
+		var seconds = int(remaining_time) % 60
+		time_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
+
 	# Controls
 	action_rotate() # Rotates selection 90 degrees
 
@@ -120,6 +156,7 @@ func _process(delta):
 					info_panel.visible = false
 				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
 				print("No structure found at clicked position.")
+
 
 @onready var data_map = get_node("data_map.gd")
 

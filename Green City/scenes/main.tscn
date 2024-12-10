@@ -38,7 +38,7 @@ shadow_color = Color(0, 0, 0, 0.392157)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_7iria")
 
-[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "pollution_gauge", "cash_display", "pollution_label")]
+[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "pollution_gauge", "cash_display", "pollution_label", "time_label")]
 script = ExtResource("1_jybm7")
 structures = Array[ExtResource("2_54v6r")]([ExtResource("2_bwyku"), ExtResource("3_o6o81"), ExtResource("3_6fpyf"), ExtResource("7_kqu4g"), ExtResource("8_1swhv"), ExtResource("4_b632v"), ExtResource("8_4il2q"), ExtResource("5_v5o2m"), ExtResource("6_f4603"), ExtResource("10_84or2"), ExtResource("12_8obn7"), ExtResource("13_ut2cy"), ExtResource("9_ifw7y"), ExtResource("10_vaeah"), ExtResource("17_iv05t"), ExtResource("17_eamrl")])
 selector = NodePath("Selector")
@@ -48,6 +48,7 @@ gridmap = NodePath("../GridMap")
 pollution_gauge = NodePath("../CanvasLayer/Control/PollutionGauge")
 cash_display = NodePath("../CanvasLayer/Control/Cash")
 pollution_label = NodePath("../CanvasLayer/Control/PollutionLabel")
+time_label = NodePath("../CanvasLayer/Control/TimerLabel")
 
 [node name="Selector" type="Node3D" parent="Builder"]
 
@@ -153,3 +154,11 @@ offset_right = 288.0
 offset_bottom = 229.0
 theme = ExtResource("24_wn6e2")
 max_value = 100000.0
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 2634.0
+offset_top = 24.0
+offset_right = 2892.0
+offset_bottom = 70.0
+theme = ExtResource("24_wn6e2")
