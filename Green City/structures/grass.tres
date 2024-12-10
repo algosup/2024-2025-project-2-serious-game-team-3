@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_1i4lf")
-name = "grass"
+name = "Grass"
 model = ExtResource("1_2n0ef")
 price = 10
 pollution_effect = 0.0

@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bng0d1sou7c8a" path="res://sprites/coin.png" id="17_cjamx"]
 [ext_resource type="Resource" uid="uid://2fgh7jnqylhx" path="res://structures/large_buildingB.tres" id="17_eamrl"]
 [ext_resource type="Resource" uid="uid://2dugf0tyh08s" path="res://structures/large_buildingA.tres" id="17_iv05t"]
-[ext_resource type="Theme" uid="uid://cx5l3cfqbt417" path="res://game_label.tres" id="24_wn6e2"]
+[ext_resource type="Theme" uid="uid://btswjosy00tge" path="res://game_label.tres" id="24_wn6e2"]
 [ext_resource type="Script" path="res://scripts/information_display.gd" id="25_nqssb"]
 [ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="26_gqlh6"]
 
