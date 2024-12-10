@@ -33,6 +33,7 @@ We had three hours of project time this week, which was not enough to complete a
 1. Conduct unit tests to ensure the game is bug-free.
 2. Continue implementing the basic core mechanics of the game.
 3. Continue improving the game UI.
+4. Submit the Test plan document.
 
 ## Other Notes
 
