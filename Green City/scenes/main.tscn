@@ -152,5 +152,4 @@ offset_top = 145.0
 offset_right = 288.0
 offset_bottom = 229.0
 theme = ExtResource("24_wn6e2")
-max_value = 300.0
-value = 10.0
+max_value = 100000.0
