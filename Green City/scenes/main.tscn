@@ -106,10 +106,10 @@ label_settings = SubResource("LabelSettings_q176i")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1086.0
-offset_top = 205.0
-offset_right = 1415.0
-offset_bottom = 534.0
+offset_left = 1048.0
+offset_top = 40.0
+offset_right = 1560.0
+offset_bottom = 619.0
 script = ExtResource("25_nqssb")
 
 [node name="BuildingNameLabel" type="Label" parent="CanvasLayer/Control/Panel"]
