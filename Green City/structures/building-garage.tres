@@ -9,4 +9,5 @@ name = "Garage"
 model = ExtResource("1_gyclk")
 price = 70
 pollution_effect = 13.0
+info = "Garages store vehicles but encourage car use, adding to emissions. Using them for EVs or bicycles supports greener transport."
 type = "building"

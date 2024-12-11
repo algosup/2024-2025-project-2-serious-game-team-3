@@ -39,7 +39,7 @@ func _ready():
 
 	# Initialize the game timer (10 minutes duration)
 	game_timer = Timer.new()
-	game_timer.wait_time = 15.0  # 10 minutes = 600 seconds
+	game_timer.wait_time = 600.0  # 10 minutes = 600 seconds
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self, "_on_game_timer_timeout"))
 	add_child(game_timer)

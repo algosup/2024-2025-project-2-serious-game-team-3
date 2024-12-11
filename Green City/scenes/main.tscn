@@ -110,7 +110,7 @@ layout_mode = 0
 offset_left = 1048.0
 offset_top = 40.0
 offset_right = 1560.0
-offset_bottom = 619.0
+offset_bottom = 644.0
 script = ExtResource("25_nqssb")
 
 [node name="BuildingNameLabel" type="Label" parent="CanvasLayer/Control/Panel"]
@@ -136,6 +136,20 @@ offset_top = 95.0
 offset_right = 121.0
 offset_bottom = 137.0
 theme = ExtResource("26_gqlh6")
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.279
+anchor_top = 0.271
+anchor_right = -0.279
+anchor_bottom = 0.271
+offset_left = 155.848
+offset_top = 20.316
+offset_right = 641.848
+offset_bottom = 226.316
+theme = ExtResource("24_wn6e2")
+autowrap_mode = 2
 
 [node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0

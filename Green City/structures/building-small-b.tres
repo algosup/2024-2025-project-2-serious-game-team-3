@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("2_a2t3e")
-name = "Medium building"
+name = "Apartment building"
 model = ExtResource("1_klt7o")
 price = 60
 pollution_effect = 33.0
+info = "Apartments house many families efficiently, lowering land use. Recycling and energy-efficient systems enhance sustainability."
 type = "building"

@@ -166,4 +166,5 @@ name = "tower"
 model = SubResource("PackedScene_en0wr")
 price = 25
 pollution_effect = 0.0
+info = "Coal factories produce electricity but emit high levels of CO₂, impacting air quality. Transitioning to renewables reduces their environmental footprint."
 type = "building"

@@ -9,4 +9,5 @@ name = "Skyscraper"
 model = ExtResource("1_6yyww")
 price = 70
 pollution_effect = 40.0
+info = "Skyscrapers save space but use significant energy. Green designs with rooftop gardens and efficient systems reduce their impact."
 type = "building"
