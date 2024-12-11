@@ -157,8 +157,9 @@ max_value = 100000.0
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 2634.0
-offset_top = 24.0
-offset_right = 2892.0
-offset_bottom = 70.0
+offset_left = 2514.0
+offset_top = 44.0
+offset_right = 2772.0
+offset_bottom = 109.0
 theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 56
