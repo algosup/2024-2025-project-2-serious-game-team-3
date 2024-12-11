@@ -39,7 +39,7 @@ func _ready():
 
 	# Initialize the game timer (10 minutes duration)
 	game_timer = Timer.new()
-	game_timer.wait_time = 600.0  # 10 minutes = 600 seconds
+	game_timer.wait_time = 15.0  # 10 minutes = 600 seconds
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self, "_on_game_timer_timeout"))
 	add_child(game_timer)
@@ -73,8 +73,30 @@ func _on_res_timer_timeout():
 # Function to handle game timer timeout
 func _on_game_timer_timeout():
 	print("Game Over: Time is up!")
-	time_label.text = "Time's Up!"  # Update the label to indicate game over
-	disable_gameplay()
+
+	# Check pollution level
+	if map.pollution < pollution_gauge.max_value:
+		print("Victory! Pollution is under control.")
+		# Load WinningScene
+		var winning_scene = load("res://scenes/win.tscn").instantiate()
+		# Pass map to the winning scene
+		if winning_scene.has_method("set_game_data"):
+			winning_scene.set_game_data(map)
+		else:
+			print("Error: Winning scene does not have set_game_data method.")
+
+		# Add the new scene to the tree
+		get_tree().root.add_child(winning_scene)
+
+		# Optional: Remove the current scene
+		get_tree().current_scene.queue_free()
+	else:
+		print("Defeat! Pollution reached maximum levels.")
+		# Change directly to the lose scene
+		get_tree().change_scene("res://scenes/lose.tscn")  # Update path if needed
+
+
+
 
 # Function to disable gameplay (optional)
 func disable_gameplay():
@@ -311,7 +333,14 @@ func action_reset():
 
 		# Reset the cash to the initial value of 10,000
 		map.cash = 10000
-
+		
+		game_timer = Timer.new()
+		game_timer.wait_time = 600.0  # 10 minutes = 600 seconds
+		game_timer.one_shot = true
+		game_timer.connect("timeout", Callable(self, "_on_game_timer_timeout"))
+		add_child(game_timer)
+		game_timer.start()
+		
 		# Update the cash display based on the reset premade map's cash value
 		update_resources()
 		print("Reset completed. Cash: ", map.cash)

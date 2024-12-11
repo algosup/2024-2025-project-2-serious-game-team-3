@@ -16,7 +16,10 @@ config/tags=PackedStringArray("starterkit")
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.92549, 0.92549, 0.960784, 1)
+boot_splash/show_image=false
 boot_splash/image="res://green-city.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://green-city.png"
 
 [display]
