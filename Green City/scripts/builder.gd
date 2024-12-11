@@ -58,7 +58,7 @@ func _ready():
 		mesh_library.set_item_mesh(id, get_mesh(structure.model))
 		mesh_library.set_item_mesh_transform(id, Transform3D())
 	gridmap.mesh_library = mesh_library
-
+	
 	# Load the structures from the map into the GridMap
 	for cell in map.structures:
 		gridmap.set_cell_item(Vector3i(cell.position.x, 0, cell.position.y), cell.structure, cell.orientation)
@@ -93,10 +93,18 @@ func _on_game_timer_timeout():
 	else:
 		print("Defeat! Pollution reached maximum levels.")
 		# Change directly to the lose scene
-		get_tree().change_scene("res://scenes/lose.tscn")  # Update path if needed
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")  # Update path if needed
 
 
+# Check pollution level and redirect if it exceeds the max
+func check_pollution_level():
+	if map.pollution >= pollution_gauge.max_value:
+		print("Pollution has reached the maximum level! Game Over.")
+		redirect_to_lose_scene()
 
+# Redirect to losing screen
+func redirect_to_lose_scene():
+	get_tree().change_scene_to_file("res://scenes/lose.tscn")
 
 # Function to disable gameplay (optional)
 func disable_gameplay():
@@ -178,6 +186,7 @@ func _process(delta):
 					info_panel.visible = false
 				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
 				print("No structure found at clicked position.")
+	check_pollution_level()
 
 
 @onready var data_map = get_node("data_map.gd")

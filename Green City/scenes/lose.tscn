@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ga3wikt2flub"]
+
+[ext_resource type="Script" path="res://scripts/lose.gd" id="1_8iq7s"]
+[ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="2_e36uk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_8iq7s")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 720.0
+offset_top = 442.0
+offset_right = 2109.0
+offset_bottom = 555.0
+theme = ExtResource("2_e36uk")
+theme_override_font_sizes/font_size = 64
+text = "You didn't manage to build a green city... Try again!"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
+offset_left = 1242.0
+offset_top = 1136.0
+offset_right = 1608.0
+offset_bottom = 1254.0
+theme = ExtResource("2_e36uk")
+theme_override_font_sizes/font_size = 48
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer"]
+offset_left = 1240.0
+offset_top = 1323.0
+offset_right = 1606.0
+offset_bottom = 1441.0
+theme = ExtResource("2_e36uk")
+theme_override_font_sizes/font_size = 48
+text = "Menu
+"
+
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="CanvasLayer" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuButton" to="CanvasLayer" method="_on_menu_button_pressed"]
