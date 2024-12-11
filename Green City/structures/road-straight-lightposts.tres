@@ -9,4 +9,5 @@ name = "road_light"
 model = ExtResource("1_i07jw")
 price = 25
 pollution_effect = 0.0
+info = ""
 type = "environment"

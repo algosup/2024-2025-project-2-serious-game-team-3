@@ -9,4 +9,5 @@ name = "road_intersection"
 model = ExtResource("1_pnjl2")
 price = 25
 pollution_effect = 0.0
+info = ""
 type = "environment"

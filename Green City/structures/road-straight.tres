@@ -9,4 +9,5 @@ name = "road"
 model = ExtResource("1_ump1f")
 price = 25
 pollution_effect = 0.0
+info = ""
 type = "environment"

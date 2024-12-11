@@ -9,4 +9,5 @@ name = "road_corner"
 model = ExtResource("1_r8n8k")
 price = 25
 pollution_effect = 0.0
+info = ""
 type = "environment"

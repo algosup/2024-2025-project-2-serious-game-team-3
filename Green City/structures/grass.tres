@@ -9,4 +9,5 @@ name = "Grass"
 model = ExtResource("1_2n0ef")
 price = 10
 pollution_effect = 0.0
+info = ""
 type = "environment"

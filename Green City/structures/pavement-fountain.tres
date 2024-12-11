@@ -9,4 +9,5 @@ name = "fountain"
 model = ExtResource("1_r2n53")
 price = 10
 pollution_effect = 0.0
+info = ""
 type = "environment"

@@ -9,4 +9,5 @@ name = "trees"
 model = ExtResource("1_lcgc1")
 price = 25
 pollution_effect = 0.0
+info = ""
 type = "environment"
