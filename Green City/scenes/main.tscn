@@ -86,6 +86,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 script = ExtResource("23_kmj1h")
 
 [node name="CashIcon" type="TextureRect" parent="CanvasLayer/Control"]
@@ -107,6 +108,7 @@ theme = ExtResource("24_wn6e2")
 label_settings = SubResource("LabelSettings_q176i")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+z_index = 10
 layout_mode = 0
 offset_left = 1048.0
 offset_top = 40.0
@@ -124,10 +126,10 @@ theme = ExtResource("26_gqlh6")
 
 [node name="BuildingIncomeLabel" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 55.0
-offset_right = 121.0
-offset_bottom = 91.0
+offset_left = 10.0
+offset_top = 51.0
+offset_right = 122.0
+offset_bottom = 93.0
 theme = ExtResource("26_gqlh6")
 
 [node name="PollutionEffectLabel" type="Label" parent="CanvasLayer/Control/Panel"]
@@ -145,12 +147,47 @@ anchor_left = -0.279
 anchor_top = 0.271
 anchor_right = -0.279
 anchor_bottom = 0.271
-offset_left = 155.848
-offset_top = 20.316
-offset_right = 641.848
-offset_bottom = 226.316
+offset_left = 153.848
+offset_top = -0.684006
+offset_right = 639.848
+offset_bottom = 205.316
 theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
+
+[node name="IncomeUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
+z_index = 11
+layout_mode = 0
+offset_left = 84.0
+offset_top = 447.0
+offset_right = 173.0
+offset_bottom = 534.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_gqlh6")
+theme_override_font_sizes/font_size = 48
+text = "↑"
+
+[node name="PollutionUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
+z_index = 11
+layout_mode = 0
+offset_left = 326.0
+offset_top = 446.0
+offset_right = 415.0
+offset_bottom = 533.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_gqlh6")
+theme_override_font_sizes/font_size = 48
+text = "↑"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 11.0
+offset_right = 496.0
+offset_bottom = 91.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 36
+text = "Close"
 
 [node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -178,3 +215,7 @@ offset_right = 2772.0
 offset_bottom = 109.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 56
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/IncomeUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_income_upgrade_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/PollutionUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_pollution_upgrade_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/CloseButton" to="CanvasLayer/Control/Panel" method="_on_close_button_pressed"]

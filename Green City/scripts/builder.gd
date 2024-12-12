@@ -2,22 +2,26 @@ extends Node3D
 
 @export var structures: Array[Structure] = []
 
-var map:DataMap
+var map: DataMap
 
-@export var selector:Node3D # The 'cursor'
-@export var selector_container:Node3D # Node that holds a preview of the structure
-@export var view_camera:Camera3D # Used for raycasting mouse
-@export var gridmap:GridMap
+@export var selector: Node3D # The 'cursor'
+@export var selector_container: Node3D # Node that holds a preview of the structure
+@export var view_camera: Camera3D # Used for raycasting mouse
+@export var gridmap: GridMap
 @export var interval_time: float = 1.0
 @export var pollution_gauge: ProgressBar
 @export var cash_display: Label
 @export var pollution_label: Label
 @export var time_label: Label
 
-
 var res_timer: Timer
 var game_timer: Timer
+var income_timer: Timer
 var plane: Plane # Used for raycasting mouse
+var is_gameplay_enabled: bool = true # Flag to enable or disable gameplay
+
+@onready var info_panel = get_node("/root/Main/CanvasLayer/Control/Panel")
+var last_clicked_position: Vector3i = Vector3i(-1, -1, -1)
 
 func _ready():
 	# Try to load the saved map; fallback to the premade map if no saved map is found
@@ -28,14 +32,6 @@ func _ready():
 		map = DataMap.new()  # Create an empty map if both loading attempts fail
 
 	plane = Plane(Vector3.UP, Vector3.ZERO)
-	
-		# Income timer
-	var income_timer = Timer.new()
-	income_timer.wait_time = interval_time  # Update every second
-	income_timer.one_shot = false
-	income_timer.connect("timeout", Callable(self, "_on_income_timer_timeout"))
-	add_child(income_timer)
-	income_timer.start()
 
 	# Initialize the resource timer (pollution updates)
 	res_timer = Timer.new()
@@ -52,6 +48,16 @@ func _ready():
 	game_timer.connect("timeout", Callable(self, "_on_game_timer_timeout"))
 	add_child(game_timer)
 	game_timer.start()
+	
+	
+	# Add a central income timer
+	var income_timer = Timer.new()
+	income_timer.wait_time = interval_time
+	income_timer.one_shot = false
+	income_timer.connect("timeout", Callable(self, "simulate_income"))
+	add_child(income_timer)
+	income_timer.start()
+
 
 	# Debug output
 	print(get_node_or_null("CanvasLayer/Control/PollutionGauge"))
@@ -73,10 +79,107 @@ func _ready():
 
 	update_resources()
 
+func _process(delta):
+	# Allow timers and updates to continue even if gameplay is disabled
+	handle_panel_logic()
+
+	# Update the time label with the remaining time
+	if is_instance_valid(game_timer):
+		var remaining_time = game_timer.time_left
+		var minutes = int(remaining_time) / 60
+		var seconds = int(remaining_time) % 60
+		time_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
+
+	# Skip gameplay logic if disabled
+	if not is_gameplay_enabled:
+		return
+
+	# Gameplay-related logic (e.g., selector, gridmap interactions)
+	process_gameplay_inputs(delta)
+
+func process_gameplay_inputs(delta):
+	# Existing gameplay input logic for raycasting and interactions
+	var world_position = plane.intersects_ray(
+		view_camera.project_ray_origin(get_viewport().get_mouse_position()),
+		view_camera.project_ray_normal(get_viewport().get_mouse_position())
+	)
+
+	if world_position != null:
+		var grid_x = round(world_position.x)
+		var grid_z = round(world_position.z)
+		selector.position = lerp(selector.position, Vector3(grid_x, 0, grid_z), delta * 40)
+
+	if Input.is_action_just_pressed("click"):
+		handle_click(world_position)
+
+func handle_click(world_position):
+	# Logic to handle clicks and open the info panel
+	var clicked_position = Vector3i(round(world_position.x), 0, round(world_position.z))
+	var cell_item = gridmap.get_cell_item(clicked_position)
+	if cell_item != -1 and cell_item < structures.size():
+		var structure = structures[cell_item]
+
+		if structure.type == "building":
+			if info_panel:
+				info_panel.update_info_panel(structure, cell_item)
+				info_panel.visible = true
+				toggle_gameplay(false)
+	else:
+		close_info_panel()
+		
+	reactivate_gameplay_on_panel_close()
+	update_cash_display()
+	
+
+
+func get_map() -> DataMap:
+	return map
+	
+	
+func toggle_gameplay(state: bool):
+	is_gameplay_enabled = state
+	selector.visible = state
+	gridmap.set_process(state)
+	print("Gameplay toggled:", state)
+
+func close_info_panel():
+	if info_panel:
+		info_panel.visible = false
+	toggle_gameplay(true)
+
+func handle_panel_logic():
+	if info_panel.visible:
+		gridmap.set_process(false)
+		selector.set_process(false)
+	else:
+		gridmap.set_process(true)
+		selector.set_process(true)
+
+
+# Function to disable gameplay (optional)
+func disable_gameplay():
+	# Disable input or any other gameplay elements
+	selector.set_process(false)  # Disable cursor movement
+	gridmap.set_process(false)   # Stop GridMap interactions
+	res_timer.stop()             # Stop pollution updates
+	print("Gameplay disabled.")
+
+
+func reactivate_gameplay_on_panel_close():
+	is_gameplay_enabled = true
+	selector.visible = true
+	selector.set_process(true)
+	gridmap.set_process(true)
+	print("Gameplay re-enabled after panel close.")
+
+
+
 # Function to handle resource timer updates
 func _on_res_timer_timeout():
 	for building in structures:
 		apply_building_pollution_effect(building)
+
+
 
 # Function to handle game timer timeout
 func _on_game_timer_timeout():
@@ -104,101 +207,25 @@ func _on_game_timer_timeout():
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")  # Update path if needed
 
 
+
 # Check pollution level and redirect if it exceeds the max
 func check_pollution_level():
 	if map.pollution >= pollution_gauge.max_value:
 		print("Pollution has reached the maximum level! Game Over.")
 		redirect_to_lose_scene()
 
+
+
 # Redirect to losing screen
 func redirect_to_lose_scene():
 	get_tree().change_scene_to_file("res://scenes/lose.tscn")
 
-# Function to disable gameplay (optional)
-func disable_gameplay():
-	# Disable input or any other gameplay elements
-	selector.set_process(false)  # Disable cursor movement
-	gridmap.set_process(false)   # Stop GridMap interactions
-	res_timer.stop()             # Stop pollution updates
-	print("Gameplay disabled.")
 
 
-
-@onready var info_panel = get_node("/root/Main/CanvasLayer/Control/Panel")
-var last_clicked_position: Vector3i = Vector3i(-1, -1, -1)
-
-func _process(delta):
-	# Update the time label with the remaining time
-	if is_instance_valid(game_timer):
-		var remaining_time = game_timer.time_left
-		var minutes = int(remaining_time) / 60
-		var seconds = int(remaining_time) % 60
-		time_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
-
-	# Controls
-	action_rotate() # Rotates selection 90 degrees
-
-	action_save() # Saving
-	action_load() # Loading
-
-	if Input.is_action_just_pressed("reset"):
-		print("Reset button pressed!")  # Debug print to confirm input detection
-		action_reset()
-
-	# Map position based on mouse
-	var world_position = plane.intersects_ray(
-		view_camera.project_ray_origin(get_viewport().get_mouse_position()),
-		view_camera.project_ray_normal(get_viewport().get_mouse_position())
-	)
-
-	if world_position != null:
-		var grid_x = round(world_position.x)
-		var grid_z = round(world_position.z)
-		var gridmap_position = Vector3i(grid_x, 0, grid_z)
-		selector.position = lerp(selector.position, Vector3(grid_x, 0, grid_z), delta * 40)
-
-	# Raycast to check for building/environment selection based on mouse input
-	if Input.is_action_just_pressed("click"):
-		print("Click detected")  # Debug print to confirm input detection
-		if world_position != null:
-			var clicked_position = Vector3i(round(world_position.x), 0, round(world_position.z))
-			print("Clicked GridMap position: ", clicked_position)  # Debug print to confirm gridmap position
-
-			var cell_item = gridmap.get_cell_item(clicked_position)
-			if cell_item != -1 and cell_item < structures.size():
-				var structure = structures[cell_item]
-
-				# Check if the same building was clicked twice
-				if last_clicked_position == clicked_position:
-					info_panel.visible = false
-					last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
-					print("Same building clicked, closing panel.")
-					return
-
-				if structure.type == "building":
-					if info_panel:
-						info_panel.update_info_panel(structure)
-						info_panel.visible = true
-						last_clicked_position = clicked_position
-					print("Building clicked: ", structure.name)
-				elif structure.type == "environment":
-					if info_panel:
-						info_panel.visible = false  # Hide the panel if an environment is clicked
-					print("Environment clicked: ", structure.name)
-				else:
-					if info_panel:
-						info_panel.visible = false
-					print("Unknown structure type clicked: ", structure.name)
-			else:
-				if info_panel:
-					info_panel.visible = false
-				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
-				print("No structure found at clicked position.")
-	check_pollution_level()
-	update_cash_display()
 
 
 @onready var data_map = get_node("data_map.gd")
+
 
 func apply_building_pollution_effect(building: Structure):
 	if not pollution_gauge:
@@ -211,13 +238,15 @@ func apply_building_pollution_effect(building: Structure):
 	map.pollution += building.pollution_effect
 	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
 	update_resources()
-	print("Pollution changed by: ", building.pollution_effect, ". New pollution level: ", map.pollution)
+
 
 
 func _on_pollution_timer_timeout():
 	for building in structures:
 		apply_building_pollution_effect(building)
 		
+
+
 # Retrieve the mesh from a PackedScene, used for dynamically creating a MeshLibrary
 func get_mesh(packed_scene: PackedScene) -> Mesh:
 	var scene_state: SceneState = packed_scene.get_state()
@@ -230,10 +259,14 @@ func get_mesh(packed_scene: PackedScene) -> Mesh:
 					return prop_value.duplicate()  # Return the duplicated Mesh instance
 	return null  # Return null if no mesh is found
 
+
+
 # Rotates the 'cursor' 90 degrees
 func action_rotate():
 	if Input.is_action_just_pressed("rotate"):
 		selector.rotate_y(deg_to_rad(90))
+
+
 
 
 # Update the resources and gauge based on the current pollution level
@@ -279,6 +312,8 @@ func simulate_pollution():
 	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
 	update_resources()
 
+
+
 func simulate_income():
 	var total_income = 0
 
@@ -301,14 +336,113 @@ func simulate_income():
 
 	print("Income generated: ", total_income, " | New Cash Balance: ", map.cash)
 
-func _on_income_timer_timeout():
-	simulate_income()
+
+
+func _initialize_building_income():
+	print("Initializing building income timers...")
+	for i in range(map.structures.size()):
+		var data_structure = map.structures[i]
+		if data_structure is DataStructure:
+			var structure_index = data_structure.structure
+			if structure_index >= 0 and structure_index < structures.size():
+				var building = structures[structure_index]
+				if building is Structure:
+					# Create a timer for the building
+					var building_timer = Timer.new()
+					building_timer.wait_time = building.income_interval
+					building_timer.one_shot = false
+					building_timer.connect("timeout", Callable(self, "_on_building_income_timeout").bind(i))
+					add_child(building_timer)
+					building_timer.start()
+					print("Income timer started for building:", building.name)
+				else:
+					print("Error: Object is not a Structure!")
+			else:
+				print("Error: Structure index out of bounds.")
+		else:
+			print("Error: Object in map.structures is not a DataStructure!")
+
+
+
+
+func _on_building_income_timeout(building_index: int):
+	var data_structure = map.structures[building_index]
+	if data_structure is DataStructure:
+		var structure_index = data_structure.structure
+		if structure_index >= 0 and structure_index < structures.size():
+			var building = structures[structure_index]
+			if building is Structure:
+				# Add the building's income to the player's cash
+				map.cash += building.income
+				update_cash_display()
+				print("Building income added. Building:", building.name, "| Income:", building.income, "| Total Cash:", map.cash)
+			else:
+				print("Error: Object is not a Structure!")
+		else:
+			print("Error: Structure index out of bounds.")
+	else:
+		print("Error: Object in map.structures is not a DataStructure!")
+
+
+
+
+func upgrade_building_income(building_index: int) -> void:
+	var data_structure = map.structures[building_index]
+	if data_structure is DataStructure:
+		var structure_index = data_structure.structure
+		if structure_index >= 0 and structure_index < structures.size():
+			var building = structures[structure_index]
+			if building.income_upgrade_level < building.max_income_upgrade_level:
+				var cost = building.income_upgrade_costs[building.income_upgrade_level]
+				if map.cash >= cost:
+					# Deduct the cost
+					map.cash -= cost
+					# Upgrade the income
+					building.income += building.income_boost_per_level[building.income_upgrade_level]
+					# Increase the upgrade level
+					building.income_upgrade_level += 1
+					print("Income upgraded for building:", building.name)
+					update_cash_display()
+				else:
+					print("Not enough cash to upgrade income for building:", building.name)
+			else:
+				print("Maximum income upgrade level reached for building:", building.name)
+
+
+
+func upgrade_building_pollution(building_index: int) -> void:
+	var data_structure = map.structures[building_index]
+	if data_structure is DataStructure:
+		var structure_index = data_structure.structure
+		if structure_index >= 0 and structure_index < structures.size():
+			var building = structures[structure_index]
+			if building.pollution_upgrade_level < building.max_pollution_upgrade_level:
+				var cost = building.pollution_upgrade_costs[building.pollution_upgrade_level]
+				if map.cash >= cost:
+					# Deduct the cost
+					map.cash -= cost
+					# Reduce the pollution effect
+					building.pollution_effect -= building.pollution_reduction_per_level[building.pollution_upgrade_level]
+					# Ensure pollution effect doesn't go below zero
+					building.pollution_effect = max(0, building.pollution_effect)
+					# Increase the upgrade level
+					building.pollution_upgrade_level += 1
+					print("Pollution reduced for building:", building.name)
+					update_cash_display()
+				else:
+					print("Not enough cash to reduce pollution for building:", building.name)
+			else:
+				print("Maximum pollution upgrade level reached for building:", building.name)
+
+
+
 
 func update_cash_display():
 	if not is_instance_valid(cash_display):
 		print("Error: cash_display is null!")
 		return
 	cash_display.text = "$" + str(map.cash)
+
 
 
 # Saving/load
@@ -326,6 +460,8 @@ func action_save():
 
 		ResourceSaver.save(map, "res://maps/saved_map.res")  # Save to the user's directory to persist progress
 
+
+
 func action_load():
 	if Input.is_action_just_pressed("load"):
 		print("Loading map...")
@@ -340,6 +476,8 @@ func action_load():
 
 		update_resources()
 		print("Loaded map cash: ", map.cash)
+
+
 
 func action_reset():
 	if Input.is_action_just_pressed("reset"):
