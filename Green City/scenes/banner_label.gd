@@ -1,12 +1,13 @@
 extends Label
 
 # Scrolling parameters
-var scroll_speed: int = 500  # Pixels per second
+var scroll_speed: int = 350  # Pixels per second
 var pause_duration: float = 0  # Pause duration after the text scrolls out
 var messages: Array = [
-	"OUAIS BRO OUAIS BRO OUAIS BRO OUAIS BRO OUAIS BRO", 
-	"Visit our shop for more deals!", 
-	"Limited-time offer, don't miss out!"
+	"Over 10,000 cities have pledged to reduce emissions under the Paris Agreement. Is yours one of them?", 
+	"Recycling wastewater can reduce urban water emissions by up to 80%.", 
+	"Rooftop solar panels could supply 40% of a city's energy needs.",
+	"HAHAAHHAHAHAHA"
 ]  # List of scrolling messages
 
 # Internal variables
