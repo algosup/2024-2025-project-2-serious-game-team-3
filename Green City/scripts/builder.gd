@@ -28,6 +28,14 @@ func _ready():
 		map = DataMap.new()  # Create an empty map if both loading attempts fail
 
 	plane = Plane(Vector3.UP, Vector3.ZERO)
+	
+		# Income timer
+	var income_timer = Timer.new()
+	income_timer.wait_time = interval_time  # Update every second
+	income_timer.one_shot = false
+	income_timer.connect("timeout", Callable(self, "_on_income_timer_timeout"))
+	add_child(income_timer)
+	income_timer.start()
 
 	# Initialize the resource timer (pollution updates)
 	res_timer = Timer.new()
@@ -187,6 +195,7 @@ func _process(delta):
 				last_clicked_position = Vector3i(-1, -1, -1)  # Reset to default value
 				print("No structure found at clicked position.")
 	check_pollution_level()
+	update_cash_display()
 
 
 @onready var data_map = get_node("data_map.gd")
@@ -270,6 +279,36 @@ func simulate_pollution():
 	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
 	update_resources()
 
+func simulate_income():
+	var total_income = 0
+
+	# Calculate total income from all structures
+	for data_structure in map.structures:
+		if data_structure is DataStructure:
+			var structure_index = data_structure.structure
+			if structure_index >= 0 and structure_index < structures.size():
+				var building = structures[structure_index]
+				if building is Structure:
+					total_income += building.income
+			else:
+				print("Error: Structure index out of bounds.")
+		else:
+			print("Error: Object in map.structures is not a DataStructure!")
+
+	# Update cash
+	map.cash += total_income
+	update_cash_display()
+
+	print("Income generated: ", total_income, " | New Cash Balance: ", map.cash)
+
+func _on_income_timer_timeout():
+	simulate_income()
+
+func update_cash_display():
+	if not is_instance_valid(cash_display):
+		print("Error: cash_display is null!")
+		return
+	cash_display.text = "$" + str(map.cash)
 
 
 # Saving/load

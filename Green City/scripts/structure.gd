@@ -8,7 +8,8 @@ class_name Structure
 @export var model: PackedScene # Model of the structure
 
 @export_subgroup("Gameplay")
-@export var price: int # Price of the structure when building
+@export var income: int # Price of the structure when building
+@export var income_interval: float = 1.0  # Time interval in seconds for income generation
 @export var pollution_effect: float # Increase or decrease in pollution
 @export var info: String
 

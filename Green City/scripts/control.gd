@@ -4,7 +4,7 @@ extends Node
 var cash: int = 10000  # Initial cash amount
 
 # Passive income increment value
-const PASSIVE_INCOME = 50  # Amount to add every second
+const PASSIVE_INCOME = 0  # Amount to add every second
 
 # Timer to handle passive income increment
 var income_timer: Timer = null

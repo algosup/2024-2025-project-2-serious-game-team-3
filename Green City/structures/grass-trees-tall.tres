@@ -7,7 +7,7 @@
 script = ExtResource("2_b2sah")
 name = "building"
 model = ExtResource("1_nbdd1")
-price = 25
+price = 0
 pollution_effect = 0.0
 info = ""
 type = "Type"

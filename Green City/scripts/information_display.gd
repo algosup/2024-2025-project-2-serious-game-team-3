@@ -1,7 +1,7 @@
 extends Control
 
 @onready var building_name_label = $BuildingNameLabel
-@onready var building_price_label = $BuildingPriceLabel
+@onready var building_income_label = $BuildingIncomeLabel
 @onready var pollution_effect_label = $PollutionEffectLabel
 @onready var info_label = $InfoLabel
 
@@ -16,12 +16,12 @@ func update_info_panel(structure: Resource) -> void:
 		self.visible = true
 
 		# Update labels
-		if building_name_label and building_price_label and pollution_effect_label:
+		if building_name_label and building_income_label and pollution_effect_label:
 			building_name_label.text = "Name: " + structure.name
-			building_price_label.text = "Price: $" + str(structure.price)
+			building_income_label.text = "Income: $" + str(structure.income)
 			pollution_effect_label.text = "Pollution Effect: " + str(structure.pollution_effect)
 			info_label.text = structure.info
-			print("Panel updated: ", structure.name, ", Price: ", structure.price, ", Pollution Effect: ", structure.pollution_effect)  # Debug print
+			print("Panel updated: ", structure.name, ", Income: ", structure.income, ", Pollution Effect: ", structure.pollution_effect)  # Debug print
 			
 		else:
 			print("One or more labels are not properly assigned.")
