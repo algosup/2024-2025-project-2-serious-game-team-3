@@ -1,5 +1,6 @@
 # 2024-2025-project-2-serious-game-team-3
 
+
 ## 🌍 Description
 
 Welcome to **Green City**! 🌱 Our **Serious Game Project** challenges you to build and manage a thriving city while balancing **economic growth** 💰 and **environmental sustainability** 🌳. 
@@ -12,7 +13,7 @@ We’re leveraging the power of the **Godot 4 engine** 🕹️ to deliver an imm
 
 ## 🌟 Project Team
 
-| Name | Role | Image | GitHub | Linkedin |
+| Name   | Role         | Image        | GitHub | Linkedin     |
 | :----- | :----------: | :----------: | :---------- | :------ |
 | Vivien Bistrel TSANGUE CHOUNGOU | Project Manager | <img src="https://avatars.githubusercontent.com/u/122369054?v=4" width = "100px" alt="Vivien Avatar" > | [Vivien's GitHub](https://github.com/Bistrel2002) | [Vivien's Linkedin](https://www.linkedin.com/in/bistrel-tsangue-603635261/) |
 | Guillaume DERAMCHI | Program Manager | <img src="https://avatars.githubusercontent.com/u/145995909?v=4" width = "100px" alt="Guillaume Avatar"> | [Guillaume's GitHub](https://github.com/Guillaume18100) | [Guillaume's Linkedin](https://www.linkedin.com/in/guillaume-deramchi-a45116293/) |
@@ -21,6 +22,7 @@ We’re leveraging the power of the **Godot 4 engine** 🕹️ to deliver an imm
 | Manech LAGUENS | Software Engineer |<img src="https://avatars.githubusercontent.com/u/146005062?v=4" width = "100px" alt="Manech Avatar"> | [Manech's GitHub](https://github.com/Manech-Laguens) | [Manech's Linkedin](https://www.linkedin.com/in/manech-laguens-020127293/) |
 | Habi CAILLEAU | Quality Assurance | <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width = "100px" alt="Habi Avatar"> | [Habi's GitHub](https://github.com/habicll) | [Habi's Linkedin](https://www.linkedin.com/in/habi-cailleau-3b72b5293/) |
 | Jason GROSSO | Technical Writer | <img src="https://avatars.githubusercontent.com/u/114397870?v=4" width = "100px" alt="Jason Avatar"> | [Jason's GitHub](https://github.com/JasonGROSSO) | [Jason's Linkedin](https://www.linkedin.com/in/jason-grosso-847b39251/) |
+
 
 ---
 
