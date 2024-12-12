@@ -380,7 +380,7 @@ func action_reset():
 		map = premade_map
 
 		# Reset the cash to the initial value of 10,000
-		map.cash = 10000
+		map.cash = 0
 		
 		game_timer = Timer.new()
 		game_timer.wait_time = 600.0  # 10 minutes = 600 seconds

@@ -7,7 +7,8 @@
 script = ExtResource("3_oloyn")
 name = "road_corner"
 model = ExtResource("1_r8n8k")
-price = 25
+income = 0
+income_interval = 1.0
 pollution_effect = 0.0
 info = ""
 type = "environment"

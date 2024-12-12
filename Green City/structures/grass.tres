@@ -7,7 +7,8 @@
 script = ExtResource("2_1i4lf")
 name = "Grass"
 model = ExtResource("1_2n0ef")
-price = 10
+income = 0
+income_interval = 1.0
 pollution_effect = 0.0
 info = ""
 type = "environment"

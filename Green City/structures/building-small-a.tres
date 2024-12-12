@@ -7,7 +7,8 @@
 script = ExtResource("2_q3i1h")
 name = "Townhouse"
 model = ExtResource("1_v5apy")
-price = 0
+income = 1
+income_interval = 1.0
 pollution_effect = 18.0
 info = "Townhouses are energy-efficient homes with shared walls. Adding solar panels or insulation boosts sustainability further."
 type = "building"

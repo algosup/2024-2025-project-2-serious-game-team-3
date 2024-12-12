@@ -7,7 +7,8 @@
 script = ExtResource("2_8ewai")
 name = "Shop"
 model = ExtResource("1_164xq")
-price = 0
+income = 7
+income_interval = 1.0
 pollution_effect = 24.0
 info = "Shops provide goods and services while their impact depends on efficiency. Local products and green energy use lower their footprint."
 type = "building"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://vgwrcfy1qawf"]
+[gd_scene load_steps=31 format=3 uid="uid://vgwrcfy1qawf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7iria"]
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_jybm7"]
@@ -28,6 +28,7 @@
 [ext_resource type="Theme" uid="uid://btswjosy00tge" path="res://game_label.tres" id="24_wn6e2"]
 [ext_resource type="Script" path="res://scripts/information_display.gd" id="25_nqssb"]
 [ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="26_gqlh6"]
+[ext_resource type="Script" path="res://scenes/banner_label.gd" id="29_tctay"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q176i"]
 font = ExtResource("16_vlub6")
@@ -105,6 +106,20 @@ offset_right = 190.0
 offset_bottom = 63.0
 theme = ExtResource("24_wn6e2")
 label_settings = SubResource("LabelSettings_q176i")
+
+[node name="BannerLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 73.125
+anchor_top = 45.287
+anchor_right = 73.125
+anchor_bottom = 45.287
+offset_left = -2141.0
+offset_top = -10.4801
+offset_right = 31.0
+offset_bottom = 224.52
+theme = ExtResource("24_wn6e2")
+script = ExtResource("29_tctay")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 0

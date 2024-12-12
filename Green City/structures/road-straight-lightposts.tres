@@ -7,7 +7,8 @@
 script = ExtResource("2_470aq")
 name = "road_light"
 model = ExtResource("1_i07jw")
-price = 25
+income = 0
+income_interval = 1.0
 pollution_effect = 0.0
 info = ""
 type = "environment"
