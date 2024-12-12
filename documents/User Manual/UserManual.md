@@ -72,12 +72,16 @@ Amelioration come in two "flavor":
 - Major to medium increase in money generation with a major to medium increase in CO2 production.
 - Medium to small increase in money generation with a small to negative increase in CO2 production.
 
-### The Different Gauges
+<!-- 
+TODO insert image of ameliorations
+-->
 
-On the top left corner of the screen you will find multiple gauges:
+### The CO2 Gauge
+
+On the top left corner of the screen you will find a gauge indicating the current  concentration of CO2 in the atmosphere. Your goal is to keep that gauge as empty as possible.
 
 <!-- 
-TODO insert image of the gauges 
+TODO insert image of the gauge
 -->
 
 ---
@@ -85,3 +89,9 @@ TODO insert image of the gauges
 ## Settings
 
 ## Get Help
+
+### Update service software
+
+You can check for any update on the GitHub repository of the game in the release section. If there is any, see the [Set Up](#set-up)
+
+### Green City Support
