@@ -13,6 +13,9 @@ var map: DataMap
 @export var cash_display: Label
 @export var pollution_label: Label
 @export var time_label: Label
+@export var income_button: Button
+@export var pollution_button: Button
+
 
 var res_timer: Timer
 var game_timer: Timer
@@ -63,6 +66,10 @@ func _ready():
 	print(get_node_or_null("CanvasLayer/Control/PollutionGauge"))
 	print("Cash Display Node: ", cash_display)
 	print("Pollution Label Node: ", pollution_label)
+	
+	income_button.connect("pressed", Callable(self, "_on_income_upgrade_button_pressed"))
+	pollution_button.connect("pressed", Callable(self, "_on_pollution_upgrade_button_pressed"))	
+	
 
 	# Create new MeshLibrary dynamically
 	var mesh_library = MeshLibrary.new()
@@ -388,53 +395,33 @@ func _on_building_income_timeout(building_index: int):
 
 
 func upgrade_building_income(building_index: int) -> void:
-	var data_structure = map.structures[building_index]
-	if data_structure is DataStructure:
-		var structure_index = data_structure.structure
-		if structure_index >= 0 and structure_index < structures.size():
-			var building = structures[structure_index]
-			if building.income_upgrade_level < building.max_income_upgrade_level:
-				var cost = building.income_upgrade_costs[building.income_upgrade_level]
-				if map.cash >= cost:
-					# Deduct the cost
-					map.cash -= cost
-					# Upgrade the income
-					building.income += building.income_boost_per_level[building.income_upgrade_level]
-					# Increase the upgrade level
-					building.income_upgrade_level += 1
-					print("Income upgraded for building:", building.name)
-					update_cash_display()
-				else:
-					print("Not enough cash to upgrade income for building:", building.name)
-			else:
-				print("Maximum income upgrade level reached for building:", building.name)
+	var structure = structures[building_index]
+	if structure.income_upgrade_level < structure.max_income_upgrade_level:
+		var cost = structure.income_upgrade_cost_base * pow(structure.income_upgrade_cost_multiplier, structure.income_upgrade_level)
+		if map.cash >= cost:
+			map.cash -= cost
+			structure.income += structure.income * structure.income_upgrade_ratio
+			structure.income_upgrade_level += 1
+			update_cash_display()
+			print("Income upgraded for building:", structure.name)
+		else:
+			print("Not enough cash to upgrade income for building:", structure.name)
 
 
 
 func upgrade_building_pollution(building_index: int) -> void:
-	var data_structure = map.structures[building_index]
-	if data_structure is DataStructure:
-		var structure_index = data_structure.structure
-		if structure_index >= 0 and structure_index < structures.size():
-			var building = structures[structure_index]
-			if building.pollution_upgrade_level < building.max_pollution_upgrade_level:
-				var cost = building.pollution_upgrade_costs[building.pollution_upgrade_level]
-				if map.cash >= cost:
-					# Deduct the cost
-					map.cash -= cost
-					# Reduce the pollution effect
-					building.pollution_effect -= building.pollution_reduction_per_level[building.pollution_upgrade_level]
-					# Ensure pollution effect doesn't go below zero
-					building.pollution_effect = max(0, building.pollution_effect)
-					# Increase the upgrade level
-					building.pollution_upgrade_level += 1
-					print("Pollution reduced for building:", building.name)
-					update_cash_display()
-				else:
-					print("Not enough cash to reduce pollution for building:", building.name)
-			else:
-				print("Maximum pollution upgrade level reached for building:", building.name)
-
+	var structure = structures[building_index]
+	if structure.pollution_upgrade_level < structure.max_pollution_upgrade_level:
+		var cost = structure.pollution_upgrade_cost_base * pow(structure.pollution_upgrade_cost_multiplier, structure.pollution_upgrade_level)
+		if map.cash >= cost:
+			map.cash -= cost
+			structure.pollution_effect -= structure.pollution_effect * structure.pollution_reduction_ratio
+			structure.pollution_effect = max(0, structure.pollution_effect) # Ensure it doesn't go below zero
+			structure.pollution_upgrade_level += 1
+			update_cash_display()
+			print("Pollution reduced for building:", structure.name)
+		else:
+			print("Not enough cash to reduce pollution for building:", structure.name)
 
 
 

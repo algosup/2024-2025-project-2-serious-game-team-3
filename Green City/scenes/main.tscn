@@ -39,7 +39,7 @@ shadow_color = Color(0, 0, 0, 0.392157)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_7iria")
 
-[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "pollution_gauge", "cash_display", "pollution_label", "time_label")]
+[node name="Builder" type="Node3D" parent="." node_paths=PackedStringArray("selector", "selector_container", "view_camera", "gridmap", "pollution_gauge", "cash_display", "pollution_label", "time_label", "income_button", "pollution_button")]
 script = ExtResource("1_jybm7")
 structures = Array[ExtResource("2_54v6r")]([ExtResource("2_bwyku"), ExtResource("3_o6o81"), ExtResource("3_6fpyf"), ExtResource("7_kqu4g"), ExtResource("8_1swhv"), ExtResource("4_b632v"), ExtResource("8_4il2q"), ExtResource("5_v5o2m"), ExtResource("6_f4603"), ExtResource("10_84or2"), ExtResource("12_8obn7"), ExtResource("13_ut2cy"), ExtResource("9_ifw7y"), ExtResource("10_vaeah"), ExtResource("17_iv05t"), ExtResource("17_eamrl")])
 selector = NodePath("Selector")
@@ -50,6 +50,8 @@ pollution_gauge = NodePath("../CanvasLayer/Control/PollutionGauge")
 cash_display = NodePath("../CanvasLayer/Control/Cash")
 pollution_label = NodePath("../CanvasLayer/Control/PollutionLabel")
 time_label = NodePath("../CanvasLayer/Control/TimerLabel")
+income_button = NodePath("../CanvasLayer/Control/Panel/IncomeUpgradeButton")
+pollution_button = NodePath("../CanvasLayer/Control/Panel/PollutionUpgradeButton")
 
 [node name="Selector" type="Node3D" parent="Builder"]
 
@@ -147,10 +149,10 @@ anchor_left = -0.279
 anchor_top = 0.271
 anchor_right = -0.279
 anchor_bottom = 0.271
-offset_left = 153.848
-offset_top = -0.684006
-offset_right = 639.848
-offset_bottom = 205.316
+offset_left = 154.848
+offset_top = -19.684
+offset_right = 640.848
+offset_bottom = 186.316
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
@@ -158,10 +160,10 @@ autowrap_mode = 2
 [node name="IncomeUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
 z_index = 11
 layout_mode = 0
-offset_left = 84.0
-offset_top = 447.0
-offset_right = 173.0
-offset_bottom = 534.0
+offset_left = 90.0
+offset_top = 457.0
+offset_right = 179.0
+offset_bottom = 544.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("26_gqlh6")
 theme_override_font_sizes/font_size = 48
@@ -170,10 +172,10 @@ text = "↑"
 [node name="PollutionUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
 z_index = 11
 layout_mode = 0
-offset_left = 326.0
-offset_top = 446.0
-offset_right = 415.0
-offset_bottom = 533.0
+offset_left = 334.0
+offset_top = 457.0
+offset_right = 423.0
+offset_bottom = 544.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("26_gqlh6")
 theme_override_font_sizes/font_size = 48
@@ -188,6 +190,44 @@ offset_bottom = 91.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 36
 text = "Close"
+
+[node name="IncreaseIncome" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 414.0
+offset_right = 246.0
+offset_bottom = 448.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 28
+text = "Increase income"
+
+[node name="ReducePollution" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 414.0
+offset_right = 484.0
+offset_bottom = 448.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 28
+text = "Reduce pollution"
+
+[node name="IncomePriceLabel" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 552.0
+offset_right = 193.0
+offset_bottom = 593.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 28
+
+[node name="ReducePrice" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 552.0
+offset_right = 438.0
+offset_bottom = 593.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 28
 
 [node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
