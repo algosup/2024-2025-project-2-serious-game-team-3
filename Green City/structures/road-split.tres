@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://cqvwy36htu81"]
+
+[ext_resource type="PackedScene" uid="uid://mu30r6rmht07" path="res://models/road-split.glb" id="1_ku0rj"]
+[ext_resource type="Script" path="res://scripts/structure.gd" id="2_xa71m"]
+
+[resource]
+script = ExtResource("2_xa71m")
+name = "road_split"
+model = ExtResource("1_ku0rj")
+income = 0
+income_interval = 1.0
+pollution_effect = 0.0
+info = ""
+income_upgrade_level = 0
+max_income_upgrade_level = 3
+income_upgrade_ratio = 0.1
+income_upgrade_cost_base = 100.0
+income_upgrade_cost_multiplier = 2.0
+pollution_upgrade_level = 0
+max_pollution_upgrade_level = 3
+pollution_reduction_ratio = 0.1
+pollution_upgrade_cost_base = 150.0
+pollution_upgrade_cost_multiplier = 2.0
+type = "environment"

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bupjgrb1oavkv"]
+
+[ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="1_hbmik"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_qar1k"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hbmik")
+script = ExtResource("1_qar1k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = -249.0
+offset_right = 454.0
+offset_bottom = 65.0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+theme = ExtResource("1_hbmik")
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_hbmik")
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_hbmik")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_hbmik")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

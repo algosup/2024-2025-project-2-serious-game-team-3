@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://tm532uesguhk"]
+
+[ext_resource type="PackedScene" uid="uid://cr3btp34bp3eg" path="res://models/grass.glb" id="1_2n0ef"]
+[ext_resource type="Script" path="res://scripts/structure.gd" id="2_1i4lf"]
+
+[resource]
+script = ExtResource("2_1i4lf")
+name = "Grass"
+model = ExtResource("1_2n0ef")
+income = 0
+income_interval = 1.0
+pollution_effect = 0.0
+info = ""
+income_upgrade_level = 0
+max_income_upgrade_level = 3
+income_upgrade_ratio = 0.1
+income_upgrade_cost_base = 100.0
+income_upgrade_cost_multiplier = 2.0
+pollution_upgrade_level = 0
+max_pollution_upgrade_level = 3
+pollution_reduction_ratio = 0.1
+pollution_upgrade_cost_base = 150.0
+pollution_upgrade_cost_multiplier = 2.0
+type = "environment"

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://gisc1m3gjvm0"]
+
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="1_nri2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cv8t"]
+border_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[resource]
+default_font = ExtResource("1_nri2o")
+default_font_size = 36
+Button/font_sizes/font_size = 36
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_3cv8t")

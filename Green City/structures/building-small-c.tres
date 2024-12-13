@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://bh65eqgid4kxy"]
+
+[ext_resource type="PackedScene" uid="uid://m74mvao50wnm" path="res://models/building-small-c.glb" id="1_6yyww"]
+[ext_resource type="Script" path="res://scripts/structure.gd" id="2_rkiq0"]
+
+[resource]
+script = ExtResource("2_rkiq0")
+name = "Skyscraper"
+model = ExtResource("1_6yyww")
+income = 10
+income_interval = 1.0
+pollution_effect = 35.0
+info = "Skyscrapers save space but use significant energy. Green designs with rooftop gardens and efficient systems reduce their impact."
+income_upgrade_level = 0
+max_income_upgrade_level = 3
+income_upgrade_ratio = 0.15
+income_upgrade_cost_base = 10000.0
+income_upgrade_cost_multiplier = 1.5
+pollution_upgrade_level = 0
+max_pollution_upgrade_level = 3
+pollution_reduction_ratio = 0.15
+pollution_upgrade_cost_base = 10000.0
+pollution_upgrade_cost_multiplier = 1.5
+type = "building"

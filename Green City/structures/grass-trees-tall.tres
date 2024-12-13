@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://y6jafhfnhbrp"]
+
+[ext_resource type="PackedScene" uid="uid://dy26b1ba2j2v1" path="res://models/grass-trees-tall.glb" id="1_nbdd1"]
+[ext_resource type="Script" path="res://scripts/structure.gd" id="2_b2sah"]
+
+[resource]
+script = ExtResource("2_b2sah")
+name = "building"
+model = ExtResource("1_nbdd1")
+income = 0
+income_interval = 1.0
+pollution_effect = 0.0
+info = ""
+income_upgrade_level = 0
+max_income_upgrade_level = 3
+income_upgrade_ratio = 0.1
+income_upgrade_cost_base = 100.0
+income_upgrade_cost_multiplier = 2.0
+pollution_upgrade_level = 0
+max_pollution_upgrade_level = 3
+pollution_reduction_ratio = 0.1
+pollution_upgrade_cost_base = 150.0
+pollution_upgrade_cost_multiplier = 2.0
+type = "Type"

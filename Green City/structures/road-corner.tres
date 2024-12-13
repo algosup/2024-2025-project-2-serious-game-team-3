@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://d2jplegnkl6u2"]
+
+[ext_resource type="PackedScene" uid="uid://c4ccm2qr5wa58" path="res://models/road-corner.glb" id="1_r8n8k"]
+[ext_resource type="Script" path="res://scripts/structure.gd" id="3_oloyn"]
+
+[resource]
+script = ExtResource("3_oloyn")
+name = "road_corner"
+model = ExtResource("1_r8n8k")
+income = 0
+income_interval = 1.0
+pollution_effect = 0.0
+info = ""
+income_upgrade_level = 0
+max_income_upgrade_level = 3
+income_upgrade_ratio = 0.1
+income_upgrade_cost_base = 100.0
+income_upgrade_cost_multiplier = 2.0
+pollution_upgrade_level = 0
+max_pollution_upgrade_level = 3
+pollution_reduction_ratio = 0.1
+pollution_upgrade_cost_base = 150.0
+pollution_upgrade_cost_multiplier = 2.0
+type = "environment"
