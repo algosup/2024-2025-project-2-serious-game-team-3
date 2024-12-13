@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://vgwrcfy1qawf"]
+[gd_scene load_steps=31 format=3 uid="uid://vgwrcfy1qawf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7iria"]
 [ext_resource type="Script" path="res://scripts/builder.gd" id="1_jybm7"]
@@ -28,6 +28,7 @@
 [ext_resource type="Theme" uid="uid://btswjosy00tge" path="res://game_label.tres" id="24_wn6e2"]
 [ext_resource type="Script" path="res://scripts/information_display.gd" id="25_nqssb"]
 [ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="26_gqlh6"]
+[ext_resource type="Script" path="res://scenes/banner_label.gd" id="29_vxyq4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q176i"]
 font = ExtResource("16_vlub6")
@@ -255,6 +256,13 @@ offset_right = 2772.0
 offset_bottom = 109.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 56
+
+[node name="BannerLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("24_wn6e2")
+script = ExtResource("29_vxyq4")
 
 [connection signal="pressed" from="CanvasLayer/Control/Panel/IncomeUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_income_upgrade_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/PollutionUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_pollution_upgrade_button_pressed"]
