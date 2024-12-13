@@ -7,7 +7,10 @@ var messages: Array = [
 	"Over 10,000 cities have pledged to reduce emissions under the Paris Agreement. Is yours one of them?", 
 	"Recycling wastewater can reduce urban water emissions by up to 80%.", 
 	"Rooftop solar panels could supply 40% of a city's energy needs.",
-	"HAHAAHHAHAHAHA"
+	"Nine out of ten people worldwide breathe polluted air, most of which comes from city emissions.",
+	"Adding urban forests can reduce a city’s temperature by 2–4°C, combating heat islands.",
+	"Composting food waste reduces methane emissions by 80% compared to landfills.",
+	"Switching to biodegradable materials can cut plastic-related urban emissions by 60%."
 ]  # List of scrolling messages
 
 # Internal variables

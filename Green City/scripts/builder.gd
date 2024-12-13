@@ -211,7 +211,6 @@ func apply_building_pollution_effect(building: Structure):
 	map.pollution += building.pollution_effect
 	map.pollution = clamp(map.pollution, 0, pollution_gauge.max_value)
 	update_resources()
-	print("Pollution changed by: ", building.pollution_effect, ". New pollution level: ", map.pollution)
 
 
 func _on_pollution_timer_timeout():

@@ -1,5 +1,5 @@
 extends Node
-#
+# other way to generate cash, to be used if the other one doesnt.
 ## Cash variable to keep track of current cash
 #var cash: int = 10000  # Initial cash amount
 #

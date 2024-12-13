@@ -167,6 +167,23 @@ offset_bottom = 226.316
 theme = ExtResource("24_wn6e2")
 autowrap_mode = 2
 
+[node name="MoneyButton" type="Button" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 174.0
+offset_bottom = 531.0
+scale = Vector2(0.873853, 1.06995)
+text = "Money +"
+
+[node name="CO2Button" type="Button" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 400.0
+offset_bottom = 531.0
+text = "CO2 -"
+
 [node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 26.0
