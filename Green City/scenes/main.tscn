@@ -158,30 +158,6 @@ theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
 
-[node name="IncomeUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
-z_index = 11
-layout_mode = 0
-offset_left = 90.0
-offset_top = 457.0
-offset_right = 179.0
-offset_bottom = 544.0
-mouse_default_cursor_shape = 2
-theme = ExtResource("26_gqlh6")
-theme_override_font_sizes/font_size = 48
-text = "↑"
-
-[node name="PollutionUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
-z_index = 11
-layout_mode = 0
-offset_left = 334.0
-offset_top = 457.0
-offset_right = 423.0
-offset_bottom = 544.0
-mouse_default_cursor_shape = 2
-theme = ExtResource("26_gqlh6")
-theme_override_font_sizes/font_size = 48
-text = "↑"
-
 [node name="CloseButton" type="Button" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 385.0
@@ -192,12 +168,36 @@ theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 36
 text = "Close"
 
+[node name="IncomeUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
+z_index = 11
+layout_mode = 0
+offset_left = 90.0
+offset_top = 405.0
+offset_right = 179.0
+offset_bottom = 492.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_gqlh6")
+theme_override_font_sizes/font_size = 48
+text = "↑"
+
+[node name="PollutionUpgradeButton" type="Button" parent="CanvasLayer/Control/Panel"]
+z_index = 11
+layout_mode = 0
+offset_left = 334.0
+offset_top = 405.0
+offset_right = 423.0
+offset_bottom = 492.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_gqlh6")
+theme_override_font_sizes/font_size = 48
+text = "↑"
+
 [node name="IncreaseIncome" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 45.0
-offset_top = 414.0
+offset_top = 362.0
 offset_right = 246.0
-offset_bottom = 448.0
+offset_bottom = 396.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 28
 text = "Increase income"
@@ -205,30 +205,50 @@ text = "Increase income"
 [node name="ReducePollution" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
 offset_left = 282.0
-offset_top = 414.0
+offset_top = 362.0
 offset_right = 484.0
-offset_bottom = 448.0
+offset_bottom = 396.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 28
 text = "Reduce pollution"
 
 [node name="IncomePriceLabel" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 552.0
-offset_right = 193.0
-offset_bottom = 593.0
+offset_left = 74.0
+offset_top = 500.0
+offset_right = 196.0
+offset_bottom = 541.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 28
 
 [node name="ReducePrice" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 552.0
-offset_right = 438.0
-offset_bottom = 593.0
+offset_left = 318.0
+offset_top = 500.0
+offset_right = 440.0
+offset_bottom = 541.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 28
+
+[node name="IncomePreview" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 547.0
+offset_right = 250.0
+offset_bottom = 587.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="PollutionPreview" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 546.0
+offset_right = 485.0
+offset_bottom = 586.0
+theme = ExtResource("24_wn6e2")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
 
 [node name="PollutionLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -264,6 +284,6 @@ offset_bottom = 23.0
 theme = ExtResource("24_wn6e2")
 script = ExtResource("29_vxyq4")
 
+[connection signal="pressed" from="CanvasLayer/Control/Panel/CloseButton" to="CanvasLayer/Control/Panel" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/IncomeUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_income_upgrade_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/PollutionUpgradeButton" to="CanvasLayer/Control/Panel" method="_on_pollution_upgrade_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Panel/CloseButton" to="CanvasLayer/Control/Panel" method="_on_close_button_pressed"]

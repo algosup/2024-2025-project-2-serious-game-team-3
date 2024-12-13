@@ -7,7 +7,7 @@
 script = ExtResource("2_l3bhw")
 name = "Coal Factory"
 model = ExtResource("1_agf83")
-income = 1
+income = 100
 income_interval = 1.0
 pollution_effect = 50.0
 info = "Coal factories produce electricity but emit high levels of CO₂, impacting air quality. Transitioning to renewables reduces their environmental footprint."

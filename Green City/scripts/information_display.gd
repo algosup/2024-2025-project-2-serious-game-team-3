@@ -9,6 +9,8 @@ extends Control
 @onready var close_button = $CloseButton  # Add reference to the close button
 @onready var income_price_label = $IncomePriceLabel
 @onready var reduce_price_label = $ReducePrice
+@onready var income_preview_label = $IncomePreview
+@onready var reduction_price_label = $PollutionPreview
 
 
 # Index of the current building
@@ -29,7 +31,6 @@ func update_info_panel(structure: Resource, index: int) -> void:
 		pollution_effect_label.text = "Pollution Effect: " + str(structure.pollution_effect)
 		building_info_label.text = structure.info
 
-		# Update button text and state dynamically
 		var main_node = get_tree().root.get_node("Main/Builder")
 		if main_node and main_node.has_method("get_map"):
 			var map = main_node.get_map()
@@ -38,22 +39,29 @@ func update_info_panel(structure: Resource, index: int) -> void:
 				if structure.income_upgrade_level >= structure.max_income_upgrade_level:
 					income_price_label.text = "Maxed out"
 					income_upgrade_button.disabled = true
+					income_preview_label.text = "Upgrade: N/A"
 				else:
 					var income_upgrade_cost = structure.income_upgrade_cost_base * pow(structure.income_upgrade_cost_multiplier, structure.income_upgrade_level)
+					var next_income = structure.income + structure.income * structure.income_upgrade_ratio
 					income_price_label.text = "Price: " + str(income_upgrade_cost) + "$"
 					income_upgrade_button.disabled = map.cash < income_upgrade_cost
+					income_preview_label.text = "Upgrade: $" + str(next_income) + " (+$" + str(next_income - structure.income) + ")"
 
 				# Pollution reduction upgrade
 				if structure.pollution_upgrade_level >= structure.max_pollution_upgrade_level:
 					reduce_price_label.text = "Maxed out"
 					pollution_upgrade_button.disabled = true
+					reduction_price_label.text = "Reduction: N/A"
 				else:
 					var pollution_upgrade_cost = structure.pollution_upgrade_cost_base * pow(structure.pollution_upgrade_cost_multiplier, structure.pollution_upgrade_level)
+					var next_pollution = structure.pollution_effect - structure.pollution_effect * structure.pollution_reduction_ratio
 					reduce_price_label.text = "Price: " + str(pollution_upgrade_cost) + "$"
 					pollution_upgrade_button.disabled = map.cash < pollution_upgrade_cost
+					reduction_price_label.text = "Reduction: " + str(next_pollution) + " (-" + str(structure.pollution_effect - next_pollution) + ")"
 	else:
 		self.visible = false
 		current_building_index = -1
+
 
 
 
