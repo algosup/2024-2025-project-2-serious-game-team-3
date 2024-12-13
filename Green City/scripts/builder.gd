@@ -82,7 +82,7 @@ func _ready():
 func _process(delta):
 	# Allow timers and updates to continue even if gameplay is disabled
 	handle_panel_logic()
-
+	
 	# Update the time label with the remaining time
 	if is_instance_valid(game_timer):
 		var remaining_time = game_timer.time_left
@@ -96,6 +96,7 @@ func _process(delta):
 
 	# Gameplay-related logic (e.g., selector, gridmap interactions)
 	process_gameplay_inputs(delta)
+	check_pollution_level()
 
 func process_gameplay_inputs(delta):
 	# Existing gameplay input logic for raycasting and interactions
