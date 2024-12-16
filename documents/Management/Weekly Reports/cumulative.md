@@ -32,11 +32,18 @@
     - [Next Week](#next-week-3)
     - [Other Notes](#other-notes-3)
   - [Weekly Report - Week 5](#weekly-report---week-5)
-  - [Overview](#overview-4)
-  - [Goals](#goals-4)
-  - [Key Accomplishments](#key-accomplishments-4)
-  - [Next Week](#next-week-4)
-  - [Other Notes](#other-notes-4)
+    - [Overview](#overview-4)
+    - [Goals](#goals-4)
+    - [Key Accomplishments](#key-accomplishments-4)
+    - [Next Week](#next-week-4)
+    - [Other Notes](#other-notes-4)
+  - [Weekly Report - Week 6](#weekly-report---week-6)
+    - [Overview](#overview-5)
+    - [Goals](#goals-5)
+    - [Key Accomplishments](#key-accomplishments-5)
+    - [Next Week](#next-week-5)
+    - [Other Notes](#other-notes-5)
+  - [Weekly Report - Week 7](#weekly-report---week-7)
 
 <details>
 
@@ -214,35 +221,74 @@ The week was not productive due to a lack of project time. We need to work over 
 
 ## Weekly Report - Week 5
 
-## Overview
+### Overview
 
 This week was not as productive as expected, and time is running out.
 
-## Goals
+### Goals
 
 1. **Submit Test Plan Document:**
-   - Assigned to: Habi CAILLEAU
-   - Responsibility: Submit the test plan document before the deadline.
+   - Submit the test plan document before the deadline. Assigned to: Habi CAILLEAU.
 
 2. **Refine Game Features Based on Feedback:**
    - For the next two weeks, gather feedback from testers and make improvements based on their input.
 
 3. **Game Balancing:**
-   - Over the next two weeks starting from this week, work on balancing the game mechanics.
+   - Over the next two weeks, starting from this week, work on balancing the game mechanics.
 
 4. **Game Optimization:**
-   - Over the next two weeks starting from this week, focus on optimizing game performance.
+   - Over the next two weeks, starting from this week, focus on optimizing game performance.
 
-## Key Accomplishments
+### Key Accomplishments
 
 - ✅ Completed and submitted the Test Plan Document.
 
-## Next Week
+### Next Week
 
 1. Finalize all game features and deliver the product.
 2. Continue refining game features based on feedback.
 3. Complete game balancing.
+4. Complete User Manual.
 
-## Other Notes
+### Other Notes
 
 The week was less productive due to time constraints and a lack of engagement with the project. To address this, we have decided to adjust our initial goals and focus on delivering an MVP (Minimum Viable Product) as the final product. This is necessary given the remaining time for this project.
+
+
+## Weekly Report - Week 6
+
+### Overview
+
+The week went very well, with all team members engaged in their assigned tasks to deliver an MVP (Minimum Viable Product).
+
+### Goals
+
+1. **Submit User Manual:**
+   - Submit the document that clearly outlines the functionality of the game (guide book). Assigned to: Jason GROSSO.
+
+2. **Game Balancing:**
+   - Over the next two weeks, starting from this week, work on balancing the game mechanics.
+
+3. **Game Optimization:**
+   - Ensure the Minimum Viable Product functionality is working well and has been revised for error checking.
+
+4. **Submit the MVP (Minimum Viable Product):**
+   - At the end of the week (Friday, 13 DEC), at 4:50 PM, submit the MVP product.
+
+### Key Accomplishments
+
+- ✅ User Manual
+- ✅ Game Balancing
+- ✅ Game Optimization
+- ✅ MVP
+
+### Next Week
+
+Rehearse and prepare for the final Oral Exam Project Presentation.
+
+### Other Notes
+
+Throughout the project, we had difficulties, mostly at the beginning. However, with feedback and more engagement, we worked hard over the last two weeks to deliver at least an MVP.
+
+
+## Weekly Report - Week 7
