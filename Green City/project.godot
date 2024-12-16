@@ -24,8 +24,8 @@ config/icon="res://green-city.png"
 
 [display]
 
-window/size/viewport_width=2940
-window/size/viewport_height=2160
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=4
 
 [editor]
