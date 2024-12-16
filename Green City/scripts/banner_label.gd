@@ -2,7 +2,7 @@ extends Label
 
 # Scrolling parameters
 var scroll_speed: int = 350  # Pixels per second
-var pause_duration: float = 0  # Pause duration after the text scrolls out
+var pause_duration: float = 1.0  # Pause duration after the text scrolls out
 var messages: Array = [
 	"Over 10,000 cities have pledged to reduce emissions under the Paris Agreement. Is yours one of them?", 
 	"Recycling wastewater can reduce urban water emissions by up to 80%.", 
@@ -17,17 +17,17 @@ var messages: Array = [
 var current_message_index: int = 0
 var is_paused: bool = false
 
-# Start with test coordinates for debugging
-var start_position: Vector2 = Vector2(3000, 1700)  # Adjust these values incrementally
-
 func _ready() -> void:
-	# Set the starting position
-	position = start_position
+	# Adjust for screen size dynamically
+	adjust_for_screen_size()
 
-	# Debug: Print the initial position
-	print("Initial BannerLabel position: ", position)
+	# Start the label off-screen to the right
+	position.x = get_viewport().size.x
 
-	# Dynamically adjust the label's width to fit the text
+	# Debug: Print initial position and size
+	print("Initial BannerLabel position: ", position, " Width: ", size.x)
+
+	# Set the initial message
 	text = messages[current_message_index]
 	minimum_size_changed()
 
@@ -35,9 +35,6 @@ func _process(delta: float) -> void:
 	if not is_paused:
 		# Move the label to the left
 		position.x -= scroll_speed * delta
-
-		# Debug: Print the label's position each frame
-		#print("BannerLabel position: ", position)
 
 		# Check if the text has completely scrolled out of view
 		if position.x + size.x < 0:
@@ -48,12 +45,18 @@ func _on_text_out_of_view() -> void:
 	current_message_index = (current_message_index + 1) % messages.size()  # Cycle to the next message
 	text = messages[current_message_index]
 
-	# Reset position and pause before resuming
+	# Pause briefly, then reset position
 	await get_tree().create_timer(pause_duration).timeout
-	position = start_position  # Reset the position to the test starting point
+	position.x = get_viewport().size.x  # Reset position to off-screen to the right
 	is_paused = false
 
 func minimum_size_changed() -> void:
-	# Estimate the size of the text to adjust the label's size dynamically
+	# Dynamically adjust label size to fit text
 	var estimated_width = text.length() * 10  # Approximate width per character
 	size = Vector2(estimated_width, size.y)
+
+func adjust_for_screen_size() -> void:
+	# Adjust the banner to align with the screen or parent size
+	var viewport_size = get_viewport().get_visible_rect().size
+	size = Vector2(viewport_size.x, size.y)  # Adjust width to match screen width
+	position.y = viewport_size.y - size.y - 50  # Position near bottom of screen

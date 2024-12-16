@@ -28,7 +28,7 @@
 [ext_resource type="Theme" uid="uid://btswjosy00tge" path="res://game_label.tres" id="24_wn6e2"]
 [ext_resource type="Script" path="res://scripts/information_display.gd" id="25_nqssb"]
 [ext_resource type="Theme" uid="uid://gisc1m3gjvm0" path="res://menu.tres" id="26_gqlh6"]
-[ext_resource type="Script" path="res://scenes/banner_label.gd" id="29_vxyq4"]
+[ext_resource type="Script" path="res://scripts/banner_label.gd" id="29_vxyq4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q176i"]
 font = ExtResource("16_vlub6")
@@ -270,10 +270,10 @@ max_value = 100000.0
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 2514.0
-offset_top = 44.0
-offset_right = 2772.0
-offset_bottom = 109.0
+offset_left = 2509.0
+offset_top = 28.0
+offset_right = 2767.0
+offset_bottom = 93.0
 theme = ExtResource("24_wn6e2")
 theme_override_font_sizes/font_size = 56
 
