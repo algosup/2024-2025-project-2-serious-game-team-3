@@ -3,7 +3,16 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Get the current window size
+	var screen_size = DisplayServer.window_get_size()
+	print("Detected Screen Resolution: ", screen_size)
+
+	# Set the resolution dynamically
+	ProjectSettings.set_setting("display/window/size/width", screen_size.x)
+	ProjectSettings.set_setting("display/window/size/height", screen_size.y)
+
+	# Optional: Save the settings (this persists them to the project.godot file)
+	ProjectSettings.save()
 
 func _process(delta):
 	if Input.is_action_just_pressed("return_to_menu"):
