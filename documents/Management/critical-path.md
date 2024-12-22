@@ -1,4 +1,4 @@
-<h1 align="center"> Team 5 SPORTSHIELD Critical Path Method</h1>
+<h1 align="center"> Team 3 SERIOUS GAME Critical Path Method</h1>
 
 ## Definition
 
