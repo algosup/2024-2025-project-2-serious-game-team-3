@@ -44,6 +44,7 @@
     - [Next Week](#next-week-5)
     - [Other Notes](#other-notes-5)
   - [Weekly Report - Week 7](#weekly-report---week-7)
+    - [Overview](#overview-6)
 
 <details>
 
@@ -292,3 +293,7 @@ Throughout the project, we had difficulties, mostly at the beginning. However, w
 
 
 ## Weekly Report - Week 7
+
+### Overview
+
+The week went very well, with all team members engaged in presenting the project during the oral exam sessions. We trained for days to prepare for this final oral exam presentation. However, the presentation did not satisfy the jury, and we received negative feedback concerning the game MVP we created and . Despite this, we have taken all the feedback into account and are planning to ensure we do not repeat the same errors in future projects.
